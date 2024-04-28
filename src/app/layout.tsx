@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { GlobalStateProvider } from "@/context";
 // const inter = Inter({ subsets: ["latin"] });
-const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false})
+const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <GlobalStateProvider>
+          {children}
+        </GlobalStateProvider>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
 import signupRoute from "@/components/signup/api/signup";
-
+import loginRoute from "@/components/login/api/login";
 
 // export const runtime = 'edge';
 
@@ -18,6 +18,7 @@ app.get('/', (c) => {
 
 
 app.route("/v1/auth",signupRoute);
+app.route("/v1/auth",loginRoute);
 
 
 

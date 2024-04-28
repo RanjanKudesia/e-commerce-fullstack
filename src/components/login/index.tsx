@@ -1,12 +1,11 @@
-import SignupContextWrapper from "./context"
-import NameInput from "./components/name-input"
-import PasswordInput from "./components/password-input"
-import EmailInput from "./components/email-input"
-import SubmitButton from "./components/submit-button"
+import SignupContextWrapper from "./context";
+import PasswordInput from "./components/password-input";
+import EmailInput from "./components/email-input";
+import SubmitButton from "./components/submit-button";
 
 
 
-export default function SignUp() {
+export default function LogIn() {
     return (
         <SignupContextWrapper>
             <div className="asbolute bg-[#0B0F0E] bg-opacity-[0.5] w-full h-screen flex justify-center items-center">
@@ -18,10 +17,6 @@ export default function SignUp() {
                         <div className='flex flex-col gap-[8px] justify-center items-start'>
                             <label className='text-[#0B0F0E] text-[16px] font-[600]' htmlFor='email'>Email</label>
                             <EmailInput id='email' />
-                        </div>
-                        <div className='flex flex-col gap-[8px] justify-center items-start'>
-                            <label className='text-[#0B0F0E] text-[16px] font-[600]' htmlFor='name'>Name</label>
-                            <NameInput id='name' />
                         </div>
                         <div className='flex flex-col gap-[8px] justify-center items-start'>
                             <label className='text-[#0B0F0E] text-[16px] font-[600]' htmlFor='password'>Password</label>
