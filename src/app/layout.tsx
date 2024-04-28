@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
+import { GlobalStateProvider } from "@/context";
 // const inter = Inter({ subsets: ["latin"] });
-const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false})
+const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
   title: "Lenny | Home",
