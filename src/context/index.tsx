@@ -24,7 +24,7 @@ type ContextProviderProps = {
     children: React.ReactNode;
 };
 
-const GlobalContext = createContext<null | GlobalContextType>(null);
+const GlobalContext = createContext(null);
 
 function GlobalStateProvider({ children }: ContextProviderProps) {
 
@@ -91,34 +91,34 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     }
 
 
-    useEffect(() => {
-        const data = localStorage.getItem("auth");
-        if (data) {
-            const parsedData = JSON.parse(data);
-            setAuth({ user: parsedData.user, token: parsedData.token });
-        }
-        setAuthInitialized(true);
-    }, []);
+    // useEffect(() => {
+    //     const data = localStorage.getItem("auth");
+    //     if (data) {
+    //         const parsedData = JSON.parse(data);
+    //         setAuth({ user: parsedData.user, token: parsedData.token });
+    //     }
+    //     setAuthInitialized(true);
+    // }, []);
 
-    useEffect(() => {
-        const handleTokenVerification = async () => {
-            if (!auth.token) return;
-            const verified = await verifyToken(auth.token);
-            if (!verified) {
-                localStorage.removeItem("auth");
-                setAuth({ user: null, token: "" });
-                router.push("/login");
-            } else if (pathname === "/login") {
-                router.push("/");
-            }
-        };
+    // useEffect(() => {
+    //     const handleTokenVerification = async () => {
+    //         if (!auth.token) return;
+    //         const verified = await verifyToken(auth.token);
+    //         if (!verified) {
+    //             localStorage.removeItem("auth");
+    //             setAuth({ user: null, token: "" });
+    //             router.push("/login");
+    //         } else if (pathname === "/login") {
+    //             router.push("/");
+    //         }
+    //     };
 
-        if (authInitialized && auth.user) {
-            handleTokenVerification();
-        } else if (authInitialized && !auth.user) {
-            router.push("/login");
-        }
-    }, [auth.user, auth.token, authInitialized, pathname]);
+    //     if (authInitialized && auth.user) {
+    //         handleTokenVerification();
+    //     } else if (authInitialized && !auth.user) {
+    //         router.push("/login");
+    //     }
+    // }, [auth.user, auth.token, authInitialized, pathname]);
 
 
     const value = { screenSize, auth, setAuth, verifyToken };
@@ -131,6 +131,8 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     );
 };
 
+
 const useGlobalState = () => useContext(GlobalContext);
+
 
 export { useGlobalState, GlobalStateProvider };

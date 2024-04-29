@@ -41,16 +41,12 @@ export default function SignupContextWrapper({
         }
       );
       if (response.status === 201) {
+        console.log(response);
         toast.success(response.data.message);
       }
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error("Error during user creation and update:", error.message);
-        toast.error(error.message);
-      } else {
-        console.error("Unexpected error during user creation");
-        toast.error("Unexpected error during user creation");
-      }
+    } catch (error: any) {
+      console.error("Error during user creation and update:", error);
+      toast.error(error.response.data.code);
     }
   };
 
