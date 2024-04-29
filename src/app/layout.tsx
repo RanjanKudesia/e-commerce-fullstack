@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { GlobalStateProvider } from "@/context";
-// const inter = Inter({ subsets: ["latin"] });
-const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
+// const Jost = Jost({ subsets: ["latin"] });
+const jost = Jost({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
   title: "Lenny | Home",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jost.className}>
         <GlobalStateProvider>
         <Navbar/>
         {children}
