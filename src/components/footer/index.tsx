@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="flex justify-start items-start flex-wrap py-10 w-full md:justify-between">
       <div className="w-full sm:w-1/2 md:w-1/4 md:pr-10 p-4 sm:p-0">
       <Link href="/"><Image
-            src="/assets/Logo.svg"
+            src="/assets/svgs/Logo.svg"
             alt="Logo"
             width={200}
             height={200}
@@ -99,16 +99,16 @@ Republic of Indonesia
 </div> 
 <div className="w-full sm:w-1/2 flex justify-center items-center md:justify-end">
 <div className="w-[50px] h-[25px] bg-white rounded mx-1 flex justify-center items-center">
-<Image src="/assets/visa.png" alt="Visa" width={30} height={10} className="object-contain"/>
+<Image src="/assets/pngs/visa.png" alt="Visa" width={30} height={10} className="object-contain"/>
 </div>
 <div className="w-[50px] h-[25px] bg-white rounded mx-1 flex justify-center items-center">
-<Image src="/assets/Mastercard.jpg" alt="Mastercard" width={30} height={10} className="object-contain"/>
+<Image src="/assets/jpgs/Mastercard.jpg" alt="Mastercard" width={30} height={10} className="object-contain"/>
 </div>
 <div className="w-[50px] h-[25px] bg-white rounded mx-1 flex justify-center items-center">
-<Image src="/assets/Google_Pay.png" alt="GooglePay" width={30} height={10} className="object-contain"/>
+<Image src="/assets/pngs/Google_Pay.png" alt="GooglePay" width={30} height={10} className="object-contain"/>
 </div>
 <div className="w-[50px] h-[25px] bg-white rounded mx-1 flex justify-center items-center">
-<Image src="/assets/paypal.png" alt="Paypal" width={30} height={10} className="object-contain"/>
+<Image src="/assets/pngs/paypal.png" alt="Paypal" width={30} height={10} className="object-contain"/>
 </div>
 </div>
 </div>

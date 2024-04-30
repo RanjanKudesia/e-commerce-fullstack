@@ -33,7 +33,7 @@ export default function Navbar() {
       <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-10 xl:px-40">
         <div className="w-1/4 xl:w-1/6 ">
           <Link href="/"><Image
-            src="/assets/Logo.svg"
+            src="/assets/svgs/Logo.svg"
             alt="Logo"
             width={300}
             height={300}
@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link href="" className="flex hover:font-bold">
                 Shop
                 <Image
-                  src="/assets/chevron-down.svg"
+                  src="/assets/svgs/chevron-down.svg"
                   alt="icon"
                   width={10}
                   height={10}
@@ -217,7 +217,7 @@ export default function Navbar() {
 
         <div className="flex justify-end items-center w-1/3 xl:w-1/5">
           <Image
-            src="/assets/shopping-cart.svg"
+            src="/assets/svgs/shopping-cart.svg"
             alt="Logo"
             width={20}
             height={20}
@@ -225,7 +225,7 @@ export default function Navbar() {
           />
 
           <Image
-            src="/assets/user_profile.svg"
+            src="/assets/svgs/user_profile.svg"
             alt="Logo"
             width={25}
             height={25}
@@ -241,7 +241,7 @@ export default function Navbar() {
         />
       ) : (
         <Image
-          src="/assets/menu.svg"
+          src="/assets/svgs/menu.svg"
           alt="Menu Icon"
           width={30}
           height={30}

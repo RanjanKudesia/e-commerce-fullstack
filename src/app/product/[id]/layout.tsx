@@ -1,13 +1,5 @@
 import { ProductStateProvider } from "./context"
 
-
-
-
-
-
-
-
-
 export default function ProductLayout({
     children,
     params
