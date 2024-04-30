@@ -6,27 +6,47 @@ import { Product } from "../interfaces";
 
 interface ContextProviderProps {
     children: React.ReactNode,
-    params: {id:string}
+    params: { id: string }
 };
 
-const ProductContext = createContext(null);
+interface ProductContextType {
+    product: Product;
+}
+
+const defaultProduct: Product = {
+    uniq_id: '',
+    product_rating: '',
+    description: '',
+    pid: '',
+    type: '',
+    brand: '',
+    retail_price: '',
+    is_FK_Advantage_product: false,
+    images: [],
+    discounted_price: '',
+    category: '',
+    brand_rating: '',
+    subcategory: '',
+    product_specifications: [],
+    product_name: '',
+};
+
+const defaultProductContextValue: ProductContextType = {
+    product: defaultProduct,
+};
+
+const ProductContext = createContext<ProductContextType>(defaultProductContextValue);
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
-    console.log(params)
-    const id  = params.id;
+    const id = params.id;
     // const { auth } = useGlobalState()
 
-    // useEffect(() => {
-    //     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
-    // }, [auth.token]);
-
-    const [product, setProduct] = useState<Product | null>(null);
+    const [product, setProduct] = useState<Product>(defaultProduct);
 
     async function getProduct(uniq_id: string) {
         try {
             const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-details/${uniq_id}`);
             if (response.status === 200) {
-                // console.log(response.data);
                 setProduct(response.data);
             }
         } catch (error: any) {
@@ -34,24 +54,19 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
         }
     }
 
-
     useEffect(() => {
-        // if (auth) {
             getProduct(id);
-        // };
     }, [id]);
 
     const value = { product };
 
     return (
-        <ProductContext.Provider value={value} >
+        <ProductContext.Provider value={value}>
             {children}
         </ProductContext.Provider>
     );
 };
 
-
 const useProductState = () => useContext(ProductContext);
-
 
 export { useProductState, ProductStateProvider };

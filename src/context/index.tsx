@@ -9,7 +9,7 @@ import { useRouter, usePathname } from "next/navigation";
 interface AuthState {
     user: null | { [key: string]: any };
     token: string;
-};
+}
 
 interface GlobalContextType {
     screenSize: number;
@@ -18,13 +18,22 @@ interface GlobalContextType {
     verifyToken: (token: string) => Promise<boolean>;
 }
 
+const defaultContextValue: GlobalContextType = {
+    screenSize: 0,
+    auth: {
+        user: null,
+        token: ""
+    },
+    setAuth: () => {}, // Dummy function, will be overwritten by the actual function
+    verifyToken: async () => false // Dummy promise, will be overwritten by the actual function
+};
 
+const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
 
 type ContextProviderProps = {
     children: React.ReactNode;
 };
 
-const GlobalContext = createContext(null);
 
 function GlobalStateProvider({ children }: ContextProviderProps) {
 

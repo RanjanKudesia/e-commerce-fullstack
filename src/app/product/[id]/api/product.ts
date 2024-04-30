@@ -15,7 +15,6 @@ app.get('/get-details/:id', async (c) => {
 
     if (!querySnapshot.empty) {
       const docSnap = querySnapshot.docs[0]; // Assuming 'id' is unique and only one doc should match
-      console.log("Document data:", docSnap.data());
       return c.json(docSnap.data());
     } else {
       console.log("No such document!");
