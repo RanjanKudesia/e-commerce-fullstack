@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
+import { usePathname } from 'next/navigation'
 import Submenu from "./components/submenu";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,8 +31,8 @@ export default function Navbar() {
 
  
   return (
-    <div className="text-black sticky top-0">
-      <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-10 xl:px-40">
+    <div className="text-black sticky top-0 z-50">
+      <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-40">
         <div className="w-1/4 xl:w-1/6 ">
           <Link href="/"><Image
             src="/assets/svgs/Logo.svg"
@@ -41,13 +43,13 @@ export default function Navbar() {
           /></Link>
         </div>
 
-        <div className="navList hidden font-semibold transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
+        <div className="navList hidden font-medium transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
-            <li className="px-4 hover:font-bold py-2 xl:py-0">
+            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Home</Link>
             </li>
             <li
-              className="px-4 py-2 xl:py-0"
+              className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -63,7 +65,7 @@ export default function Navbar() {
               </Link>
               {/* Mega Menu */}
               {isMegaMenuOpen && (
-                <div className="megamenu flex justify-between align-top w-full p-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md xl:px-40">
+                <div className="megamenu flex font-medium justify-between align-top w-full p-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md xl:px-40">
                   <div className="w-1/4 ">
                     <ul>
                       <h3 className="px-4 font-bold py-2">
@@ -203,13 +205,13 @@ export default function Navbar() {
             <li className="xl:hidden">
             {/* <Submenu/> */}
             </li>
-            <li className="px-4 hover:font-bold py-2 xl:py-0">
+            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Our Stroy</Link>
             </li>
-            <li className="px-4 hover:font-bold py-2 xl:py-0">
+            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/blogs' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Blogs</Link>
             </li>
-            <li className="px-4 hover:font-bold py-2 xl:py-0">
+            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/contact-us' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Contact Us</Link>
             </li>
           </ul>

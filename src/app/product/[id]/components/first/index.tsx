@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import { useProductState } from "../../context";
-// import ProductGallery from "@/components/productGallery";
 import { FaChevronLeft } from "react-icons/fa";
 
 export default function FirstSec() {
@@ -30,20 +29,20 @@ export default function FirstSec() {
   return (
     <div>
       {product && (
-        <ul className="w-full flex justify-start items-center text-xs md:text-base">
-          <li className="px-3 text-[#1D9E34] font-medium">
+        <ul className="flex justify-start items-center text-xs md:text-base overflow-x-scroll md:overflow-auto">
+          <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="/">Home</Link>
           </li>
-          <FaAngleRight />
-          <li className="px-3 text-[#1D9E34] font-medium">
+          <FaAngleRight className="min-w-fit" />
+          <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="">{product?.category}</Link>
           </li>
-          <FaAngleRight />
-          <li className="px-3 text-[#1D9E34] font-medium">
+          <FaAngleRight className="min-w-fit"/>
+          <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="">{product?.subcategory}</Link>
           </li>
-          <FaAngleRight />
-          <li className="px-3 text-black font-medium">
+          <FaAngleRight className="min-w-fit"/>
+          <li className="px-3 text-black font-medium min-w-fit">
             <Link href="">{product?.product_name}</Link>
           </li>
         </ul>
@@ -51,25 +50,24 @@ export default function FirstSec() {
 
       <div className="w-full flex justify-between items-start px-3 my-10 flex-col md:flex-row">
         <div className="w-full md:w-1/2 pr-0 md:pr-10">
-          {/* <ProductGallery/> */}
           <div className="grid gap-4">
             {/* Main Image */}
-            <div className="relative">
+            <div className="relative z-10">
               <Image
                 src={product?.images[currentImageIndex]}
                 width={480}
                 height={480}
-                className="rounded-lg bg-[#F6F6F6] w-full h-[400] object-contain p-10"
+                className="rounded-xl w-full h-[400] object-contain p-10 shadow-md"
                 alt="Main Product Image"
               />
               <button
-                className="absolute top-1/2 left-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81]"
+                className="absolute top-1/2 left-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81] z-10"
                 onClick={handlePrevious}
               >
                 <FaChevronLeft />
               </button>
               <button
-                className="absolute top-1/2 right-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81]"
+                className="absolute top-1/2 right-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81] z-10"
                 onClick={handleNext}
               >
                 <FaAngleRight />
@@ -77,7 +75,7 @@ export default function FirstSec() {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="grid grid-cols-5 gap-4">
+            <div className="overflow-x-scroll md:overflow-auto flex justify-between items-center pb-5">
               {product?.images.map((imageUrl, index) => (
                 <div
                   key={index}
@@ -88,7 +86,7 @@ export default function FirstSec() {
                     src={imageUrl}
                     width={100}
                     height={100}
-                    className="w-full h-[100] object-contain mx-1 bg-[#F6F6F6] rounded-md p-4"
+                    className="min-w-[100px] h-[100] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
                     alt={`Thumbnail ${index}`}
                   />
                 </div>
@@ -122,7 +120,7 @@ export default function FirstSec() {
           <hr className="my-4" />
           <h4 className="text-lg font-semibold mb-3">Product Variant:</h4>
           <div>
-            <div className="w-9/12 flex justify-between items-start">
+            <div className="w-full md:w-9/12 flex justify-between items-start">
               <div className="w-1/2 mr-2">
                 <p className="mb-2">Type</p>
                 <div className="relative">
