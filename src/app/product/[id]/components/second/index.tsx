@@ -87,7 +87,7 @@ export default function SecondSec() {
         </div>
       </div>
 
-      <hr className="my-20"/>
+      <hr className="my-10"/>
     </div>
   );
 }
