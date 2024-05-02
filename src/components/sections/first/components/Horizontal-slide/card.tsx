@@ -37,7 +37,7 @@ export default function Card({
   // console.log(isMobileView);
 
   return (
-    <div className="flex flex-col md:flex-row pt-[102px] md:pt-[188px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] md:pb-[192px] gap-[32px] relative">
+    <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] md:pb-[192px] gap-[32px] relative">
       <div className="flex flex-col gap-[32px] justify-start w-[315px] md:w-[657px] z-10">
         <div className="flex flex-col gap-[16px]">
           <div className="text-black text-[28px] md:text-[58px] font-[600] leading-[39.2px] md:leading-[69.6px] tracking-tight ">
@@ -76,7 +76,7 @@ export default function Card({
       >
         <Image
           // right-54 and top + 43
-          className="absolute right-[50%] bottom-[35%] md:right-[457px] md:top-[213px] "
+          className="absolute right-[50%] bottom-[35%] md:right-[457px] md:top-[125px] "
           src="/svgs/WHITE_DOT.svg"
           width={42}
           height={42}
@@ -135,7 +135,7 @@ export default function Card({
         <div className="md:block hidden">
           {isOpen && (
             <div
-              className="cursor-pointer gap-[4px] pt-[4px] flex flex-col justify-center items-center w-[150px] h-[249px] absolute  right-[403px] top-[256px]"
+              className="cursor-pointer gap-[4px] pt-[4px] flex flex-col justify-center items-center w-[150px] h-[249px] absolute  right-[403px] top-[168px]"
               style={{
                 transition: "opacity 3s",
                 transitionDelay: isOpen ? "0.3s" : "0s",
