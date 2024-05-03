@@ -9,7 +9,33 @@ interface ContextProviderProps {
   params: { id: string };
 }
 
-const ProductContext = createContext(null);
+interface ProductContextType {
+    product: Product;
+}
+
+const defaultProduct: Product = {
+    uniq_id: '',
+    product_rating: '',
+    description: '',
+    pid: '',
+    type: '',
+    brand: '',
+    retail_price: '',
+    is_FK_Advantage_product: false,
+    images: [],
+    discounted_price: '',
+    category: '',
+    brand_rating: '',
+    subcategory: '',
+    product_specifications: [],
+    product_name: '',
+};
+
+const defaultProductContextValue: ProductContextType = {
+    product: defaultProduct,
+};
+
+const ProductContext = createContext<ProductContextType>(defaultProductContextValue);
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
   console.log(params);
