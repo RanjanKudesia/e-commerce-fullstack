@@ -3,6 +3,7 @@ import Signup from "@/components/signup";
 import Login from "@/components/login";
 import Fourth from "@/components/sections/fourth";
 import Third from "@/components/sections/third";
+import Fifth from "@/components/sections/fifth";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <First />
       <Third />
       <Fourth />
+      <Fifth />
     </main>
   );
 }

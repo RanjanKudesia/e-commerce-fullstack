@@ -1,25 +1,47 @@
-'use client'
-import { db } from "@/firebase/config/firebaseConfig";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import React,{useEffect,useState} from "react";
-
-async function fetchDataFromFirestore(){
-  const q = query(collection(db, 'productsv2'), where('brand_rating', '>', 4));
-  const productsSnapshot = await getDocs(q);
-
-  const data = [];
-  productsSnapshot.forEach((doc) => {
-    // Push each document's data to the data array
-    data.push({ id: doc.id, ...doc.data() });
-  });
-
-  return data;
-}
-
+"use client";
+import { useProductState } from "@/app/product/[id]/context";
+import { Product } from "@/app/product/[id]/interfaces";
+import React, { useEffect, useState } from "react";
+import ProductCard from "./Card";
+import axios from "axios";
 
 export default function TProducts() {
+  // const { products } = useProductState();
+
+  // useEffect(() => {
+  //   console.log("fetched products", products);
+  // }, [products]);
+
+  const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-products`
+      );
+      if (response.status === 200) {
+        setFetchedProducts(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching products:", error.message);
+    }
+  };
 
   return (
-    <div className="w-full  px-[24px] md:px-[120px] gap-x-[24px] gap-[32px] md:grid grid-cols-3 md:gap-y-[32px]"></div>
+    <div className="grid grid-cols-2 gap-[17px] gap-y-[24px] md:grid-cols-4 md:gap-[24px] md:gap-y-[32px]">
+      {fetchedProducts.map((product: Product) => (
+        <ProductCard
+          key={product.uniq_id}
+          prodImg={product.images[0]}
+          prodName={product.product_name}
+          prodPrice={product.discounted_price}
+          prodRating={product.product_rating}
+        />
+      ))}
+    </div>
   );
 }
