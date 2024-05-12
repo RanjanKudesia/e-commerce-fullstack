@@ -5,8 +5,11 @@ import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { usePathname } from 'next/navigation'
 import Submenu from "./components/submenu";
+// import { useProductState } from "../../context";
+
 
 export default function Navbar() {
+  // const { productCategory } = useProductState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +32,7 @@ export default function Navbar() {
     setIsMegaMenuOpen(false);
   };
 
- 
+
   return (
     <div className="text-black sticky top-0 z-50">
       <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-40">
@@ -199,17 +202,26 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </div>
+
+
+                  <div className="w-1/4 ">
+                    <ul>
+                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
+                        <Link href="">T-Shirts</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               )}
             </li>
             <li className="xl:hidden">
-            {/* <Submenu/> */}
+              {/* <Submenu/> */}
             </li>
             <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Our Stroy</Link>
             </li>
-            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/blogs' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
-              <Link href="">Blogs</Link>
+            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/articles' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+              <Link href="/articles">Blogs</Link>
             </li>
             <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/contact-us' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Contact Us</Link>
@@ -234,25 +246,25 @@ export default function Navbar() {
             className="mx-2 xl:w-[35px] xl:mx-4 cursor-pointer"
           />
 
-<div className="mr-5">
-      {isOpen ? (
-        <IoIosClose
-          className="text-4xl cursor-pointer"
-          onClick={toggleMenu}
-          aria-label="Close menu"
-        />
-      ) : (
-        <Image
-          src="/assets/svgs/menu.svg"
-          alt="Menu Icon"
-          width={30}
-          height={30}
-          className="mx-2 border-l-2 pl-4 w-[40px] xl:hidden cursor-pointer"
-          onClick={toggleMenu}
-          aria-label="Open menu"
-        />
-      )}
-    </div>
+          <div className="mr-5">
+            {isOpen ? (
+              <IoIosClose
+                className="text-4xl cursor-pointer"
+                onClick={toggleMenu}
+                aria-label="Close menu"
+              />
+            ) : (
+              <Image
+                src="/assets/svgs/menu.svg"
+                alt="Menu Icon"
+                width={30}
+                height={30}
+                className="mx-2 border-l-2 pl-4 w-[40px] xl:hidden cursor-pointer"
+                onClick={toggleMenu}
+                aria-label="Open menu"
+              />
+            )}
+          </div>
         </div>
       </nav>
     </div>

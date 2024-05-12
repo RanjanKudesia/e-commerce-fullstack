@@ -1,75 +1,30 @@
-import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
+import { Hono } from "hono";
+import { handle } from "hono/vercel";
 import signupRoute from "@/components/signup/api/signup";
 import loginRoute from "@/components/login/api/login";
 import productsRoute from "@/app/product/[id]/api/product";
+import reviewsRoute from "@/app/product/[id]/api/review";
+import relatedProductRoute from "@/app/product/[id]/api/related-product";
+import productCategoryRoute from "@/app/product/[id]/api/category";
+
 // export const runtime = 'edge';
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath("/api");
 
 // Handling GET request
-app.get('/', (c) => {
+app.get("/", (c) => {
   return c.json({
-    message: 'Testing... api',
-  })
-})
+    message: "Testing... api",
+  });
+});
 
+app.route("/v1/auth", signupRoute);
+app.route("/v1/auth", loginRoute);
 
-
-
-app.route("/v1/auth",signupRoute);
-app.route("/v1/auth",loginRoute);
-
-
-app.route("/v1/product",productsRoute);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.route("/v1/product", productsRoute);
+app.route("/v1", reviewsRoute);
+app.route("/v1", relatedProductRoute);
+app.route("/v1", productCategoryRoute);
 
 
 

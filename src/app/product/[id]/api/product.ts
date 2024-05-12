@@ -1,12 +1,12 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
 import { db } from "@/firebase/config/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-const app = new Hono()
+const app = new Hono();
 
 // Handling GET request
-app.get('/get-details/:id', async (c) => {
-  const id = c.req.param('id');
+app.get("/get-details/:id", async (c) => {
+  const id = c.req.param("id");
   const colRef = collection(db, "productsv2");
   const q = query(colRef, where("uniq_id", "==", id));
 
@@ -15,7 +15,7 @@ app.get('/get-details/:id', async (c) => {
 
     if (!querySnapshot.empty) {
       const docSnap = querySnapshot.docs[0]; // Assuming 'id' is unique and only one doc should match
-      return c.json(docSnap.data());
+      return c.json(docSnap.data(), 200);
     } else {
       console.log("No such document!");
       return c.json({ error: "Document not found" }, 404);
@@ -24,6 +24,6 @@ app.get('/get-details/:id', async (c) => {
     console.error("Error fetching document:", error);
     return c.json({ error: "Failed to fetch document" }, 500);
   }
-})
+});
 
 export default app;

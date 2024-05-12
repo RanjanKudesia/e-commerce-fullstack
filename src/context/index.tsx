@@ -24,7 +24,7 @@ const defaultContextValue: GlobalContextType = {
         user: null,
         token: ""
     },
-    setAuth: () => {}, // Dummy function, will be overwritten by the actual function
+    setAuth: () => { }, // Dummy function, will be overwritten by the actual function
     verifyToken: async () => false // Dummy promise, will be overwritten by the actual function
 };
 
