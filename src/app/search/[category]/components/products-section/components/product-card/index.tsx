@@ -35,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
     const brandRating = parseFloat(product.brand_rating);
 
     return (
-        <div className="h-[284px] w-[200px] flex flex-col gap-[16px] rounded-[8px] border-x-2 border-y-0 border-[#1E4C2F] transition-transform duration-300 hover:transform hover:scale-105">
+        <div className="h-[284px] w-[278px] flex flex-col gap-[16px] rounded-[8px] border-x-2 border-y-0 border-[#1E4C2F] transition-transform duration-300 hover:transform hover:scale-105">
             <div className="relative basis-1/2 w-full rounded-[8px]  shadow-red-500 flex justify-center items-center">
                 <Image src={product.images[0]} alt='product-image'
                     width={50}
@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
             <div className="basis-1/2 flex flex-col justify-between px-2">
                 <div className='text-sm font-bold text-center'>{product.product_name}</div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 justify-center">
                     <div className='text-lg flex text-gray-900 font-medium'>
                         <span className='text-xs font-semibold'>Rs</span>
                         {product.discounted_price}
@@ -59,11 +59,11 @@ export default function ProductCard({ product }: { product: Product }) {
                         ({percentage})
                     </div>
                 </div>
-                <div className='bg-green-500 w-max rounded text-sm font-medium'>
+                <div className='mx-auto text-center bg-green-500 w-max rounded text-sm font-medium'>
                     Save ₹{saving}
                 </div>
                 {/* Star Rating */}
-                <div className="flex items-center justify-between gap-1">
+                <div className="flex items-center justify-evenly gap-1">
                     {[...Array(5)].map((_, index) => (
                         <svg key={index} className={`h-5 w-5 ${index < Math.floor(brandRating) ? 'text-yellow-400' : index + 0.5 === brandRating ? 'text-yellow-500' : 'text-gray-400'} fill-current`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path d="M10 1l2.6 6.4H18l-5.2 4.2L15.7 19 10 15.3 4.3 19l1.9-7.4L2 7.4h5.4L10 1z" />

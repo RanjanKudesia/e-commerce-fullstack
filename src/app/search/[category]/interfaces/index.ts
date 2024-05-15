@@ -20,3 +20,11 @@ export interface Product {
     product_specifications: ProductSpecification[];
     product_name: string;
 }
+
+export interface Category {
+    category_name: string;
+    category_level: number;
+    children: string[];
+    count: number;
+    parent: string;
+  }

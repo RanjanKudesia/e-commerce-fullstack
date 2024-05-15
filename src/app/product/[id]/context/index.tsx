@@ -51,11 +51,11 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
             }
         } catch (error: any) {
             console.error('Error', error.message);
-        }
+        };
     }
 
     useEffect(() => {
-            getProduct(id);
+        getProduct(id);
     }, [id]);
 
     const value = { product };

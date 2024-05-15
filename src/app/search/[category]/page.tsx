@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import HeadSection from "./components/head-section";
-import Products from "./components/products-section";
-
+import ProductsSection from "./components/products-section";
+import FilterSection from "./components/filter-section";
 
 
 export default function Search() {
@@ -11,7 +11,8 @@ export default function Search() {
             <div className="h-full w-full pt-[60px] pb-[120px] flex flex-col gap-[52px] px-[120px]">
                 <HeadSection />
                 <div className="flex gap-[32px] mt-[52px]">
-                    <Products />
+                    <FilterSection />
+                    <ProductsSection />
                 </div>
             </div>
         </Suspense>

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
-import { useGlobalState } from "@/context";
+import { useSearchParams } from "next/navigation";
 import { Product } from "../interfaces";
 
 interface ContextProviderProps {
@@ -11,8 +11,15 @@ interface ContextProviderProps {
 
 interface ProductsContextType {
     products: Product[];
-    category: string
-}
+    category: string;
+    subCategories: string[];
+    subCategory: string;
+    sortByFilter: string;
+    setSortByFilter: (sortByFilter: string) => void;
+    setSubCategory: (subCategory: string) => void;
+    priceFilter: string;
+    setPriceFilter: (priceFilter: string) => void;
+};
 
 const defaultProduct: Product = {
     uniq_id: '',
@@ -34,20 +41,32 @@ const defaultProduct: Product = {
 
 const defaultProductContextValue: ProductsContextType = {
     products: [defaultProduct],
-    category: ""
+    category: "",
+    subCategories: [""],
+    subCategory: "",
+    setSubCategory: () => { },
+    sortByFilter: "Relevent Products",
+    setSortByFilter: () => { },
+    priceFilter: "",
+    setPriceFilter: () => { }
 };
 
 const SearchContext = createContext<ProductsContextType>(defaultProductContextValue);
 
 function SearchStateProvider({ children, params }: ContextProviderProps) {
     const { category } = params;
-    // const { auth } = useGlobalState()
-
+    const searchParams = useSearchParams();
     const [products, setProducts] = useState<Product[]>([defaultProduct]);
+    const [subCategories, setSubCategories] = useState<string[]>([""]);
+    const [subCategory, setSubCategory] = useState<string>("");
+    const [priceFilter, setPriceFilter] = useState<string>("");
+    const [sortByFilter, setSortByFilter] = useState<string>("Relevant products");
 
-    async function getSearchProducts(uniq_id: string) {
+    async function getSearchProducts(category: string, priceFilter: string) {
         try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/search/products/${category}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/search/products/${category}?branded=${searchParams.has('branded')}&discount=${searchParams.has('discount')}&above4stars=${searchParams.has('above4stars')}&priceFilter=${priceFilter}`, {
+                subCategory
+            });
             if (response.status === 200) {
                 setProducts(response.data);
             }
@@ -57,17 +76,34 @@ function SearchStateProvider({ children, params }: ContextProviderProps) {
     }
 
     useEffect(() => {
-        getSearchProducts(category);
+        getSearchProducts(category, priceFilter);
+    }, [category, searchParams, subCategory, priceFilter]);
+
+    async function getCategories(category: string) {
+        try {
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/search/children-categories/${category}`);
+            if (response.status === 200) {
+                setSubCategories(response.data.subCategories);
+            }
+        } catch (error: any) {
+            console.error("Error", error.message);
+        }
+    }
+
+    useEffect(() => {
+        if (category) {
+            getCategories(category);
+        }
     }, [category]);
 
-    const value = { products, category };
+    const value = { products, category, subCategories, subCategory, setSubCategory, priceFilter, setPriceFilter, sortByFilter, setSortByFilter };
 
     return (
         <SearchContext.Provider value={value}>
             {children}
         </SearchContext.Provider>
     );
-};
+}
 
 const useSearchState = () => useContext(SearchContext);
 
