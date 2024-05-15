@@ -3,6 +3,8 @@ import { handle } from "hono/vercel";
 import signupRoute from "@/components/signup/api/signup";
 import loginRoute from "@/components/login/api/login";
 import productsRoute from "@/app/product/[id]/api/product";
+import searchRoute from "@/app/search/[category]/api/search";
+
 import reviewsRoute from "@/app/product/[id]/api/review";
 import relatedProductRoute from "@/app/product/[id]/api/related-product";
 import productCategoryRoute from "@/app/product/[id]/api/category";
@@ -18,8 +20,58 @@ app.get("/", (c) => {
   });
 });
 
-app.route("/v1/auth", signupRoute);
-app.route("/v1/auth", loginRoute);
+app.route("/v1/auth",  signupRoute);
+app.route("/v1/auth",  loginRoute);
+
+app.route("/v1/product", productsRoute);
+app.route("/v1/search", searchRoute);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.route("/v1/product", productsRoute);
 app.route("/v1", reviewsRoute);
