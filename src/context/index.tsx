@@ -100,14 +100,14 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     }
 
 
-    // useEffect(() => {
-    //     const data = localStorage.getItem("auth");
-    //     if (data) {
-    //         const parsedData = JSON.parse(data);
-    //         setAuth({ user: parsedData.user, token: parsedData.token });
-    //     }
-    //     setAuthInitialized(true);
-    // }, []);
+    useEffect(() => {
+        const data = localStorage.getItem("auth");
+        if (data) {
+            const parsedData = JSON.parse(data);
+            setAuth({ user: parsedData.user, token: parsedData.token });
+        }
+        setAuthInitialized(true);
+    }, []);
 
     // useEffect(() => {
     //     const handleTokenVerification = async () => {
