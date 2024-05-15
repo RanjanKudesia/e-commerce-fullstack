@@ -52,7 +52,7 @@ export default function Navbar() {
               <Link href="">Home</Link>
             </li>
             <li
-              className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
+              className={`hidden md:block text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -203,19 +203,12 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-
-                  <div className="w-1/4 ">
-                    <ul>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">T-Shirts</Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               )}
             </li>
             <li className="xl:hidden">
-              {/* <Submenu/> */}
+              <Submenu />
+
             </li>
             <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Our Stroy</Link>

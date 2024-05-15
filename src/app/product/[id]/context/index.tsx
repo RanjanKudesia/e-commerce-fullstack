@@ -50,6 +50,8 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   const [review, setReview] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
   const [productCategory, setProductCategory] = useState<ProductCategory | null>(null);
+  const [productRating, setProductRating] = useState(null);
+
 
 
   async function getProduct(uniq_id: string) {
@@ -68,10 +70,10 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   async function getReview() {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-reviews`
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-reviews?rating=${productRating}`
       );
       if (response.status === 200) {
-        setReview(response.data); // Assuming response.data is Review[]
+        setReview(response.data);
       }
     } catch (error: any) {
       console.error("Error fetching reviews:", error.message);
@@ -102,7 +104,7 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
 
   useEffect(() => {
     getProduct(id);
-    getReview();
+    // getReview();
     getRelatedProduct(id);
     getProductCategory();
   }, [id]);

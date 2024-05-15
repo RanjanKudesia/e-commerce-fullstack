@@ -1,20 +1,40 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { useProductState } from "../../context";
 import { Review } from "../../interfaces";
-
+import axios from "axios";
 
 export default function FourthSec() {
-
-  const { review } = useProductState();
+  const [productRating, setProductRating] = useState<number | null>(null);
+  const [reviews, setReviews] = useState<Review[]>([]); // State to store fetched reviews
   const reviewsPerPage = 4; // Number of reviews to show per page
   const [visibleReviews, setVisibleReviews] = useState(reviewsPerPage);
 
   const loadMoreReviews = () => {
     setVisibleReviews((prevVisibleReviews) => prevVisibleReviews + reviewsPerPage);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const params = productRating !== null ? { rating: productRating } : {};
+        const response = await axios.get(`/api/v1/product-reviews`, { params });
+        console.log("Fetched data:", response.data);
+        setReviews(response.data); // Set fetched reviews to state
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    // fetchData();
+  }, [productRating]);
+
+  const handleCheckboxChange = (rating: number) => {
+    setProductRating((prevRating) => (prevRating === rating ? null : rating));
+    console.log(productRating); // Log the new productRating after toggling
+  };
+
 
 
   return (
@@ -140,7 +160,7 @@ export default function FourthSec() {
             </div>
 
             <div className="flex justify-start items-center my-2">
-              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" />
+              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" checked={productRating === 5} onChange={() => handleCheckboxChange(5)} />
               <Image
                 src="/assets/svgs/star.svg"
                 alt="star"
@@ -151,7 +171,7 @@ export default function FourthSec() {
             </div>
 
             <div className="flex justify-start items-center my-2">
-              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" />
+              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" checked={productRating === 4} onChange={() => handleCheckboxChange(4)} />
               <Image
                 src="/assets/svgs/star.svg"
                 alt="star"
@@ -162,7 +182,7 @@ export default function FourthSec() {
             </div>
 
             <div className="flex justify-start items-center my-2">
-              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" />
+              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" checked={productRating === 3} onChange={() => handleCheckboxChange(3)} />
               <Image
                 src="/assets/svgs/star.svg"
                 alt="star"
@@ -173,7 +193,7 @@ export default function FourthSec() {
             </div>
 
             <div className="flex justify-start items-center my-2">
-              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" />
+              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" checked={productRating === 2} onChange={() => handleCheckboxChange(2)} />
               <Image
                 src="/assets/svgs/star.svg"
                 alt="star"
@@ -184,7 +204,7 @@ export default function FourthSec() {
             </div>
 
             <div className="flex justify-start items-center my-2">
-              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" />
+              <input type="checkbox" name="" id="" className="w-5 h-5 mr-2" checked={productRating === 1} onChange={() => handleCheckboxChange(1)} />
               <Image
                 src="/assets/svgs/star.svg"
                 alt="star"
@@ -251,13 +271,13 @@ export default function FourthSec() {
           <div className="w-full">
             {/* Display reviews */}
             <div className="w-full py-5">
-              {review.slice(0, visibleReviews).map((reviewItem) => (
-                <div key={reviewItem.id} className="mb-5">
+              {reviews.slice(0, visibleReviews).map((review) => (
+                <div key={review.id} className="mb-5">
                   {/* Individual review item */}
                   <div className="w-full flex justify-end md:justify-between items-end">
                     <div className="w-[70%] md:w-9/12">
                       <div className="flex">
-                        <p className="font-medium mr-1">{reviewItem?.rating}.0</p>
+                        <p className="font-medium mr-1">{review?.rating}.0</p>
                         <Image
                           src="/assets/svgs/star.svg"
                           alt="rating star"
@@ -266,12 +286,12 @@ export default function FourthSec() {
                           className="mb-3"
                         />
                       </div>
-                      <h3 className="font-bold text-sm md:text-lg leading-5 md:leading-8">{reviewItem?.review}</h3>
+                      <h3 className="font-bold text-sm md:text-lg leading-5 md:leading-8">{review?.review}</h3>
                       <p className="text-[#818B9C] text-xs md:text-base mt-2">July 2, 2020 03:29 PM</p>
                       <div className="mt-5 flex items-center">
                         <Image
                           // src="/assets/svgs/user_rating_profile.svg"
-                          src={reviewItem.profilePicture}
+                          src={review.profilePicture}
                           alt="user_rating_profile"
                           width={50}
                           height={50}
@@ -308,13 +328,8 @@ export default function FourthSec() {
               ))}
             </div>
             {/* Pagination button */}
-            {review.length > visibleReviews && (
-              <button
-                onClick={loadMoreReviews}
-                className="text-[#1D9E34] border-2 border-[#1D9E34] md:ml-2 p-2 md:px-4 w-1/2 md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1D9E34] hover:text-white transition-all ease-in-out duration-300"
-              >
-                Show More
-              </button>
+            {visibleReviews < reviews.length && (
+              <button onClick={loadMoreReviews}>Load More</button>
             )}
           </div>
         </div>
