@@ -1,0 +1,3398 @@
+{
+    "Clothing": {
+        "count": 6198,
+        "Women's Clothing": {
+            "count": 3901,
+            "Lingerie, Sleep & Swimwear": {
+                "count": 1208
+            },
+            "Sports & Gym Wear": {
+                "count": 49
+            },
+            "Fusion Wear": {
+                "count": 73
+            },
+            "Ethnic Wear": {
+                "count": 468
+            },
+            "Formal Wear": {
+                "count": 19
+            },
+            "Western Wear": {
+                "count": 1981
+            },
+            "Accessories": {
+                "count": 17
+            },
+            "Winter & Seasonal Wear": {
+                "count": 32
+            },
+            "Maternity Wear": {
+                "count": 21
+            },
+            "Starsy Women's Clothing": {
+                "count": 1
+            },
+            "fourgee Women's Clothing": {
+                "count": 1
+            },
+            "Viral Girl Women's Clothing": {
+                "count": 1
+            },
+            "Clovia Women's Clothing": {
+                "count": 1
+            },
+            "DOLZ Women's Clothing": {
+                "count": 1
+            },
+            "TIMBERLAKE Women's Clothing": {
+                "count": 1
+            },
+            "Leggings & Jeggings": {
+                "count": 22
+            },
+            "Combo Sets": {
+                "count": 5
+            }
+        },
+        "Kids' Clothing": {
+            "count": 520,
+            "Boys Wear": {
+                "count": 169
+            },
+            "Girls Wear": {
+                "count": 287
+            },
+            "Infants Wear": {
+                "count": 63
+            },
+            "RAA Kids' Clothing": {
+                "count": 1
+            }
+        },
+        "Men's Clothing": {
+            "count": 1773,
+            "Cargos, Shorts & 3/4ths": {
+                "count": 21
+            },
+            "Winter & Seasonal Wear": {
+                "count": 193
+            },
+            "Shirts": {
+                "count": 234
+            },
+            "Jeans": {
+                "count": 65
+            },
+            "Accessories & Combo Sets": {
+                "count": 135
+            },
+            "Navaksha Men's Clothing": {
+                "count": 32
+            },
+            "Posto Men's Clothing": {
+                "count": 1
+            },
+            "Elite Neckties Men's Clothing": {
+                "count": 1
+            },
+            "Sports Wear": {
+                "count": 26
+            },
+            "Jewlook Men's Clothing": {
+                "count": 1
+            },
+            "Suits & Blazers": {
+                "count": 32
+            },
+            "T-Shirts": {
+                "count": 903
+            },
+            "Ethnic Wear": {
+                "count": 17
+            },
+            "Trousers": {
+                "count": 35
+            },
+            "Inner Wear & Sleep Wear": {
+                "count": 75
+            },
+            "Fabrics": {
+                "count": 2
+            }
+        },
+        "fourgee Clothing": {
+            "count": 1,
+            "fourgee Slim Fit Boy's Blue Jeans": {
+                "count": 1
+            }
+        },
+        "piftif Clothing": {
+            "count": 1,
+            "piftif Women's Sports Bra": {
+                "count": 1
+            }
+        },
+        "Clovia Clothing": {
+            "count": 1,
+            "Clovia Women's T-Shirt Bra": {
+                "count": 1
+            }
+        },
+        "Sonpra Clothing": {
+            "count": 1,
+            "Sonpra Men's Mid-calf Length Socks": {
+                "count": 1
+            }
+        }
+    },
+    "Furniture": {
+        "count": 103,
+        "Living Room Furniture": {
+            "count": 6,
+            "Sofa Beds & Futons": {
+                "count": 4
+            },
+            "TV & Entertainment Units": {
+                "count": 1
+            },
+            "Sofas & Sectionals": {
+                "count": 1
+            }
+        },
+        "Living Room": {
+            "count": 60,
+            "Display Units": {
+                "count": 1
+            },
+            "Sofas & Sectionals": {
+                "count": 59
+            }
+        },
+        "Study & Home Office Furniture": {
+            "count": 8,
+            "Portable Laptop Tables": {
+                "count": 7
+            },
+            "Computer Tables": {
+                "count": 1
+            }
+        },
+        "Kids Room Furniture": {
+            "count": 5,
+            "Kids Storage": {
+                "count": 3
+            },
+            "Kids Tables & Seating": {
+                "count": 2
+            }
+        },
+        "Storage Furniture": {
+            "count": 2,
+            "Shoe Racks": {
+                "count": 2
+            }
+        },
+        "Kitchen & Dining Furniture": {
+            "count": 3,
+            "Dining Tables, Chairs & Sets": {
+                "count": 3
+            }
+        },
+        "Seating Furniture": {
+            "count": 2,
+            "Outdoor & Cafeteria Chairs": {
+                "count": 1
+            },
+            "ABCD XL Bean Bag  With Foam Filling (Orange)": {
+                "count": 1
+            }
+        },
+        "Outdoor & Cafeteria Furniture": {
+            "count": 2,
+            "Outdoor & Cafeteria Chairs": {
+                "count": 1
+            },
+            "Outdoor Kids Seating": {
+                "count": 1
+            }
+        },
+        "Bar Furniture": {
+            "count": 1,
+            "Wine Racks": {
+                "count": 1
+            }
+        },
+        "Bedroom Furniture": {
+            "count": 12,
+            "Mattresses": {
+                "count": 8
+            },
+            "Beds": {
+                "count": 3
+            },
+            "Dressing Tables": {
+                "count": 1
+            }
+        },
+        "General Utility Furniture": {
+            "count": 1,
+            "Puja Mandir & Temple": {
+                "count": 1
+            }
+        },
+        "Seating": {
+            "count": 1,
+            "Bean Bag Covers": {
+                "count": 1
+            }
+        }
+    },
+    "Footwear": {
+        "count": 1226,
+        "Women's Footwear": {
+            "count": 781,
+            "Ballerinas": {
+                "count": 51
+            },
+            "Sports Sandals": {
+                "count": 14
+            },
+            "Casual Shoes": {
+                "count": 248
+            },
+            "Wedges": {
+                "count": 207
+            },
+            "Flats": {
+                "count": 100
+            },
+            "Heels": {
+                "count": 139
+            },
+            "Boots": {
+                "count": 4
+            },
+            "Slippers & Flip Flops": {
+                "count": 7
+            },
+            "Sports Shoes": {
+                "count": 9
+            },
+            "REMSON INDIA Women Flats": {
+                "count": 1
+            },
+            "INDILEGO Women Flats": {
+                "count": 1
+            }
+        },
+        "Men's Footwear": {
+            "count": 340,
+            "Casual Shoes": {
+                "count": 213
+            },
+            "Sports Shoes": {
+                "count": 17
+            },
+            "Slippers & Flip Flops": {
+                "count": 26
+            },
+            "Formal Shoes": {
+                "count": 66
+            },
+            "Sandals & Floaters": {
+                "count": 17
+            },
+            "Shoe Care": {
+                "count": 1
+            }
+        },
+        "Kids' & Infant Footwear": {
+            "count": 105,
+            "For Boys": {
+                "count": 72
+            },
+            "For Girls": {
+                "count": 32
+            },
+            "METMO Slippers": {
+                "count": 1
+            }
+        }
+    },
+    "Pet Supplies": {
+        "count": 30,
+        "Grooming": {
+            "count": 3,
+            "Skin & Coat Care": {
+                "count": 3
+            }
+        },
+        "Toys": {
+            "count": 4,
+            "Comfort Toys": {
+                "count": 4
+            }
+        },
+        "Pet Apparel": {
+            "count": 3,
+            "Four Paws Sweats for Cat, Dog (Purple)": {
+                "count": 1
+            },
+            "Magideal Raincoat for Dog (Black)": {
+                "count": 1
+            },
+            "Petto Raincoat for Dog, Cat (Grey, Green)": {
+                "count": 1
+            }
+        },
+        "Habitat": {
+            "count": 2,
+            "Habitat Essentials": {
+                "count": 2
+            }
+        },
+        "Storage & Feeding Utensils": {
+            "count": 17,
+            "Bowls & Bottles": {
+                "count": 17
+            }
+        },
+        "Food & Health Supplies": {
+            "count": 1,
+            "Food": {
+                "count": 1
+            }
+        }
+    },
+    "Pens & Stationery": {
+        "count": 313,
+        "School Supplies": {
+            "count": 86,
+            "Water Bottles": {
+                "count": 3
+            },
+            "Pens & Notebooks": {
+                "count": 1
+            },
+            "Art & Craft": {
+                "count": 4
+            },
+            "Pencils, Pen & Pencil Boxes": {
+                "count": 2
+            },
+            "Geometry, Pen & Pencil boxes": {
+                "count": 69
+            },
+            "Badges": {
+                "count": 6
+            },
+            "Umbrellas": {
+                "count": 1
+            }
+        },
+        "Diaries & Notebooks": {
+            "count": 10,
+            "Notebooks": {
+                "count": 3
+            },
+            "Planners & Organisers": {
+                "count": 3
+            },
+            "Notepads": {
+                "count": 1
+            },
+            "Journals": {
+                "count": 2
+            },
+            "Diaries": {
+                "count": 1
+            }
+        },
+        "Office Supplies": {
+            "count": 140,
+            "Packaging Security Bags": {
+                "count": 1
+            },
+            "Boards & Dusters": {
+                "count": 1
+            },
+            "Files and Folders": {
+                "count": 26
+            },
+            "Sketch & Paint Markers": {
+                "count": 1
+            },
+            "Key Chains": {
+                "count": 11
+            },
+            "Scissors": {
+                "count": 1
+            },
+            "Diaries": {
+                "count": 8
+            },
+            "Desk Organizers": {
+                "count": 11
+            },
+            "Calendars": {
+                "count": 4
+            },
+            "Tucasa Office Supplies": {
+                "count": 3
+            },
+            "Office Supplies Accessories": {
+                "count": 6
+            },
+            "Craftter Office Supplies": {
+                "count": 2
+            },
+            "Clairefontaine Office Supplies": {
+                "count": 3
+            },
+            "Campap Office Supplies": {
+                "count": 2
+            },
+            "Piedpaper Office Supplies": {
+                "count": 1
+            },
+            "Lanyards": {
+                "count": 1
+            },
+            "Iwonder Office Supplies": {
+                "count": 1
+            },
+            "Classmate Office Supplies": {
+                "count": 1
+            },
+            "Daycraft Office Supplies": {
+                "count": 3
+            },
+            "Designwallas Office Supplies": {
+                "count": 1
+            },
+            "Punches & Punching Machines": {
+                "count": 34
+            },
+            "AMY Office Supplies": {
+                "count": 17
+            },
+            "Shoperite Office Supplies": {
+                "count": 1
+            }
+        },
+        "College Supplies": {
+            "count": 39,
+            "Coin Banks": {
+                "count": 3
+            },
+            "Art & Craft": {
+                "count": 2
+            },
+            "College Bags": {
+                "count": 2
+            },
+            "SHOPMANIA College Supplies": {
+                "count": 10
+            },
+            "Geometry & Pencil Boxes": {
+                "count": 21
+            },
+            "Pens & Notebooks": {
+                "count": 1
+            }
+        },
+        "Art Supplies": {
+            "count": 2,
+            "Paint Brushes": {
+                "count": 1
+            },
+            "Sketch & Paint Markers": {
+                "count": 1
+            }
+        },
+        "Pens": {
+            "count": 29,
+            "Mechanical Pencils": {
+                "count": 1
+            },
+            "Ball Pens": {
+                "count": 12
+            },
+            "Roller Ball Pens": {
+                "count": 8
+            },
+            "Fountain Pens": {
+                "count": 8
+            }
+        },
+        "Office Equipments": {
+            "count": 6,
+            "Public Address Systems": {
+                "count": 1
+            },
+            "Home Security Cameras": {
+                "count": 2
+            },
+            "Biometric Devices": {
+                "count": 3
+            }
+        },
+        "Calculators": {
+            "count": 1,
+            "CALTRIX Calculators": {
+                "count": 1
+            }
+        }
+    },
+    "Sports & Fitness": {
+        "count": 166,
+        "Other Sports": {
+            "count": 21,
+            "Skating": {
+                "count": 10
+            },
+            "Golf": {
+                "count": 5
+            },
+            "Swimming": {
+                "count": 5
+            },
+            "Boxing": {
+                "count": 1
+            }
+        },
+        "Team Sports": {
+            "count": 60,
+            "Cricket": {
+                "count": 30
+            },
+            "Volleyball": {
+                "count": 1
+            },
+            "Basketball": {
+                "count": 26
+            },
+            "Hockey": {
+                "count": 1
+            },
+            "Football": {
+                "count": 2
+            }
+        },
+        "Fitness Accessories": {
+            "count": 27,
+            "Fitness Bags": {
+                "count": 1
+            },
+            "Accessories": {
+                "count": 10
+            },
+            "Bottles & Shakers": {
+                "count": 2
+            },
+            "Strength": {
+                "count": 1
+            },
+            "Kits": {
+                "count": 1
+            },
+            "Mats": {
+                "count": 10
+            },
+            "Fitness Bands": {
+                "count": 1
+            },
+            "Supports": {
+                "count": 1
+            }
+        },
+        "Outdoor & Adventure": {
+            "count": 34,
+            "Cycling": {
+                "count": 12
+            },
+            "Camping & Hiking": {
+                "count": 21
+            },
+            "Running": {
+                "count": 1
+            }
+        },
+        "Racquet Sports": {
+            "count": 16,
+            "Table Tennis": {
+                "count": 4
+            },
+            "Tennis": {
+                "count": 7
+            },
+            "Badminton": {
+                "count": 5
+            }
+        },
+        "Track & Field": {
+            "count": 6,
+            "Storm Track & Field": {
+                "count": 1
+            },
+            "Amscan Track & Field": {
+                "count": 4
+            },
+            "Pepup Track & Field": {
+                "count": 1
+            }
+        },
+        "Indoor Sports & Games": {
+            "count": 2,
+            "Pool": {
+                "count": 1
+            },
+            "Carrom": {
+                "count": 1
+            }
+        }
+    },
+    "Beauty and Personal Care": {
+        "count": 710,
+        "Makeup": {
+            "count": 78,
+            "Vanity Boxes": {
+                "count": 41
+            },
+            "Nails": {
+                "count": 5
+            },
+            "Lips": {
+                "count": 14
+            },
+            "Face": {
+                "count": 9
+            },
+            "Makeup Accessories": {
+                "count": 3
+            },
+            "Body": {
+                "count": 1
+            },
+            "Eyes": {
+                "count": 4
+            },
+            "Makeup Kits": {
+                "count": 1
+            }
+        },
+        "Bath and Spa": {
+            "count": 22,
+            "Soaps": {
+                "count": 6
+            },
+            "Bath and Spa Accessories": {
+                "count": 7
+            },
+            "Body and Essential Oils": {
+                "count": 9
+            }
+        },
+        "Hair Care": {
+            "count": 31,
+            "Conditioners": {
+                "count": 8
+            },
+            "Hair Styling": {
+                "count": 1
+            },
+            "Shampoos": {
+                "count": 2
+            },
+            "Hair Care Accessories": {
+                "count": 9
+            },
+            "Hair Colors": {
+                "count": 10
+            },
+            "Hair Treatments": {
+                "count": 1
+            }
+        },
+        "Body and Skin Care": {
+            "count": 74,
+            "Face Care": {
+                "count": 46
+            },
+            "Lip Care": {
+                "count": 10
+            },
+            "Hand Care": {
+                "count": 16
+            },
+            "Body and Skin Accessories": {
+                "count": 2
+            }
+        },
+        "Combos and Kits": {
+            "count": 84,
+            "RYTHMX Combos and Kits": {
+                "count": 8
+            },
+            "Brillare Science Combos and Kits": {
+                "count": 1
+            },
+            "Mars Combos and Kits": {
+                "count": 1
+            },
+            "Victoria's Secret Combos and Kits": {
+                "count": 1
+            },
+            "VIVIANA Combos and Kits": {
+                "count": 2
+            },
+            "Imported Combos and Kits": {
+                "count": 1
+            },
+            "Avon Combos and Kits": {
+                "count": 1
+            },
+            "Oxyglow Combos and Kits": {
+                "count": 38
+            },
+            "Mxofere Combos and Kits": {
+                "count": 31
+            }
+        },
+        "Women's Hygiene": {
+            "count": 2,
+            "Menstrual Cups": {
+                "count": 1
+            },
+            "Combo & kits": {
+                "count": 1
+            }
+        },
+        "Health Care": {
+            "count": 18,
+            "Health Care Devices": {
+                "count": 8
+            },
+            "Medical Equipment & Accessories": {
+                "count": 6
+            },
+            "Health Care Accessories": {
+                "count": 1
+            },
+            "Medicines & Treatment": {
+                "count": 3
+            }
+        },
+        "Fragrances": {
+            "count": 391,
+            "Deodorants": {
+                "count": 388
+            },
+            "Perfumes": {
+                "count": 3
+            }
+        },
+        "Men's Grooming": {
+            "count": 3,
+            "Shaving Creams, Foams, and Gels": {
+                "count": 1
+            },
+            "Aftershave": {
+                "count": 1
+            },
+            "Sivanna Men's Grooming": {
+                "count": 1
+            }
+        },
+        "Eye Care": {
+            "count": 4,
+            "H2O Plus Eye Care": {
+                "count": 1
+            },
+            "Wild Ferns Eye Care": {
+                "count": 2
+            },
+            "Contact Lenses": {
+                "count": 1
+            }
+        },
+        "Beauty Accessories": {
+            "count": 3,
+            "Makeup Accessories": {
+                "count": 3
+            }
+        }
+    },
+    "Bags, Wallets & Belts": {
+        "count": 265,
+        "Bags": {
+            "count": 195,
+            "Pouches and Potlis": {
+                "count": 13
+            },
+            "Backpacks": {
+                "count": 78
+            },
+            "Hand Bags": {
+                "count": 85
+            },
+            "Sling Bags": {
+                "count": 11
+            },
+            "Cosmetic Bags": {
+                "count": 1
+            },
+            "Totes": {
+                "count": 4
+            },
+            "Laptop Bags": {
+                "count": 3
+            }
+        },
+        "Belts": {
+            "count": 2,
+            "Vermello Belts": {
+                "count": 1
+            },
+            "Ligans NY Belts": {
+                "count": 1
+            }
+        },
+        "Wallets & Clutches": {
+            "count": 33,
+            "Clutches": {
+                "count": 16
+            },
+            "Travel Document Holders & Card Holders": {
+                "count": 16
+            },
+            "Wallets": {
+                "count": 1
+            }
+        },
+        "Luggage & Travel": {
+            "count": 18,
+            "Travel Accessories": {
+                "count": 2
+            },
+            "Rucksacks": {
+                "count": 6
+            },
+            "Lowe Alpine Luggage & Travel": {
+                "count": 1
+            },
+            "Suitcases": {
+                "count": 9
+            }
+        },
+        "Suspenders": {
+            "count": 15,
+            "Urban Diseno Suspenders": {
+                "count": 4
+            },
+            "walletsnbags Suspenders": {
+                "count": 1
+            },
+            "Navaksha Suspenders": {
+                "count": 1
+            },
+            "Eccellente Suspenders": {
+                "count": 3
+            },
+            "Modishera Suspenders": {
+                "count": 6
+            }
+        },
+        "Garment Covers": {
+            "count": 1,
+            "Addyz Garment Covers": {
+                "count": 1
+            }
+        },
+        "Cufflinks": {
+            "count": 1,
+            "the jewelbox Cufflinks": {
+                "count": 1
+            }
+        }
+    },
+    "Home Decor & Festive Needs": {
+        "count": 927,
+        "Showpiece": {
+            "count": 18,
+            "Gramophones": {
+                "count": 4
+            },
+            "Contemporary": {
+                "count": 13
+            },
+            "Bharatcraft Showpiece": {
+                "count": 1
+            }
+        },
+        "Table Decor & Handicrafts": {
+            "count": 150,
+            "Showpiece": {
+                "count": 6
+            },
+            "Showpieces": {
+                "count": 112
+            },
+            "Decorative Platters": {
+                "count": 9
+            },
+            "Photo Frames": {
+                "count": 8
+            },
+            "Table Decor": {
+                "count": 14
+            },
+            "Water Fountains": {
+                "count": 1
+            }
+        },
+        "Candles & Fragrances": {
+            "count": 19,
+            "Home Fragrances": {
+                "count": 19
+            }
+        },
+        "Showpieces": {
+            "count": 303,
+            "Eshoppee Showpieces": {
+                "count": 1
+            },
+            "Karigaari Showpieces": {
+                "count": 1
+            },
+            "Sunrise Showpieces": {
+                "count": 1
+            },
+            "Ethnic": {
+                "count": 172
+            },
+            "Parv Collections Showpieces": {
+                "count": 2
+            },
+            "Exotic India Showpieces": {
+                "count": 7
+            },
+            "Aapno Rajasthan Showpieces": {
+                "count": 2
+            },
+            "Right Florist Showpieces": {
+                "count": 1
+            },
+            "Sixthsense Showpieces": {
+                "count": 1
+            },
+            "BeYOUtiful Showpieces": {
+                "count": 1
+            },
+            "Paras Showpieces": {
+                "count": 1
+            },
+            "Adaa Showpieces": {
+                "count": 6
+            },
+            "Handecor Showpieces": {
+                "count": 1
+            },
+            "Gramophones": {
+                "count": 1
+            },
+            "Animal Figurines": {
+                "count": 1
+            },
+            "S C Handicrafts Showpieces": {
+                "count": 8
+            },
+            "RajLaxmi Showpieces": {
+                "count": 1
+            },
+            "Rastogi Handicrafts Showpieces": {
+                "count": 2
+            },
+            "NEHP Showpieces": {
+                "count": 4
+            },
+            "Ona'S Showpieces": {
+                "count": 4
+            },
+            "Shoppingtara Showpieces": {
+                "count": 8
+            },
+            "Onlineshoppee Showpieces": {
+                "count": 1
+            },
+            "Siri Creations Showpieces": {
+                "count": 1
+            },
+            "Tiedribbons Showpieces": {
+                "count": 8
+            },
+            "Prachin Showpieces": {
+                "count": 1
+            },
+            "MA Design Hut Showpieces": {
+                "count": 3
+            },
+            "Ninety One Degree Showpieces": {
+                "count": 1
+            },
+            "Purpledip Showpieces": {
+                "count": 1
+            },
+            "Slice of Bengal Showpieces": {
+                "count": 1
+            },
+            "Redbag Showpieces": {
+                "count": 2
+            },
+            "Orange Tree Showpieces": {
+                "count": 2
+            },
+            "Unique Design Showpieces": {
+                "count": 2
+            },
+            "Marwar Showpieces": {
+                "count": 4
+            },
+            "Port Showpieces": {
+                "count": 1
+            },
+            "Unravel india Showpieces": {
+                "count": 1
+            },
+            "Orchard Showpieces": {
+                "count": 1
+            },
+            "Villcart Showpieces": {
+                "count": 2
+            },
+            "Unravel India Showpieces": {
+                "count": 4
+            },
+            "The Crystal Jewel Showpieces": {
+                "count": 2
+            },
+            "Wink Showpieces": {
+                "count": 1
+            },
+            "Malhar Showpieces": {
+                "count": 2
+            },
+            "Pindia Showpieces": {
+                "count": 1
+            },
+            "Murtiwala Showpieces": {
+                "count": 1
+            },
+            "The Crafts House Showpieces": {
+                "count": 1
+            },
+            "Woodino Handicrafts Showpieces": {
+                "count": 1
+            },
+            "R S Jewels Showpieces": {
+                "count": 1
+            },
+            "Unique Handicrafts Showpieces": {
+                "count": 1
+            },
+            "Mavi Showpieces": {
+                "count": 1
+            },
+            "Chinhhari Arts Showpieces": {
+                "count": 1
+            },
+            "Indigocart Showpieces": {
+                "count": 3
+            },
+            "Apkamart Showpieces": {
+                "count": 1
+            },
+            "Fengshui": {
+                "count": 5
+            },
+            "Contemporary": {
+                "count": 1
+            },
+            "TaraProjects Showpieces": {
+                "count": 1
+            },
+            "Swarnim Jewellers Showpieces": {
+                "count": 1
+            },
+            "Creativity Centre Showpieces": {
+                "count": 1
+            },
+            "Jaipur Raga Showpieces": {
+                "count": 1
+            },
+            "Zotalic Showpieces": {
+                "count": 1
+            },
+            "Abhushan Showpieces": {
+                "count": 1
+            },
+            "Kakori Showpieces": {
+                "count": 1
+            },
+            "You2Deal Showpieces": {
+                "count": 1
+            },
+            "Home India Showpieces": {
+                "count": 1
+            },
+            "Craft Store India Showpieces": {
+                "count": 1
+            },
+            "eCraftIndia Showpieces": {
+                "count": 1
+            },
+            "Golmaalshop Showpieces": {
+                "count": 1
+            },
+            "Aamore Decor Showpieces": {
+                "count": 1
+            },
+            "Swayambhu Showpieces": {
+                "count": 1
+            },
+            "Gift Island Showpieces": {
+                "count": 1
+            },
+            "Vedic Deals Showpieces": {
+                "count": 1
+            },
+            "Chrome Showpieces": {
+                "count": 1
+            },
+            "Shubham Exports Showpieces": {
+                "count": 1
+            }
+        },
+        "Decorative Lighting & Lamps": {
+            "count": 87,
+            "Wall Lamps": {
+                "count": 2
+            },
+            "Table Lamps": {
+                "count": 6
+            },
+            "Ceiling Lamps": {
+                "count": 2
+            },
+            "Lanterns": {
+                "count": 9
+            },
+            "Series Lights": {
+                "count": 55
+            },
+            "Floor Lamp": {
+                "count": 1
+            },
+            "Night Lamps": {
+                "count": 11
+            },
+            "Ceiling Lights": {
+                "count": 1
+            }
+        },
+        "Wall Decor & Clocks": {
+            "count": 278,
+            "Key Holders": {
+                "count": 4
+            },
+            "Wallpapers": {
+                "count": 4
+            },
+            "Wall Decals & Stickers": {
+                "count": 122
+            },
+            "Wall Shelves": {
+                "count": 8
+            },
+            "Posters": {
+                "count": 11
+            },
+            "Wall Photo Frames": {
+                "count": 2
+            },
+            "Clocks": {
+                "count": 74
+            },
+            "Paintings": {
+                "count": 51
+            },
+            "Fridge Magnets": {
+                "count": 2
+            }
+        },
+        "Flowers, Plants & Vases": {
+            "count": 35,
+            "Flower Vase": {
+                "count": 19
+            },
+            "Artificial Plants": {
+                "count": 14
+            },
+            "Vase Fillers": {
+                "count": 2
+            }
+        },
+        "Garden & Leisure": {
+            "count": 6,
+            "Garden Stakes": {
+                "count": 1
+            },
+            "Hookah & Hookah Flavors": {
+                "count": 3
+            },
+            "Hammocks & Swings": {
+                "count": 1
+            },
+            "Stones & Pebbles": {
+                "count": 1
+            }
+        },
+        "Religion & Devotion": {
+            "count": 12,
+            "Shankh": {
+                "count": 4
+            },
+            "Rangoli Stencils": {
+                "count": 1
+            },
+            "Villcart Religion & Devotion": {
+                "count": 1
+            },
+            "Chowkis": {
+                "count": 1
+            },
+            "Bless Religion & Devotion": {
+                "count": 1
+            },
+            "brass gift center Religion & Devotion": {
+                "count": 1
+            },
+            "Incense Sticks & Holders": {
+                "count": 1
+            },
+            "Jaycoknit Religion & Devotion": {
+                "count": 1
+            },
+            "Green House Religion & Devotion": {
+                "count": 1
+            }
+        },
+        "Festive Decor": {
+            "count": 19,
+            "Holi Essentials": {
+                "count": 7
+            },
+            "Festive Gift Boxes": {
+                "count": 1
+            },
+            "Greeting Cards": {
+                "count": 3
+            },
+            "Rakhi": {
+                "count": 8
+            }
+        }
+    },
+    "Automotive": {
+        "count": 1003,
+        "Accessories & Spare parts": {
+            "count": 925,
+            "Car Interior & Exterior": {
+                "count": 657
+            },
+            "Car & Bike Care": {
+                "count": 30
+            },
+            "Car & Bike Styling": {
+                "count": 9
+            },
+            "Spares & Performance Parts": {
+                "count": 111
+            },
+            "Tyres": {
+                "count": 1
+            },
+            "Bike Essentials": {
+                "count": 16
+            },
+            "Car Electronics & Accessories": {
+                "count": 53
+            },
+            "Automotive Combo": {
+                "count": 17
+            },
+            "Helmets & Riding Gear": {
+                "count": 9
+            },
+            "Car & Bike Lighting": {
+                "count": 22
+            }
+        },
+        "Car & Bike Accessories": {
+            "count": 63,
+            "Car Interior & Exterior": {
+                "count": 20
+            },
+            "Car & Bike Lighting": {
+                "count": 16
+            },
+            "Bike Essentials": {
+                "count": 2
+            },
+            "Helmets & Riding Gear": {
+                "count": 5
+            },
+            "Car & Bike Care": {
+                "count": 11
+            },
+            "Automotive Combo": {
+                "count": 8
+            },
+            "Car & Bike Styling": {
+                "count": 1
+            }
+        },
+        "Car Accessories": {
+            "count": 15,
+            "Car Interior": {
+                "count": 13
+            },
+            "Car Care": {
+                "count": 2
+            }
+        }
+    },
+    "Tools & Hardware": {
+        "count": 391,
+        "Tools": {
+            "count": 391,
+            "Hardware & Electricals": {
+                "count": 15
+            },
+            "Alternate Energy": {
+                "count": 2
+            },
+            "Gardening Tools": {
+                "count": 343
+            },
+            "Hand Tools": {
+                "count": 4
+            },
+            "Tool Accessories": {
+                "count": 25
+            },
+            "Home Organizers & Storage": {
+                "count": 1
+            },
+            "Home Utilities": {
+                "count": 1
+            }
+        }
+    },
+    "Home Furnishing": {
+        "count": 682,
+        "Curtains & Accessories": {
+            "count": 162,
+            "Curtains": {
+                "count": 161
+            },
+            "Curtain Accessories": {
+                "count": 1
+            }
+        },
+        "Bed Linen": {
+            "count": 217,
+            "Bedsheets": {
+                "count": 23
+            },
+            "Duvet Covers": {
+                "count": 1
+            },
+            "ARIHANT Bed Linen": {
+                "count": 1
+            },
+            "Blankets, Quilts & Dohars": {
+                "count": 192
+            }
+        },
+        "Living Room Furnishing": {
+            "count": 13,
+            "Diwan Sets": {
+                "count": 7
+            },
+            "Cushion Covers": {
+                "count": 3
+            },
+            "Lushomes Living Room Furnishing": {
+                "count": 1
+            },
+            "Zaffre's Living Room Furnishing": {
+                "count": 1
+            },
+            "Nitra Living Room Furnishing": {
+                "count": 1
+            }
+        },
+        "Cushions, Pillows & Covers": {
+            "count": 95,
+            "Pillows": {
+                "count": 6
+            },
+            "Cushion Covers": {
+                "count": 86
+            },
+            "Cushions": {
+                "count": 3
+            }
+        },
+        "Bath Linen": {
+            "count": 105,
+            "Bath Mats": {
+                "count": 11
+            },
+            "Towels": {
+                "count": 94
+            }
+        },
+        "JMD Home Furnishing": {
+            "count": 2,
+            "JMD Printed Cushions Cover (Pack of 2, 40 cm*40 ...": {
+                "count": 2
+            }
+        },
+        "Kripa's Home Furnishing": {
+            "count": 1,
+            "Kripa's Printed Cushions Cover (Pack of 2, 45 cm...": {
+                "count": 1
+            }
+        },
+        "Kitchen & Dining Linen": {
+            "count": 49,
+            "Table Covers": {
+                "count": 8
+            },
+            "Coasters": {
+                "count": 5
+            },
+            "Table Linen Sets": {
+                "count": 2
+            },
+            "Kitchen Linen Sets": {
+                "count": 19
+            },
+            "Table Placemats": {
+                "count": 4
+            },
+            "Table Runners": {
+                "count": 7
+            },
+            "Aprons": {
+                "count": 3
+            },
+            "Appliance Covers": {
+                "count": 1
+            }
+        },
+        "Living": {
+            "count": 9,
+            "Sofa Covers": {
+                "count": 8
+            },
+            "Diwan Sets": {
+                "count": 1
+            }
+        },
+        "sovam Home Furnishing": {
+            "count": 1,
+            "sovam Checkered Cushions Cover (Pack of 5, 32 cm...": {
+                "count": 1
+            }
+        },
+        "Tidy Home Furnishing": {
+            "count": 1,
+            "Tidy Printed Cushions Cover (Pack of 9, 50 cm*50...": {
+                "count": 1
+            }
+        },
+        "Floor Coverings": {
+            "count": 27,
+            "Firangi Floor Coverings": {
+                "count": 1
+            },
+            "Carpets & Rugs": {
+                "count": 24
+            },
+            "Mats": {
+                "count": 2
+            }
+        }
+    },
+    "Baby Care": {
+        "count": 483,
+        "Baby Bath & Skin": {
+            "count": 26,
+            "Baby Bath Towels": {
+                "count": 22
+            },
+            "Baby Shower Caps": {
+                "count": 1
+            },
+            "Baby Body Wash": {
+                "count": 3
+            }
+        },
+        "Infant Wear": {
+            "count": 187,
+            "Baby Boys' Clothes": {
+                "count": 99
+            },
+            "Baby Girls' Clothes": {
+                "count": 88
+            }
+        },
+        "Feeding & Nursing": {
+            "count": 9,
+            "Bottles & Accessories": {
+                "count": 1
+            },
+            "Bibs & Hankies": {
+                "count": 3
+            },
+            "Utensils": {
+                "count": 5
+            }
+        },
+        "Baby Bedding": {
+            "count": 35,
+            "Baby Mattresses": {
+                "count": 1
+            },
+            "Baby Mosquito Nets": {
+                "count": 2
+            },
+            "Baby Sleeping Bags": {
+                "count": 1
+            },
+            "Baby Bedsheets": {
+                "count": 11
+            },
+            "Baby Blankets": {
+                "count": 20
+            }
+        },
+        "Furniture & Furnishings": {
+            "count": 6,
+            "Inflatable Products": {
+                "count": 6
+            }
+        },
+        "Baby Grooming": {
+            "count": 5,
+            "Baby Grooming Combos": {
+                "count": 1
+            },
+            "Boreal Baby Grooming": {
+                "count": 1
+            },
+            "Baby Powder": {
+                "count": 1
+            },
+            "Baby Massage Oils": {
+                "count": 1
+            },
+            "Cotton Buds": {
+                "count": 1
+            }
+        },
+        "Diapering & Potty Training": {
+            "count": 9,
+            "Changing Tables": {
+                "count": 1
+            },
+            "Diaper Bags": {
+                "count": 1
+            },
+            "Baby Mats": {
+                "count": 1
+            },
+            "Nappies & Cloth Diapers": {
+                "count": 6
+            }
+        },
+        "Strollers & Activity Gear": {
+            "count": 1,
+            "Strollers & Prams": {
+                "count": 1
+            }
+        },
+        "Health & Safety": {
+            "count": 2,
+            "Baby Oral Care": {
+                "count": 1
+            },
+            "Insect Repellents": {
+                "count": 1
+            }
+        },
+        "Baby & Kids Gifts": {
+            "count": 203,
+            "Photo Frames": {
+                "count": 8
+            },
+            "Decorations": {
+                "count": 1
+            },
+            "Stickers": {
+                "count": 194
+            }
+        }
+    },
+    "Mobiles & Accessories": {
+        "count": 1099,
+        "Mobile Accessories": {
+            "count": 304,
+            "Mobile Body Panels": {
+                "count": 9
+            },
+            "Mobile Pouches": {
+                "count": 46
+            },
+            "Screen Guards": {
+                "count": 2
+            },
+            "Mobile Chargers": {
+                "count": 10
+            },
+            "Chargers": {
+                "count": 22
+            },
+            "Speakers": {
+                "count": 10
+            },
+            "Headphones": {
+                "count": 25
+            },
+            "Mobile Phone Lens": {
+                "count": 2
+            },
+            "Batteries": {
+                "count": 10
+            },
+            "Earphone Cable Organizers": {
+                "count": 16
+            },
+            "Bluetooth Headphones (With Mic)": {
+                "count": 1
+            },
+            "Car Accessories": {
+                "count": 37
+            },
+            "Anti Radiation Stickers & Chips": {
+                "count": 2
+            },
+            "Mobile Displays": {
+                "count": 1
+            },
+            "OTG Adapters": {
+                "count": 6
+            },
+            "Cables": {
+                "count": 39
+            },
+            "Dyna Mobile Accessories": {
+                "count": 1
+            },
+            "SIM Adapters": {
+                "count": 1
+            },
+            "Screen Protectors": {
+                "count": 48
+            },
+            "Power Banks": {
+                "count": 5
+            },
+            "Charging Pads": {
+                "count": 1
+            },
+            "Selfie Sticks": {
+                "count": 2
+            },
+            "Mobile Holders": {
+                "count": 1
+            },
+            "Headphones (With Mic)": {
+                "count": 1
+            },
+            "Mobile Cables": {
+                "count": 3
+            },
+            "Styling & Maintenance": {
+                "count": 2
+            },
+            "Screen Expander For Phones": {
+                "count": 1
+            }
+        },
+        "Tablet Accessories": {
+            "count": 795,
+            "Cases & Covers": {
+                "count": 792
+            },
+            "Keyboards": {
+                "count": 1
+            },
+            "Screen Protectors": {
+                "count": 2
+            }
+        }
+    },
+    "Food & Nutrition": {
+        "count": 2,
+        "Health & Nutrition": {
+            "count": 2,
+            "Protein Supplements": {
+                "count": 2
+            }
+        }
+    },
+    "Watches": {
+        "count": 530,
+        "Wrist Watches": {
+            "count": 523,
+            "Cobra Paris Wrist Watches": {
+                "count": 1
+            },
+            "Aries Gold Wrist Watches": {
+                "count": 1
+            },
+            "Maserati Time Wrist Watches": {
+                "count": 1
+            },
+            "Vizion Wrist Watches": {
+                "count": 4
+            },
+            "Camerii Wrist Watches": {
+                "count": 1
+            },
+            "Colat Wrist Watches": {
+                "count": 2
+            },
+            "Rochees Wrist Watches": {
+                "count": 2
+            },
+            "Rorlig Wrist Watches": {
+                "count": 2
+            },
+            "T STAR Wrist Watches": {
+                "count": 1
+            },
+            "Alfajr Wrist Watches": {
+                "count": 2
+            },
+            "TAG Heuer Wrist Watches": {
+                "count": 1
+            },
+            "Costa Swiss Wrist Watches": {
+                "count": 1
+            },
+            "Breitling Wrist Watches": {
+                "count": 1
+            },
+            "Calibro Wrist Watches": {
+                "count": 1
+            },
+            "Fluid Wrist Watches": {
+                "count": 5
+            },
+            "Disney Wrist Watches": {
+                "count": 5
+            },
+            "Cartier Wrist Watches": {
+                "count": 1
+            },
+            "Lois Caron Wrist Watches": {
+                "count": 1
+            },
+            "Felix Wrist Watches": {
+                "count": 2
+            },
+            "Kool Kidz Wrist Watches": {
+                "count": 6
+            },
+            "Franck Bella Wrist Watches": {
+                "count": 5
+            },
+            "Vencer Stella Wrist Watches": {
+                "count": 1
+            },
+            "Casela Wrist Watches": {
+                "count": 1
+            },
+            "Timer Wrist Watches": {
+                "count": 1
+            },
+            "Titan Wrist Watches": {
+                "count": 2
+            },
+            "Srushti Art Jewelry Wrist Watches": {
+                "count": 1
+            },
+            "Q&Q Wrist Watches": {
+                "count": 3
+            },
+            "Escort Wrist Watches": {
+                "count": 1
+            },
+            "Estilo Wrist Watches": {
+                "count": 1
+            },
+            "Jack klein Wrist Watches": {
+                "count": 1
+            },
+            "North Moon Wrist Watches": {
+                "count": 1
+            },
+            "Rich Club Wrist Watches": {
+                "count": 2
+            },
+            "Skmei Wrist Watches": {
+                "count": 5
+            },
+            "Kms Wrist Watches": {
+                "count": 1
+            },
+            "Swag Wrist Watches": {
+                "count": 2
+            },
+            "Hala Wrist Watches": {
+                "count": 1
+            },
+            "Ridas Wrist Watches": {
+                "count": 3
+            },
+            "Now Wrist Watches": {
+                "count": 5
+            },
+            "Jacques Farel Wrist Watches": {
+                "count": 1
+            },
+            "Oxter Wrist Watches": {
+                "count": 1
+            },
+            "Positif Wrist Watches": {
+                "count": 1
+            },
+            "D'SIGNER Wrist Watches": {
+                "count": 1
+            },
+            "Jack Klein Wrist Watches": {
+                "count": 1
+            },
+            "fastrack Wrist Watches": {
+                "count": 1
+            },
+            "A Avon Wrist Watches": {
+                "count": 2
+            },
+            "Sale Funda Wrist Watches": {
+                "count": 1
+            },
+            "Britex Wrist Watches": {
+                "count": 2
+            },
+            "3wish Wrist Watches": {
+                "count": 1
+            },
+            "Lenco Wrist Watches": {
+                "count": 2
+            },
+            "Rockstar Wrist Watches": {
+                "count": 1
+            },
+            "Elantra Wrist Watches": {
+                "count": 1
+            },
+            "Marvel Wrist Watches": {
+                "count": 1
+            },
+            "Eleganzza Wrist Watches": {
+                "count": 1
+            },
+            "Zoop Wrist Watches": {
+                "count": 2
+            },
+            "Shoppingekart Wrist Watches": {
+                "count": 1
+            },
+            "D'Signer Wrist Watches": {
+                "count": 1
+            },
+            "SwissFire Wrist Watches": {
+                "count": 2
+            },
+            "Logues Wrist Watches": {
+                "count": 3
+            },
+            "Desire Wrist Watches": {
+                "count": 3
+            },
+            "Sitaram Wrist Watches": {
+                "count": 3
+            },
+            "DICE Wrist Watches": {
+                "count": 2
+            },
+            "Italian Fashion Wrist Watches": {
+                "count": 7
+            },
+            "Pittsburgh Polo Club Wrist Watches": {
+                "count": 1
+            },
+            "palito Wrist Watches": {
+                "count": 4
+            },
+            "Omen Wrist Watches": {
+                "count": 1
+            },
+            "Carlos Wrist Watches": {
+                "count": 3
+            },
+            "Texus Wrist Watches": {
+                "count": 1
+            },
+            "Adino Wrist Watches": {
+                "count": 1
+            },
+            "ESIDON Wrist Watches": {
+                "count": 4
+            },
+            "Wisdom Wrist Watches": {
+                "count": 2
+            },
+            "Invaders Wrist Watches": {
+                "count": 1
+            },
+            "Yves Bertelin Wrist Watches": {
+                "count": 1
+            },
+            "V9 Wrist Watches": {
+                "count": 1
+            },
+            "PIEXIM Wrist Watches": {
+                "count": 1
+            },
+            "Fastrack Wrist Watches": {
+                "count": 20
+            },
+            "Nexus Wrist Watches": {
+                "count": 9
+            },
+            "Sonata Wrist Watches": {
+                "count": 56
+            },
+            "Times Wrist Watches": {
+                "count": 23
+            },
+            "Flippd Wrist Watches": {
+                "count": 16
+            },
+            "Geonaute Wrist Watches": {
+                "count": 1
+            },
+            "Maxima Wrist Watches": {
+                "count": 73
+            },
+            "Timewel Wrist Watches": {
+                "count": 30
+            },
+            "Figo Fashion Wrist Watches": {
+                "count": 2
+            },
+            "SVM Wrist Watches": {
+                "count": 4
+            },
+            "HMT Wrist Watches": {
+                "count": 11
+            },
+            "SF by Sonata Wrist Watches": {
+                "count": 3
+            },
+            "Global Nomad Wrist Watches": {
+                "count": 3
+            },
+            "Noise Wrist Watches": {
+                "count": 10
+            },
+            "Omax Wrist Watches": {
+                "count": 3
+            },
+            "Lamex Wrist Watches": {
+                "count": 4
+            },
+            "Gift Island Wrist Watches": {
+                "count": 16
+            },
+            "Neo Classic Wrist Watches": {
+                "count": 4
+            },
+            "Stylisda Wrist Watches": {
+                "count": 1
+            },
+            "Jazma Wrist Watches": {
+                "count": 1
+            },
+            "Petrol Wrist Watches": {
+                "count": 6
+            },
+            "Sir Time Wrist Watches": {
+                "count": 2
+            },
+            "Only Kidz Wrist Watches": {
+                "count": 5
+            },
+            "Stol'n Wrist Watches": {
+                "count": 1
+            },
+            "Klaus Kobec Wrist Watches": {
+                "count": 1
+            },
+            "Olvin Wrist Watches": {
+                "count": 1
+            },
+            "Lamex Timewear Wrist Watches": {
+                "count": 2
+            },
+            "Hourglass Wrist Watches": {
+                "count": 1
+            },
+            "Like Wrist Watches": {
+                "count": 1
+            },
+            "Forex Wrist Watches": {
+                "count": 1
+            },
+            "Curren Nx Wrist Watches": {
+                "count": 1
+            },
+            "Minuut Wrist Watches": {
+                "count": 1
+            },
+            "Romex Wrist Watches": {
+                "count": 1
+            },
+            "Relish Wrist Watches": {
+                "count": 1
+            },
+            "Fogg Fashion Store Wrist Watches": {
+                "count": 1
+            },
+            "Luba Wrist Watches": {
+                "count": 11
+            },
+            "Fighter Wrist Watches": {
+                "count": 1
+            },
+            "Swiss Trend Wrist Watches": {
+                "count": 1
+            },
+            "Geneva Wrist Watches": {
+                "count": 1
+            },
+            "Yepme Wrist Watches": {
+                "count": 1
+            },
+            "Follow Me Wrist Watches": {
+                "count": 1
+            },
+            "Perucci Wrist Watches": {
+                "count": 20
+            },
+            "Chappin & Nellson Wrist Watches": {
+                "count": 2
+            },
+            "Zoya-JQ Wrist Watches": {
+                "count": 1
+            },
+            "HPD Wrist Watches": {
+                "count": 1
+            },
+            "Gesture Wrist Watches": {
+                "count": 1
+            },
+            "Xemex Wrist Watches": {
+                "count": 1
+            },
+            "Timebre Wrist Watches": {
+                "count": 1
+            },
+            "RRTC Wrist Watches": {
+                "count": 1
+            },
+            "LUBA Wrist Watches": {
+                "count": 5
+            },
+            "Scheffer's Wrist Watches": {
+                "count": 4
+            },
+            "Swisstyle Wrist Watches": {
+                "count": 1
+            },
+            "Rana Watches Wrist Watches": {
+                "count": 1
+            },
+            "R.S Wrist Watches": {
+                "count": 1
+            },
+            "Firstrace Wrist Watches": {
+                "count": 1
+            },
+            "CB Fashion Wrist Watches": {
+                "count": 4
+            },
+            "Timex Wrist Watches": {
+                "count": 1
+            },
+            "Playboy Wrist Watches": {
+                "count": 1
+            },
+            "Fimex Wrist Watches": {
+                "count": 1
+            },
+            "FNB Wrist Watches": {
+                "count": 1
+            },
+            "V-Luma Wrist Watches": {
+                "count": 1
+            }
+        },
+        "Watch Accessories": {
+            "count": 6,
+            "Watch Boxes": {
+                "count": 1
+            },
+            "Wrist Bands": {
+                "count": 5
+            }
+        },
+        "Clocks": {
+            "count": 1,
+            "Table Clocks": {
+                "count": 1
+            }
+        }
+    },
+    "Toys & School Supplies": {
+        "count": 330,
+        "Musical Instruments & Toys": {
+            "count": 10,
+            "A R ENTERPRISES Musical Instruments & Toys": {
+                "count": 1
+            },
+            "Bento Musical Instruments & Toys": {
+                "count": 2
+            },
+            "Dinoimpex Musical Instruments & Toys": {
+                "count": 1
+            },
+            "Shop & Shoppee Musical Instruments & Toys": {
+                "count": 1
+            },
+            "GoMerryKids Musical Instruments & Toys": {
+                "count": 1
+            },
+            "Fun Box Musical Instruments & Toys": {
+                "count": 1
+            },
+            "Airwind Musical Instruments & Toys": {
+                "count": 1
+            },
+            "SIHRA Musical Instruments & Toys": {
+                "count": 1
+            },
+            "RREnterprizes Musical Instruments & Toys": {
+                "count": 1
+            }
+        },
+        "Puzzles & Board Games": {
+            "count": 5,
+            "Board Games": {
+                "count": 4
+            },
+            "Naaz Puzzles & Board Games": {
+                "count": 1
+            }
+        },
+        "Dupli Color Toys & School Supplies": {
+            "count": 1,
+            "Dupli Color Spray Paint Bottle (Set of 1, Signal...": {
+                "count": 1
+            }
+        },
+        "Tuelip Toys & School Supplies": {
+            "count": 1,
+            "Tuelip Art Superfine Nib Sketch Pens (Set of 2, ...": {
+                "count": 1
+            }
+        },
+        "School Supplies": {
+            "count": 214,
+            "School Bags": {
+                "count": 6
+            },
+            "Geometry & Pencil Boxes": {
+                "count": 200
+            },
+            "Umbrellas": {
+                "count": 4
+            },
+            "Lunch Boxes": {
+                "count": 4
+            }
+        },
+        "Soft Toys": {
+            "count": 11,
+            "Gungun Toys Soft Toys": {
+                "count": 2
+            },
+            "Disney Soft Toys": {
+                "count": 1
+            },
+            "Ekku Soft Toys": {
+                "count": 2
+            },
+            "Marami Soft Toys": {
+                "count": 1
+            },
+            "MK Teddy Soft Toys": {
+                "count": 1
+            },
+            "Twisha Soft Toys": {
+                "count": 1
+            },
+            "Dimpy Stuff Soft Toys": {
+                "count": 1
+            },
+            "Smiledrive Soft Toys": {
+                "count": 1
+            },
+            "Surbhi Soft Toys": {
+                "count": 1
+            }
+        },
+        "C Kreul Toys & School Supplies": {
+            "count": 1,
+            "C Kreul Fabric Color Bottle (Set of 1, Sahara)": {
+                "count": 1
+            }
+        },
+        "Party Supplies": {
+            "count": 7,
+            "Balloons & Decoration": {
+                "count": 2
+            },
+            "Accessories": {
+                "count": 5
+            }
+        },
+        "Outdoor Toys": {
+            "count": 3,
+            "Playhood Outdoor Toys": {
+                "count": 2
+            },
+            "Intex Outdoor Toys": {
+                "count": 1
+            }
+        },
+        "Role Play Toys": {
+            "count": 2,
+            "Bento Role Play Toys": {
+                "count": 1
+            },
+            "Riddhi Siddhi Role Play Toys": {
+                "count": 1
+            }
+        },
+        "Magic Kits": {
+            "count": 1,
+            "Spin Master Magic Kits": {
+                "count": 1
+            }
+        },
+        "Cars, Trains & Bikes": {
+            "count": 4,
+            "Smart Picks Cars, Trains & Bikes": {
+                "count": 2
+            },
+            "Shop4everything Cars, Trains & Bikes": {
+                "count": 1
+            },
+            "Tomafo Cars, Trains & Bikes": {
+                "count": 1
+            }
+        },
+        "Naaz Toys & School Supplies": {
+            "count": 1,
+            "Naaz The Young Scientist for kids Board Game": {
+                "count": 1
+            }
+        },
+        "Learning & Educational Toys": {
+            "count": 10,
+            "SJ Learning & Educational Toys": {
+                "count": 1
+            },
+            "Aimedu Toy Learning & Educational Toys": {
+                "count": 1
+            },
+            "I SQUARE ENTERPRISES Learning & Educational Toys": {
+                "count": 1
+            },
+            "Explore Embedded Learning & Educational Toys": {
+                "count": 1
+            },
+            "Wishkey Learning & Educational Toys": {
+                "count": 1
+            },
+            "Tabu Learning & Educational Toys": {
+                "count": 1
+            },
+            "Parth Collection Learning & Educational Toys": {
+                "count": 1
+            },
+            "DIY Learning & Educational Toys": {
+                "count": 1
+            },
+            "Indidecor Learning & Educational Toys": {
+                "count": 1
+            },
+            "GEMKOLABWELL Learning & Educational Toys": {
+                "count": 1
+            }
+        },
+        "Remote Control Toys": {
+            "count": 15,
+            "AdraxX Remote Control Toys": {
+                "count": 2
+            },
+            "Syma Remote Control Toys": {
+                "count": 1
+            },
+            "Toyhouse Remote Control Toys": {
+                "count": 1
+            },
+            "Nikko Remote Control Toys": {
+                "count": 1
+            },
+            "Silverlit Remote Control Toys": {
+                "count": 1
+            },
+            "Prism Remote Control Toys": {
+                "count": 1
+            },
+            "Maisto Remote Control Toys": {
+                "count": 1
+            },
+            "XQ Remote Control Toys": {
+                "count": 1
+            },
+            "Classic Themes Remote Control Toys": {
+                "count": 1
+            },
+            "Mera Toy Shop Remote Control Toys": {
+                "count": 1
+            },
+            "Taaza Garam Remote Control Toys": {
+                "count": 1
+            },
+            "Brunte Remote Control Toys": {
+                "count": 1
+            },
+            "Gifts & Arts Remote Control Toys": {
+                "count": 1
+            },
+            "Dinoimpex Remote Control Toys": {
+                "count": 1
+            }
+        },
+        "Ride Ons": {
+            "count": 6,
+            "TOMAFO Ride Ons": {
+                "count": 4
+            },
+            "RKDEAL Ride Ons": {
+                "count": 1
+            },
+            "Babytintin Ride Ons": {
+                "count": 1
+            }
+        },
+        "Toy Guns & Weapons": {
+            "count": 1,
+            "Lotus Toy Guns & Weapons": {
+                "count": 1
+            }
+        },
+        "Educational Toys": {
+            "count": 4,
+            "Blocks & Building Sets": {
+                "count": 2
+            },
+            "Art & Craft Toys": {
+                "count": 2
+            }
+        },
+        "Wind Spinner Toys": {
+            "count": 1,
+            "Yijun Wind Spinner Toys": {
+                "count": 1
+            }
+        },
+        "Action Figures": {
+            "count": 32,
+            "Disney Action Figures": {
+                "count": 4
+            },
+            "Safari Ltd. Action Figures": {
+                "count": 1
+            },
+            "Tom and Jerry Action Figures": {
+                "count": 1
+            },
+            "DC Universe Action Figures": {
+                "count": 1
+            },
+            "Eaglemoss Publications Action Figures": {
+                "count": 3
+            },
+            "X-Plus Action Figures": {
+                "count": 1
+            },
+            "Wild Republic Action Figures": {
+                "count": 2
+            },
+            "Nendoroid Action Figures": {
+                "count": 2
+            },
+            "Sentinel Action Figures": {
+                "count": 3
+            },
+            "Calico Critters Action Figures": {
+                "count": 1
+            },
+            "Tokidoki Action Figures": {
+                "count": 1
+            },
+            "Discovery Toys Action Figures": {
+                "count": 1
+            },
+            "Wishkey Action Figures": {
+                "count": 1
+            },
+            "Blizzard Entertainment Action Figures": {
+                "count": 1
+            },
+            "The Loyal Subjects Action Figures": {
+                "count": 1
+            },
+            "Moulin Roty Action Figures": {
+                "count": 1
+            },
+            "Doctor Who Action Figures": {
+                "count": 1
+            },
+            "Johhny Cash Action Figures": {
+                "count": 1
+            },
+            "Predator Action Figures": {
+                "count": 1
+            },
+            "happy deals Action Figures": {
+                "count": 1
+            },
+            "Hasbro Action Figures": {
+                "count": 1
+            },
+            "Great Eastern Action Figures": {
+                "count": 1
+            },
+            "Beyblade Action Figures": {
+                "count": 1
+            }
+        }
+    },
+    "Jewellery": {
+        "count": 2546,
+        "Bangles, Bracelets & Armlets": {
+            "count": 724,
+            "Bracelets": {
+                "count": 267
+            },
+            "Bangles": {
+                "count": 455
+            },
+            "Armlets": {
+                "count": 1
+            },
+            "Siyas Collection Lac Cubic Zirconia Bangle Set (...": {
+                "count": 1
+            }
+        },
+        "Pendants & Lockets": {
+            "count": 26,
+            "Silvesto India Stone Pendant": {
+                "count": 2
+            },
+            "Gehna Yellow Gold Zircon Silver Pendant": {
+                "count": 1
+            },
+            "Kirati Flower Design 14K Yellow Gold Garnet, Cub...": {
+                "count": 1
+            },
+            "VK Jewels Reticular Heart Rhodium Cubic Zirconia...": {
+                "count": 1
+            },
+            "Aria Rhodium Sterling Silver Pendant": {
+                "count": 8
+            },
+            "RosesNRibbons Rhodium Sterling Silver": {
+                "count": 1
+            },
+            "Johareez Beautiful Black Silver NAK Spinel Sterl...": {
+                "count": 1
+            },
+            "VASTUGHAR 5 Mukhi Rudraksha Wood": {
+                "count": 1
+            },
+            "INAYA Yellow Gold NAK Brass Pendant Set": {
+                "count": 6
+            },
+            "Sanaa Creations Alloy": {
+                "count": 1
+            },
+            "RosesNRibbons Rhodium Garnet, Amethyst, Citrine,...": {
+                "count": 1
+            },
+            "RosesNRibbons Rhodium Garnet Sterling Silver": {
+                "count": 1
+            },
+            "YELLOW CHIMES Butterfly Fairy Alloy": {
+                "count": 1
+            }
+        },
+        "Rings": {
+            "count": 33,
+            "Zevrr Sterling Silver Swarovski Zirconia Platinu...": {
+                "count": 4
+            },
+            "Malabar Gold and Diamonds HBDAAAABLZJM Gold Ruby...": {
+                "count": 1
+            },
+            "Rasav Jewels Yellow Gold Diamond 18 K Ring": {
+                "count": 3
+            },
+            "Frabjous Sterling Silver Toe Ring Set": {
+                "count": 3
+            },
+            "Malabar Gold and Diamonds HBDAAAABLZLD Gold Emer...": {
+                "count": 1
+            },
+            "Amantran Jewels Om shaped Silver Zircon Sterling...": {
+                "count": 1
+            },
+            "Sanaa Creations Alloy Ring": {
+                "count": 3
+            },
+            "Silvesto India Stone Pearl Silver Ring": {
+                "count": 1
+            },
+            "diwine jewels Silver Zircon Rhodium NA K Ring": {
+                "count": 1
+            },
+            "Manirathnum Manirathnum Garnet & Peridot Gemston...": {
+                "count": 1
+            },
+            "Manirathnum Ruby Gemstone Silver Ring Sterling S...": {
+                "count": 1
+            },
+            "Manirathnum Mix Gemstone Gemstone Silver Ring St...": {
+                "count": 1
+            },
+            "Manirathnum Manirathnum Hematite Gemstone Silver...": {
+                "count": 1
+            },
+            "Manirathnum Pearl Gemstone Silver Ring Sterling ...": {
+                "count": 2
+            },
+            "Manirathnum Manirathnum Black Star Gemstone Silv...": {
+                "count": 2
+            },
+            "Manirathnum Green Onyx Gemstone Silver Ring Ster...": {
+                "count": 1
+            },
+            "Manirathnum Blue Topaz Gemstone Silver Ring Ster...": {
+                "count": 1
+            },
+            "Manirathnum Smoky Quartz Gemstone Silver Ring St...": {
+                "count": 1
+            },
+            "Manirathnum Manirathnum silver Gemstone Silver R...": {
+                "count": 1
+            },
+            "Manirathnum Manirathnum Tourquise Original Gemst...": {
+                "count": 1
+            },
+            "Manirathnum Manirathnum Garnet Gemstone Silver R...": {
+                "count": 1
+            },
+            "Manirathnum Star Diopside Gemstone Gemstone Silv...": {
+                "count": 1
+            }
+        },
+        "Necklaces & Chains": {
+            "count": 1606,
+            "Necklaces": {
+                "count": 1588
+            },
+            "Chains": {
+                "count": 18
+            }
+        },
+        "Mangalsutras & Tanmaniyas": {
+            "count": 11,
+            "Parinaaz Alloy Mangalsutra": {
+                "count": 5
+            },
+            "Decon Metal Mangalsutra": {
+                "count": 1
+            },
+            "Spangel Fashion Audi Style Alloy Mangalsutra": {
+                "count": 1
+            },
+            "Decon Alloy Mangalsutra": {
+                "count": 1
+            },
+            "knp enterprise Audi Style Alloy Mangalsutra": {
+                "count": 1
+            },
+            "JewelFox Gold Tanmaniya": {
+                "count": 2
+            }
+        },
+        "Accessories": {
+            "count": 114,
+            "Brooches": {
+                "count": 113
+            },
+            "Cufflinks & Tie Pins": {
+                "count": 1
+            }
+        },
+        "Anklets": {
+            "count": 1,
+            "Wise Pebble Stylish Alloy Anklet": {
+                "count": 1
+            }
+        },
+        "Earrings": {
+            "count": 2,
+            "Affinity Jewellers Just like diamonds Cubic Zirc...": {
+                "count": 1
+            },
+            "Velvetcase Smoky Quartz Textured Earrings Quartz...": {
+                "count": 1
+            }
+        },
+        "Jewellery Sets": {
+            "count": 5,
+            "WOAP Alloy Jewel Set (Blue)": {
+                "count": 1
+            },
+            "Taraash Sterling Silver Jewel Set (Multicolor)": {
+                "count": 1
+            },
+            "KALYANI COVERING Brass, Copper, Crystal Jewel Se...": {
+                "count": 1
+            },
+            "Archi Collection Alloy Jewel Set (White)": {
+                "count": 1
+            },
+            "MUCHMORE Alloy Jewel Set (Pink)": {
+                "count": 1
+            }
+        },
+        "Hair Accessories": {
+            "count": 6,
+            "Takspin casual & stylish matte finish clutcher( ...": {
+                "count": 2
+            },
+            "Takspin casual & stylish collection of clutcher ...": {
+                "count": 2
+            },
+            "Takspin casual collection of clutcher & hair pin...": {
+                "count": 1
+            },
+            "Anuradha Art ZBF-263 Hair Clip (Blue)": {
+                "count": 1
+            }
+        },
+        "Artificial Jewellery": {
+            "count": 4,
+            "Chickraft Wood Bangle": {
+                "count": 1
+            },
+            "Pout Brass Bangle": {
+                "count": 1
+            },
+            "Siyas Collection Lac Cubic Zirconia Bangle Set (...": {
+                "count": 1
+            },
+            "Dilan Jewels Alloy Crystal 18K Yellow Gold Bangl...": {
+                "count": 1
+            }
+        },
+        "Precious Jewellery": {
+            "count": 2,
+            "classyworld Brass Cufflink (Silver-01)": {
+                "count": 1
+            },
+            "Precious Articles": {
+                "count": 1
+            }
+        },
+        "Nose Rings & Studs": {
+            "count": 12,
+            "Radhesh Creation Crystal Yellow Gold Plated Bras...": {
+                "count": 12
+            }
+        }
+    },
+    "Kitchen & Dining": {
+        "count": 647,
+        "Tableware & Cutlery": {
+            "count": 15,
+            "Jug, Glass & Tray Sets": {
+                "count": 2
+            },
+            "Tableware": {
+                "count": 4
+            },
+            "Glasses & Tumblers": {
+                "count": 5
+            },
+            "Jugs & Pitchers": {
+                "count": 2
+            },
+            "Cutlery": {
+                "count": 2
+            }
+        },
+        "Lighting": {
+            "count": 39,
+            "Bulbs": {
+                "count": 39
+            }
+        },
+        "Coffee Mugs": {
+            "count": 302,
+            "AKUP Coffee Mugs": {
+                "count": 22
+            },
+            "Shopmania Coffee Mugs": {
+                "count": 4
+            },
+            "Prithish Coffee Mugs": {
+                "count": 94
+            },
+            "Printland Coffee Mugs": {
+                "count": 89
+            },
+            "Rockmantra Coffee Mugs": {
+                "count": 72
+            },
+            "Rajesh Digital Coffee Mugs": {
+                "count": 5
+            },
+            "Returnfavors Coffee Mugs": {
+                "count": 2
+            },
+            "Value Bay Coffee Mugs": {
+                "count": 1
+            },
+            "posterchacha Coffee Mugs": {
+                "count": 1
+            },
+            "Aagam Coffee Mugs": {
+                "count": 2
+            },
+            "ZEVA Coffee Mugs": {
+                "count": 1
+            },
+            "G&G Coffee Mugs": {
+                "count": 1
+            },
+            "AM Creation Coffee Mugs": {
+                "count": 1
+            },
+            "StyleStuffs Coffee Mugs": {
+                "count": 5
+            },
+            "Happiness Is Coffee Mugs": {
+                "count": 1
+            },
+            "HuppmeGift Coffee Mugs": {
+                "count": 1
+            }
+        },
+        "Cookware": {
+            "count": 102,
+            "Casserole & Sets": {
+                "count": 1
+            },
+            "Pots & Pans": {
+                "count": 98
+            },
+            "Lids": {
+                "count": 2
+            },
+            "Steamers & Idli Makers": {
+                "count": 1
+            }
+        },
+        "Containers & Bottles": {
+            "count": 48,
+            "Lunch Boxes": {
+                "count": 9
+            },
+            "Bottles & Sippers": {
+                "count": 30
+            },
+            "Shoe Racks": {
+                "count": 2
+            },
+            "Containers & Jars": {
+                "count": 3
+            },
+            "Storage Baskets": {
+                "count": 1
+            },
+            "Kitchen Racks & Trolleys": {
+                "count": 3
+            }
+        },
+        "Consumables & Disposables": {
+            "count": 2,
+            "Bowls": {
+                "count": 2
+            }
+        },
+        "Dinnerware & Crockery": {
+            "count": 7,
+            "Cups & Saucers": {
+                "count": 7
+            }
+        },
+        "Housekeeping & Laundry": {
+            "count": 13,
+            "Bathroom Accessories": {
+                "count": 8
+            },
+            "Home Cleaning": {
+                "count": 4
+            },
+            "Stools & Ladders": {
+                "count": 1
+            }
+        },
+        "Bakeware": {
+            "count": 4,
+            "Pastry Brushes": {
+                "count": 1
+            },
+            "Baking Dishes & Pans": {
+                "count": 3
+            }
+        },
+        "Kitchen Tools": {
+            "count": 74,
+            "Kitchen Implements": {
+                "count": 66
+            },
+            "Gas Cylinder Trolleys": {
+                "count": 1
+            },
+            "Spatulas & Ladles": {
+                "count": 2
+            },
+            "Kitchen Knives": {
+                "count": 1
+            },
+            "Choppers & Peelers": {
+                "count": 3
+            },
+            "Kitchen Tool Sets": {
+                "count": 1
+            }
+        },
+        "Bar & Glassware": {
+            "count": 27,
+            "Bar Accessories": {
+                "count": 6
+            },
+            "Bar Glasses": {
+                "count": 21
+            }
+        },
+        "Pressure Cookers & Pans": {
+            "count": 11,
+            "Hawkins Pressure Cookers & Pans": {
+                "count": 1
+            },
+            "Varun Pressure Cookers & Pans": {
+                "count": 1
+            },
+            "Prestige Pressure Cookers & Pans": {
+                "count": 3
+            },
+            "Ultra Pressure Cookers & Pans": {
+                "count": 1
+            },
+            "United Pressure Cookers & Pans": {
+                "count": 5
+            }
+        },
+        "Palakz Kitchen & Dining": {
+            "count": 1,
+            "Palakz Printed Foldable Storage Stool (Multicolor)": {
+                "count": 1
+            }
+        },
+        "Flasks & Casseroles": {
+            "count": 1,
+            "Water Purifier Bottles": {
+                "count": 1
+            }
+        },
+        "Home Utilities": {
+            "count": 1,
+            "Mosquito Killers": {
+                "count": 1
+            }
+        }
+    },
+    "Home & Kitchen": {
+        "count": 24,
+        "Kitchen Appliances": {
+            "count": 12,
+            "Microwave Ovens": {
+                "count": 1
+            },
+            "Mixer/juicer/grinders": {
+                "count": 4
+            },
+            "Hand Blenders": {
+                "count": 2
+            },
+            "Food Makers": {
+                "count": 2
+            },
+            "Sandwich & Roti Makers": {
+                "count": 1
+            },
+            "Induction Cooktops": {
+                "count": 1
+            },
+            "Electric Jug(heater)/Travel Kettles": {
+                "count": 1
+            }
+        },
+        "Home Appliances": {
+            "count": 12,
+            "Vacuum Cleaners": {
+                "count": 1
+            },
+            "Sewing Machines": {
+                "count": 2
+            },
+            "Irons": {
+                "count": 3
+            },
+            "Refrigerators": {
+                "count": 2
+            },
+            "Lightings": {
+                "count": 3
+            },
+            "Voltage Stabilizers": {
+                "count": 1
+            }
+        }
+    },
+    "Computers": {
+        "count": 578,
+        "Network Components": {
+            "count": 202,
+            "Routers": {
+                "count": 199
+            },
+            "Cables": {
+                "count": 3
+            }
+        },
+        "Tablet Accessories": {
+            "count": 6,
+            "Keyboards": {
+                "count": 2
+            },
+            "Cases & Covers": {
+                "count": 4
+            }
+        },
+        "Laptop Accessories": {
+            "count": 343,
+            "Keyboards": {
+                "count": 1
+            },
+            "USB Gadgets": {
+                "count": 154
+            },
+            "Laptop Bags": {
+                "count": 2
+            },
+            "Mouse Pads": {
+                "count": 8
+            },
+            "Anti Dust Plugs": {
+                "count": 4
+            },
+            "Adapters": {
+                "count": 43
+            },
+            "Laptop Adapters": {
+                "count": 10
+            },
+            "Batteries": {
+                "count": 83
+            },
+            "Cleaning Kits": {
+                "count": 1
+            },
+            "Bags": {
+                "count": 1
+            },
+            "Computer Accessories Combos": {
+                "count": 36
+            }
+        },
+        "Software": {
+            "count": 2,
+            "Language Learning": {
+                "count": 1
+            },
+            "Utilities": {
+                "count": 1
+            }
+        },
+        "Audio Players": {
+            "count": 1,
+            "MP4 / Video MP3 Players": {
+                "count": 1
+            }
+        },
+        "Computer Peripherals": {
+            "count": 11,
+            "Printers & Inks": {
+                "count": 9
+            },
+            "CPU": {
+                "count": 1
+            },
+            "Portable Projectors": {
+                "count": 1
+            }
+        },
+        "Storage": {
+            "count": 3,
+            "Pen Drives": {
+                "count": 3
+            }
+        },
+        "Computer Components": {
+            "count": 8,
+            "Processors": {
+                "count": 5
+            },
+            "Motherboards": {
+                "count": 2
+            },
+            "RAMs": {
+                "count": 1
+            }
+        },
+        "Laptops": {
+            "count": 2,
+            "HP Laptops": {
+                "count": 2
+            }
+        }
+    },
+    "Cameras & Accessories": {
+        "count": 82,
+        "Camera Accessories": {
+            "count": 82,
+            "Battery chargers": {
+                "count": 17
+            },
+            "Camera Mounts": {
+                "count": 1
+            },
+            "Flashes": {
+                "count": 1
+            },
+            "Lens Hoods": {
+                "count": 60
+            },
+            "Lens Adapters": {
+                "count": 2
+            },
+            "Camera Lenses": {
+                "count": 1
+            }
+        }
+    },
+    "Health & Personal Care Appliances": {
+        "count": 43,
+        "Health Care": {
+            "count": 4,
+            "Health Care Devices": {
+                "count": 4
+            }
+        },
+        "Personal Care Appliances": {
+            "count": 39,
+            "Trimmers": {
+                "count": 16
+            },
+            "Vaping Devices": {
+                "count": 2
+            },
+            "Shavers": {
+                "count": 4
+            },
+            "Hair Straighteners": {
+                "count": 1
+            },
+            "Hair Dryers": {
+                "count": 16
+            }
+        }
+    },
+    "Gaming": {
+        "count": 35,
+        "Gaming Accessories": {
+            "count": 34,
+            "Headphones (With Mic)": {
+                "count": 24
+            },
+            "Cables & Adapters": {
+                "count": 4
+            },
+            "Mouse": {
+                "count": 2
+            },
+            "Gaming Speakers": {
+                "count": 1
+            },
+            "Mousepads": {
+                "count": 2
+            },
+            "TV-Out Cable": {
+                "count": 1
+            }
+        },
+        "Gaming Components": {
+            "count": 1,
+            "Power Supply Units": {
+                "count": 1
+            }
+        }
+    },
+    "Home Improvement": {
+        "count": 80,
+        "Tools": {
+            "count": 12,
+            "Hand Tools": {
+                "count": 9
+            },
+            "Measuring & Layout Tools": {
+                "count": 2
+            },
+            "Power Tools": {
+                "count": 1
+            }
+        },
+        "Electricals": {
+            "count": 31,
+            "Wire, Joints & Connectors": {
+                "count": 1
+            },
+            "Switches & Accessories": {
+                "count": 29
+            },
+            "Circuit Breaker": {
+                "count": 1
+            }
+        },
+        "Hardware": {
+            "count": 14,
+            "Bathroom & Kitchen Fixtures": {
+                "count": 13
+            },
+            "Door & Windows Fittings": {
+                "count": 1
+            }
+        },
+        "Sanitaryware": {
+            "count": 2,
+            "Bathroom Fixtures": {
+                "count": 2
+            }
+        },
+        "Lawn & Gardening": {
+            "count": 20,
+            "Plants": {
+                "count": 20
+            }
+        },
+        "Home Storage & Organization": {
+            "count": 1,
+            "Laundry": {
+                "count": 1
+            }
+        }
+    },
+    "Home Entertainment": {
+        "count": 19,
+        "Audio Players": {
+            "count": 5,
+            "Krown Audio Players": {
+                "count": 1
+            },
+            "Home Audio": {
+                "count": 3
+            },
+            "Audio Player Accessories": {
+                "count": 1
+            }
+        },
+        "Home Audio": {
+            "count": 3,
+            "Speakers": {
+                "count": 3
+            }
+        },
+        "Video Players & Accessories": {
+            "count": 10,
+            "Video Accessories": {
+                "count": 5
+            },
+            "Home Theaters": {
+                "count": 5
+            }
+        },
+        "MP3 players/Ipods Accessories": {
+            "count": 1,
+            "Headphones": {
+                "count": 1
+            }
+        }
+    },
+    "Wearable Smart Devices": {
+        "count": 2,
+        "Wearable Accessories": {
+            "count": 2,
+            "Besto Wearable Accessories": {
+                "count": 1
+            },
+            "Quartz Wearable Accessories": {
+                "count": 1
+            }
+        }
+    },
+    "Eyewear": {
+        "count": 10,
+        "Frames": {
+            "count": 10,
+            "ULTRAVISION Full Rim Round Frame (51 mm)": {
+                "count": 1
+            },
+            "VINSON LONDON Full Rim Oval Frame (53 mm)": {
+                "count": 2
+            },
+            "fabwoods Rimless Square Frame (54 mm)": {
+                "count": 1
+            },
+            "Ted Smith Full Rim Wayfarer Frame (56 mm)": {
+                "count": 1
+            },
+            "Ted Smith Full Rim Wayfarer Frame (53 mm)": {
+                "count": 2
+            },
+            "Ted Smith Full Rim Wayfarer Frame (52 mm)": {
+                "count": 2
+            },
+            "Lavish Blink Full Rim Rectangle Frame (54 mm)": {
+                "count": 1
+            }
+        }
+    },
+    "eBooks": {
+        "count": 15,
+        "Academic Texts": {
+            "count": 9,
+            "Medical": {
+                "count": 4
+            },
+            "Language Learning": {
+                "count": 3
+            },
+            "Law": {
+                "count": 1
+            },
+            "Humanities": {
+                "count": 1
+            }
+        },
+        "Religion & Spirituality": {
+            "count": 2,
+            "Religions": {
+                "count": 2
+            }
+        },
+        "Science": {
+            "count": 4,
+            "Physics": {
+                "count": 4
+            }
+        }
+    },
+    "Household Supplies": {
+        "count": 4,
+        "Home Cleaning": {
+            "count": 4,
+            "Kitchen Surface Cleaners": {
+                "count": 4
+            }
+        }
+    }
+}

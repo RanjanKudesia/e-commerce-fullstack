@@ -67,24 +67,9 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
     }
   }
 
-  async function getProducts() {
-    console.log(process.env.NEXT_PUBLIC_SERVER_API);
-    try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-products`
-      );
-      if (response.status === 200) {
-        setProductsCollection({ products: response.data });
-      }
-    } catch (error: any) {
-      console.error("Error", error.message);
-    }
-  }
-
   useEffect(() => {
     getProduct(id);
-    getProducts();
-  }, []);
+  }, [id]);
 
   const value = { product };
 
