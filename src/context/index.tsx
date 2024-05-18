@@ -5,143 +5,243 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter, usePathname } from "next/navigation";
+import products from "@/app/checkout/components/second/components/cartProducts/cartProducts";
 
 interface AuthState {
-    user: null | { [key: string]: any };
-    token: string;
+  user: null | { [key: string]: any };
+  token: string;
+}
+interface CartItem {
+  id: number;
+  name: string;
+  price: string;
+  discountedPrice: string;
+  imageSrc: string;
+  quantity: number;
 }
 
 interface GlobalContextType {
-    screenSize: number;
-    auth: AuthState;
-    setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
-    verifyToken: (token: string) => Promise<boolean>;
+  screenSize: number;
+  auth: AuthState;
+  setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
+  verifyToken: (token: string) => Promise<boolean>;
+  itemPrice: string | null;
+  discountedPrice: string | null;
+  setItemPrice: (price: string | null) => void;
+  setDiscountedPrice: (price: string | null) => void;
+  selectedProducts: number[];
+  setSelectedProducts: React.Dispatch<React.SetStateAction<number[]>>;
+  cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  addToCart: (item: CartItem) => void;
+  removeFromCart: (itemId: number) => void;
+  updateCartItemQuantity: (itemId: number, quantity: number) => void;
 }
 
 const defaultContextValue: GlobalContextType = {
-    screenSize: 0,
-    auth: {
-        user: null,
-        token: ""
-    },
-    setAuth: () => {}, // Dummy function, will be overwritten by the actual function
-    verifyToken: async () => false // Dummy promise, will be overwritten by the actual function
+  screenSize: 0,
+  auth: {
+    user: null,
+    token: "",
+  },
+  setAuth: () => {},
+  verifyToken: async () => false,
+  itemPrice: "0",
+  discountedPrice: "0",
+  setItemPrice: () => {},
+  setDiscountedPrice: () => {},
+  selectedProducts: [],
+  setSelectedProducts: () => {},
+  cart: [],
+  setCart: () => {},
+  addToCart: () => {},
+  removeFromCart: () => {},
+  updateCartItemQuantity: () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
 
 type ContextProviderProps = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
-
 
 function GlobalStateProvider({ children }: ContextProviderProps) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-    const router = useRouter();
-    const pathname = usePathname();
+  const [auth, setAuth] = useState<AuthState>({
+    user: null,
+    token: "",
+  });
+  const [authInitialized, setAuthInitialized] = useState<boolean>(false);
+  const [itemPrice, setItemPrice] = useState<string | null>(null);
+  const [discountedPrice, setDiscountedPrice] = useState<string | null>(null);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-    const [auth, setAuth] = useState<AuthState>({
-        user: null,
-        token: "",
-    });
-    const [authInitialized, setAuthInitialized] = useState<boolean>(false);
+  useEffect(() => {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
+  }, [auth.token]);
 
-    useEffect(() => {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
-    }, [auth.token]);
+  const [screenSize, setScreenSize] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
-    const [screenSize, setScreenSize] = useState<number>(
-        typeof window !== "undefined" ? window.innerWidth : 0
-    );
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
 
-    useEffect(() => {
-        const handleResize = () => {
-            setScreenSize(window.innerWidth);
-        };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    async function verifyToken(token: string): Promise<boolean> {
-        try {
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/auth/verify-token`,
-                {
-                    accessToken: token,
-                }
-            );
-            // Check if the response indicates a successful verification
-            if (response.data.success) {
-                console.log("Token is valid.");
-                return true;
-            } else {
-                // Log and inform the user if the token verification is unsuccessful
-                console.log("Token is invalid or expired.");
-                toast.error("Please login again");
-                return false;
-            }
-        } catch (error: unknown) {
-            if (axios.isAxiosError(error)) {
-                // Handle errors specific to axios, e.g., network issues, bad requests, etc.
-                console.error("Axios error verifying token:", error.response?.data.message || error.message);
-            } else if (error instanceof Error) {
-                // Handle generic errors, such as coding errors in try block (less likely)
-                console.error("Error verifying token:", error.message);
-            } else {
-                // If the caught error is not an instance of Error, log a default message
-                console.error("Unexpected error verifying token");
-            }
-            // Notify user of the error via a toast
-            toast.error("An error occurred while verifying the token. Please try again.");
-            return false;
+  async function verifyToken(token: string): Promise<boolean> {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/auth/verify-token`,
+        {
+          accessToken: token,
         }
-
+      );
+      // Check if the response indicates a successful verification
+      if (response.data.success) {
+        console.log("Token is valid.");
+        return true;
+      } else {
+        // Log and inform the user if the token verification is unsuccessful
+        console.log("Token is invalid or expired.");
+        toast.error("Please login again");
+        return false;
+      }
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        // Handle errors specific to axios, e.g., network issues, bad requests, etc.
+        console.error(
+          "Axios error verifying token:",
+          error.response?.data.message || error.message
+        );
+      } else if (error instanceof Error) {
+        // Handle generic errors, such as coding errors in try block (less likely)
+        console.error("Error verifying token:", error.message);
+      } else {
+        // If the caught error is not an instance of Error, log a default message
+        console.error("Unexpected error verifying token");
+      }
+      // Notify user of the error via a toast
+      toast.error(
+        "An error occurred while verifying the token. Please try again."
+      );
+      return false;
     }
+  }
 
+  // useEffect(() => {
+  //     const data = localStorage.getItem("auth");
+  //     if (data) {
+  //         const parsedData = JSON.parse(data);
+  //         setAuth({ user: parsedData.user, token: parsedData.token });
+  //     }
+  //     setAuthInitialized(true);
+  // }, []);
 
-    // useEffect(() => {
-    //     const data = localStorage.getItem("auth");
-    //     if (data) {
-    //         const parsedData = JSON.parse(data);
-    //         setAuth({ user: parsedData.user, token: parsedData.token });
-    //     }
-    //     setAuthInitialized(true);
-    // }, []);
+  // useEffect(() => {
+  //     const handleTokenVerification = async () => {
+  //         if (!auth.token) return;
+  //         const verified = await verifyToken(auth.token);
+  //         if (!verified) {
+  //             localStorage.removeItem("auth");
+  //             setAuth({ user: null, token: "" });
+  //             router.push("/login");
+  //         } else if (pathname === "/login") {
+  //             router.push("/");
+  //         }
+  //     };
 
-    // useEffect(() => {
-    //     const handleTokenVerification = async () => {
-    //         if (!auth.token) return;
-    //         const verified = await verifyToken(auth.token);
-    //         if (!verified) {
-    //             localStorage.removeItem("auth");
-    //             setAuth({ user: null, token: "" });
-    //             router.push("/login");
-    //         } else if (pathname === "/login") {
-    //             router.push("/");
-    //         }
-    //     };
+  //     if (authInitialized && auth.user) {
+  //         handleTokenVerification();
+  //     } else if (authInitialized && !auth.user) {
+  //         router.push("/login");
+  //     }
+  // }, [auth.user, auth.token, authInitialized, pathname]);
 
-    //     if (authInitialized && auth.user) {
-    //         handleTokenVerification();
-    //     } else if (authInitialized && !auth.user) {
-    //         router.push("/login");
-    //     }
-    // }, [auth.user, auth.token, authInitialized, pathname]);
+  const addToCart = (
+    id: number,
+    name: string,
+    price: string,
+    discountedPrice: string,
+    imageSrc: string,
+    quantity: number
+  ) => {
+    setCart((prevCart) => {
+      // Check if the product is already in the cart
+      const existingProduct = prevCart.find((item) => item.id === id);
 
+      if (!existingProduct) {
+        // If the product is not already in the cart, add it
+        return [
+          ...prevCart,
+          { id, name, price, discountedPrice, imageSrc, quantity },
+        ];
+      }
 
-    const value = { screenSize, auth, setAuth, verifyToken };
+      // If the product is already in the cart, don't update its quantity
+      return prevCart;
+    });
+  };
+  useEffect(() => {
+    if (cart.length === 0) {
+      products.map((product) => {
+        addToCart(
+          product.id,
+          product.name,
+          product.price,
+          product.discountedPrice,
+          product.imageSrc,
+          product.quantity
+        );
+      });
+    }
+    console.log(cart);
+  }, [cart]);
 
-    return (
-        <GlobalContext.Provider value={value} >
-            {children}
-            < ToastContainer />
-        </GlobalContext.Provider>
-    );
-};
+  const removeFromCart = (itemId: number) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+  };
 
+  const updateCartItemQuantity = (itemId: number, quantity: number) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, quantity };
+      }
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
+  const value = {
+    screenSize,
+    auth,
+    setAuth,
+    verifyToken,
+    itemPrice,
+    discountedPrice,
+    setItemPrice,
+    setDiscountedPrice,
+    cart,
+    setCart,
+    addToCart,
+    removeFromCart,
+    updateCartItemQuantity,
+  };
+
+  return (
+    <GlobalContext.Provider value={value}>
+      {children}
+      <ToastContainer />
+    </GlobalContext.Provider>
+  );
+}
 
 const useGlobalState = () => useContext(GlobalContext);
-
 
 export { useGlobalState, GlobalStateProvider };

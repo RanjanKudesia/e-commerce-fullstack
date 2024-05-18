@@ -32,7 +32,7 @@ export default function SignUp() {
                         <SubmitButton />
                         <div className='relative w-full flex justify-between items-center py-[10px]'>
                             <div className='w-full h-[1px] bg-[#E4E9EE]' />
-                            <div className='absolute left-1/2 transform -translate-x-1/2 w-max z-1 bg-white  text-[#818B9C] text-[12px] font-[500] px-[10px]'>
+                            <div className='absolute left-1/2 transform -translate-x-1/2 w-max bg-white z-0 text-[#818B9C] text-[12px] font-[500] px-[10px]'>
                                 Or using other method
                             </div>
                         </div>

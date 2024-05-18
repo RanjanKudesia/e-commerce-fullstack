@@ -38,13 +38,13 @@ const defaultProductsCollection: ProductsCollection = {
   products: [],
 };
 
-// const ProductContext = createContext<ProductContextType>(
-//   defaultProductContextValue
-// );
-
-const ProductContext = createContext<ProductsCollection>(
-  defaultProductsCollection
+const ProductContext = createContext<ProductContextType>(
+  defaultProductContextValue
 );
+
+// const ProductContext = createContext<ProductsCollection>(
+//   defaultProductsCollection
+// );
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
   const id = params.id;
@@ -82,11 +82,11 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   }
 
   useEffect(() => {
-    // getProduct(id);
+    getProduct(id);
     getProducts();
   }, []);
 
-  const value = { productsCollection };
+  const value = { product };
 
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
