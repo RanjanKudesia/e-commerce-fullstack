@@ -53,7 +53,6 @@ const ProductContext = createContext<ProductContextType>(
 // );
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
-  const id = params.id;
   // const { auth } = useGlobalState()
 
   const [product, setProduct] = useState<Product>(defaultProduct);
@@ -61,7 +60,6 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
     useState<ProductsCollection>(defaultProductsCollection);
   const { id } = params;
 
-  const [product, setProduct] = useState<Product | null>(null);
   const [review, setReview] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
   const [productCategory, setProductCategory] = useState(null);

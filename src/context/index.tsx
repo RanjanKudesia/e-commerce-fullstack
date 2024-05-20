@@ -59,13 +59,6 @@ const defaultContextValue: GlobalContextType = {
   addToCart: () => { },
   removeFromCart: () => { },
   updateCartItemQuantity: () => { },
-  screenSize: 0,
-  auth: {
-    user: null,
-    token: ""
-  },
-  setAuth: () => { }, // Dummy function, will be overwritten by the actual function
-  verifyToken: async () => false,// Dummy promise, will be overwritten by the actual function
   productRating: 0, // Default value for productRating
   setProductRating: () => { },
 };
