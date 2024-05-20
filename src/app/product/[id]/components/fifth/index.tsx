@@ -6,11 +6,11 @@ import Link from "next/link";
 export default function FifthSec() {
     const { relatedProducts } = useProductState();
 
-    // Function to extract the first 2 words and add ellipsis if there are more words
+    // Function to extract the first 3 words and add ellipsis if there are more words
     const getShortProductName = (name) => {
         const words = name.split(' ');
-        if (words.length > 2) {
-            return words.slice(0, 2).join(' ') + '...';
+        if (words.length > 3) {
+            return words.slice(0, 3).join(' ') + '...';
         }
         return name; // Return the full name if it's 3 words or fewer
     };

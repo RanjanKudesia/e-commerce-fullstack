@@ -5,11 +5,11 @@ import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { usePathname } from 'next/navigation'
 import Submenu from "./components/submenu";
-// import { useProductState } from "../../context";
+import { useProductState } from "@/app/product/[id]/context";
 
 
 export default function Navbar() {
-  // const { productCategory } = useProductState();
+  const { productCategory } = useProductState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -48,11 +48,11 @@ export default function Navbar() {
 
         <div className="navList hidden font-medium transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
-            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
-              <Link href="">Home</Link>
+            <li className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+              <Link href="/">Home</Link>
             </li>
             <li
-              className={`hidden md:block text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
+              className={`hidden md:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -208,15 +208,26 @@ export default function Navbar() {
             </li>
             <li className="xl:hidden">
               <Submenu />
+              <div>
+                {productCategory?.map((category, index) => {
+                  if (category.category_level === 1) {
+                    return (
+                      <ul key={index}>
+                        <li>{category?.parent}</li>
+                      </ul>
+                    );
+                  }
+                })}
 
+              </div>
             </li>
-            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Our Stroy</Link>
             </li>
-            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/articles' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/articles' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="/articles">Blogs</Link>
             </li>
-            <li className={`text-[#1E4C2F] px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/contact-us' ? 'active' : 'px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/contact-us' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Contact Us</Link>
             </li>
           </ul>

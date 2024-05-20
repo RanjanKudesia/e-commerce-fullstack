@@ -13,7 +13,7 @@ interface ProductContextType {
   product: Product | null;
   review: Review[]; // Assuming review is an array of Review objects
   relatedProducts: RelatedProduct[] | null;
-  productCategory: ProductCategory | null;
+  productCategory: ProductCategory[];
 }
 
 const defaultProduct: Product = {
@@ -38,7 +38,7 @@ const defaultProductContextValue: ProductContextType = {
   product: null,
   review: [], // Initialize as empty array
   relatedProducts: null,
-  productCategory: null,
+  productCategory: [],
 };
 
 const ProductContext = createContext<ProductContextType>(defaultProductContextValue);
@@ -49,7 +49,7 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   const [product, setProduct] = useState<Product | null>(null);
   const [review, setReview] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
-  const [productCategory, setProductCategory] = useState<ProductCategory | null>(null);
+  const [productCategory, setProductCategory] = useState(null);
   const [productRating, setProductRating] = useState(null);
 
 

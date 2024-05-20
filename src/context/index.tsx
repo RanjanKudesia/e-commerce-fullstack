@@ -16,7 +16,8 @@ interface GlobalContextType {
     auth: AuthState;
     setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
     verifyToken: (token: string) => Promise<boolean>;
-    setProductRating: (rating: number | null) => void;
+    productRating: number; // Added this line
+    setProductRating: (rating: number) => void;
 }
 
 const defaultContextValue: GlobalContextType = {
@@ -27,6 +28,7 @@ const defaultContextValue: GlobalContextType = {
     },
     setAuth: () => { }, // Dummy function, will be overwritten by the actual function
     verifyToken: async () => false,// Dummy promise, will be overwritten by the actual function
+    productRating: 0, // Default value for productRating
     setProductRating: () => { },
 };
 
@@ -47,7 +49,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
         token: "",
     });
     const [authInitialized, setAuthInitialized] = useState<boolean>(false);
-    const [productRating, setProductRating] = useState<number | null>(null);
+    const [productRating, setProductRating] = useState<number>(0);
 
     useEffect(() => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;

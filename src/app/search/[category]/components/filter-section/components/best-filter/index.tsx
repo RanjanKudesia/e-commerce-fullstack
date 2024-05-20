@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from "next/image";
-import { useSearchParams, useRouter,usePathname } from 'next/navigation';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -25,7 +25,8 @@ export default function BestFilter() {
     }, [isOpen]);
 
     const checkBoxStyling = {
-        color: '#1E4C2F',
+        color: '#E4E9EE',
+        fontFamily: 'Jost, sans-serif',
         '&.Mui-checked': {
             color: '#1E4C2F',
         },
@@ -33,18 +34,18 @@ export default function BestFilter() {
 
     const handleChange = (param: string, checked: boolean) => {
         const newSearchParams = new URLSearchParams(searchParams);
-        
+
         if (checked) {
             newSearchParams.set(param, "true");
         } else {
             newSearchParams.delete(param);
         }
-    
+
         // Building the new URL
         const basePath = pathname;  // Gets the current path without query string
         const queryString = newSearchParams.toString();  // Gets the query string from URLSearchParams
         const newUrl = queryString ? `${basePath}?${queryString}` : basePath;  // Append query string if not empty
-    
+
         router.push(newUrl);
     };
 
@@ -64,7 +65,7 @@ export default function BestFilter() {
                             onChange={(event) => handleChange("above4stars", event.target.checked)}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>Above 4 Stars</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>Above 4 Stars</div>}
                     />
                     <FormControlLabel
                         control={<Checkbox
@@ -72,7 +73,7 @@ export default function BestFilter() {
                             onChange={(event) => handleChange("branded", event.target.checked)}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>Branded</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>Branded</div>}
                     />
                     <FormControlLabel
                         control={<Checkbox
@@ -80,7 +81,7 @@ export default function BestFilter() {
                             onChange={(event) => handleChange("discount", event.target.checked)}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>Discount</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>Discount</div>}
                     />
                 </FormGroup>
             </div>

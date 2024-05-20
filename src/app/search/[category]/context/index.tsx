@@ -19,6 +19,8 @@ interface ProductsContextType {
     setSubCategory: (subCategory: string) => void;
     priceFilter: string;
     setPriceFilter: (priceFilter: string) => void;
+    isFilterOpen: boolean;
+    setIsFilterOpen: (isFilterOpen: boolean | ((prev: boolean) => boolean)) => void;
 };
 
 const defaultProduct: Product = {
@@ -48,7 +50,9 @@ const defaultProductContextValue: ProductsContextType = {
     sortByFilter: "Relevent Products",
     setSortByFilter: () => { },
     priceFilter: "",
-    setPriceFilter: () => { }
+    setPriceFilter: () => { },
+    isFilterOpen: false,
+    setIsFilterOpen: () => { },
 };
 
 const SearchContext = createContext<ProductsContextType>(defaultProductContextValue);
@@ -61,6 +65,7 @@ function SearchStateProvider({ children, params }: ContextProviderProps) {
     const [subCategory, setSubCategory] = useState<string>("");
     const [priceFilter, setPriceFilter] = useState<string>("");
     const [sortByFilter, setSortByFilter] = useState<string>("Relevant products");
+    const [isFilterOpen, setIsFilterOpen] = useState<Boolean>(false);
 
     async function getSearchProducts(category: string, priceFilter: string) {
         try {
@@ -96,7 +101,7 @@ function SearchStateProvider({ children, params }: ContextProviderProps) {
         }
     }, [category]);
 
-    const value = { products, category, subCategories, subCategory, setSubCategory, priceFilter, setPriceFilter, sortByFilter, setSortByFilter };
+    const value = { products, category, subCategories, subCategory, setSubCategory, priceFilter, setPriceFilter, sortByFilter, setSortByFilter, isFilterOpen, setIsFilterOpen };
 
     return (
         <SearchContext.Provider value={value}>

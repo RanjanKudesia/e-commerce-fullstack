@@ -1,13 +1,5 @@
 import { SearchStateProvider } from "./context"
 
-
-
-
-
-
-
-
-
 export default function SearchLayout({
     children,
     params

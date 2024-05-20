@@ -8,9 +8,9 @@ export default function Search() {
 
     return (
         <Suspense fallback={<h1 className="w-full text-black font-bold">Loading...</h1>}>
-            <div className="h-full w-full pt-[60px] pb-[120px] flex flex-col gap-[52px] px-[120px]">
+            <div className="h-full w-full pt-[60px] pb-[120px] flex flex-col gap-[52px] px-5 md:px-[120px]">
                 <HeadSection />
-                <div className="flex gap-[32px] mt-[52px]">
+                <div className="flex gap-[32px]">
                     <FilterSection />
                     <ProductsSection />
                 </div>

@@ -9,6 +9,7 @@ import ReceiptLong from '@mui/icons-material/ReceiptLong';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 
 export default function ExampleCollapsibleList() {
+
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -16,7 +17,8 @@ export default function ExampleCollapsibleList() {
       sx={{
         width: 320,
         pl: '24px',
-        fontFamily: 'Jost, sans-serif',  // Apply Jost font to the entire Box
+        fontFamily: 'Jost, sans-serif',
+        fontWeight: 500,
       }}
     >
       <List
@@ -72,7 +74,7 @@ export default function ExampleCollapsibleList() {
               level="inherit"
               className=" text-black hover:font-bold"
               sx={{
-                fontWeight: open ? 'bold' : undefined,
+                fontWeight: open ? 'bold' : '500',
                 color: open ? 'text.primary' : 'inherit',
                 fontFamily: 'Jost, sans-serif',  // Apply Jost font to Typography
                 fontSize: '16px',
@@ -107,6 +109,7 @@ export default function ExampleCollapsibleList() {
           )}
         </ListItem>
       </List>
+
     </Box>
   );
 }

@@ -24,3 +24,4 @@ app.get("/product-category", async (c) => {
 });
 
 export default app;
+
