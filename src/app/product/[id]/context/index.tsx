@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
-import { Product, Review, RelatedProduct, ProductCategory } from "../interfaces";
+import { Product, Review, RelatedProduct, ProductCategory, ProductsCollection } from "../interfaces";
 
 
 interface ContextProviderProps {
@@ -40,10 +40,25 @@ const defaultProductContextValue: ProductContextType = {
   relatedProducts: null,
   productCategory: [],
 };
+const defaultProductsCollection: ProductsCollection = {
+  products: [],
+};
 
-const ProductContext = createContext<ProductContextType>(defaultProductContextValue);
+const ProductContext = createContext<ProductContextType>(
+  defaultProductContextValue
+);
+
+// const ProductContext = createContext<ProductsCollection>(
+//   defaultProductsCollection
+// );
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
+  const id = params.id;
+  // const { auth } = useGlobalState()
+
+  const [product, setProduct] = useState<Product>(defaultProduct);
+  const [productsCollection, setProductsCollection] =
+    useState<ProductsCollection>(defaultProductsCollection);
   const { id } = params;
 
   const [product, setProduct] = useState<Product | null>(null);

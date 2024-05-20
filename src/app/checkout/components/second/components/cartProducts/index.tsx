@@ -1,0 +1,116 @@
+"use client";
+import { useGlobalState } from "@/context";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import products from "./cartProducts";
+
+export default function CartProducts() {
+  const {
+    itemPrice,
+    discountedPrice,
+    setItemPrice,
+    setDiscountedPrice,
+    cart,
+    setCart,
+    addToCart,
+    removeFromCart,
+    updateCartItemQuantity,
+  } = useGlobalState();
+
+  return (
+    <div className="flex flex-col gap-[32px]">
+      <div className="flex flex-col w-[788px]  py-[32px] px-[24px] gap-[24px] rounded-[12px] outline-[#E4E9EE] outline outline-[1px] bg-white ">
+        <div className="flex gap-[8px]  ">
+          <Image src="/pngs/LOGITECH_LOGO.png" width={46} height={46} alt="" />
+          <div className="text-[14px] font-[400] leading-[22.4px]">
+            <span className="text-[16px] leading-[22.4px] tracking-[-0.2px] font-[600] ">
+              Logitech Indonesia
+            </span>{" "}
+            <br />
+            Central Jakarta
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-[24px] ">
+          {cart.map((product) => (
+            <div className="flex flex-col gap-[24px] ">
+              <div className="flex flex-row justify-between items-center ">
+                <div className="flex flex-row gap-[24px]  ">
+                  <div className="flex flex-row gap-[16px]">
+                    <div className="flex justify-center rounded-[8px] bg-[#F6F6F6] md:w-[80px] md:h-[80px] ">
+                      <Image
+                        className="object-contain "
+                        src={product.imageSrc}
+                        width={60}
+                        height={60}
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex flex-col gap-[8px]">
+                      <div className="text-[14px] font-[400] leading-[22.4px] ">
+                        <span className="text-[14px] font-[600] leading-[19.6px] tracking-[-0.2px] ">
+                          {product.name}
+                        </span>
+                        <br />
+                        Central Jakarta
+                      </div>
+                      <div className="text-[16px] leading-[22.4px] tracking-[-0.2px] font-[600] text-[#1D9E34] ">
+                        {product.price}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-row gap-[12px] items-center h-[32px]">
+                  <div className="flex flex-row p-[4px] rounded-[8px]">
+                    <Image
+                      onClick={() => {
+                        if (product.quantity > 1) {
+                          updateCartItemQuantity(
+                            product.id,
+                            product.quantity - 1
+                          );
+                        }
+                      }}
+                      className="cursor-pointer"
+                      src="/svgs/MINUS_LOGO.svg"
+                      width={24}
+                      height={24}
+                      alt=""
+                    />
+                    <div className="flex justify-center w-[24px]">
+                      {product.quantity}
+                    </div>
+                    <Image
+                      onClick={() => {
+                        updateCartItemQuantity(
+                          product.id,
+                          product.quantity + 1
+                        );
+                      }}
+                      className="cursor-pointer"
+                      src="/svgs/PLUS_LOGO.svg"
+                      width={24}
+                      height={24}
+                      alt=""
+                    />
+                  </div>
+                  <Image
+                    onClick={() => {
+                      removeFromCart(product.id);
+                    }}
+                    className="cursor-pointer"
+                    src="/svgs/DELETE_LOGO.svg"
+                    width={32}
+                    height={32}
+                    alt=""
+                  />
+                </div>
+              </div>
+              <hr />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
