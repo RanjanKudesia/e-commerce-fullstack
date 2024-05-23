@@ -10,7 +10,7 @@ export default function Fifth() {
           Lenny’s Article
         </div>
         <Link href="/articles">
-          <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-10 md:py-3 w-1/2 md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
+          <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-10 md:py-3 w-full md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
             View All
           </button>
         </Link>

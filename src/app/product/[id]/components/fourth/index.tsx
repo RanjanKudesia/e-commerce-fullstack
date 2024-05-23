@@ -58,9 +58,9 @@ export default function FourthSec() {
   };
 
   return (
-    <div className="px-3 my-20" id="reviews">
+    <div className="px-3 -mt-14 md:-mt-0 md:pt-10 my-10 md:my-20" id="reviews">
       <h3 className="font-semibold text-lg mb-5">Product Reviews</h3>
-      <div className="border rounded-lg p-5 md:p-10 flex flex-wrap md:flex-row">
+      <div className="border rounded-lg p-5 md:p-10 flex flex-wrap md:flex-row items-center">
         <div className="w-[50%] font-medium h-[10%] md:w-[10%]">
           <div className="w-[120px] h-[120px] bg-[#E4E9EE] rounded-full relative overflow-hidden">
             <div className="bg-[#FFA439] w-[120px] h-[120px] rounded-full absolute top-0 left-0 flex justify-center items-center">
