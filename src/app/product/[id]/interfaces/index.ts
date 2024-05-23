@@ -24,3 +24,32 @@ export interface Product {
 export interface ProductsCollection {
   products: Product[];
 }
+
+export interface Review{
+    id:string;
+    profilePicture:string;
+    rating:string;
+    review:string;
+}
+
+export interface RelatedProduct{
+    uniq_id: string;
+    product_rating: string;
+    description: string;
+    pid: string;
+    brand: string;
+    retail_price: string;
+    images: string[];
+    discounted_price: string;
+    category: string;
+    brand_rating: string;
+    subcategory: string;
+    product_name: string;
+
+}
+
+
+export interface ProductCategory{
+    parent:string;
+}
+

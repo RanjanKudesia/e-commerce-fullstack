@@ -22,7 +22,7 @@ app.get("/get-details/:id", async (c) => {
 
     if (!querySnapshot.empty) {
       const docSnap = querySnapshot.docs[0]; 
-      return c.json(docSnap.data());
+      return c.json(docSnap.data(), 200);
     } else {
       console.log("No such document!");
       return c.json({ error: "Document not found" }, 404);

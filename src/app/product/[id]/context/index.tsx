@@ -2,7 +2,8 @@
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
 import { useGlobalState } from "@/context";
-import { Product, ProductsCollection } from "../interfaces";
+import { Product, Review, RelatedProduct, ProductCategory,ProductsCollection } from "../interfaces";
+
 
 interface ContextProviderProps {
   children: React.ReactNode;
@@ -10,32 +11,35 @@ interface ContextProviderProps {
 }
 
 interface ProductContextType {
-  product: Product;
+  product: Product | null;
+  review: Review[]; // Assuming review is an array of Review objects
+  relatedProducts: RelatedProduct[] | null;
+  productCategory: ProductCategory | null;
 }
 
 const defaultProduct: Product = {
-  uniq_id: "",
-  product_rating: "",
-  description: "",
-  pid: "",
-  type: "",
-  brand: "",
-  retail_price: "",
+  uniq_id: '',
+  product_rating: '',
+  description: '',
+  pid: '',
+  type: '',
+  brand: '',
+  retail_price: '',
   is_FK_Advantage_product: false,
   images: [],
-  discounted_price: "",
-  category: "",
-  brand_rating: "",
-  subcategory: "",
+  discounted_price: '',
+  category: '',
+  brand_rating: '',
+  subcategory: '',
   product_specifications: [],
-  product_name: "",
+  product_name: '',
 };
 
 const defaultProductContextValue: ProductContextType = {
-  product: defaultProduct,
-};
-const defaultProductsCollection: ProductsCollection = {
-  products: [],
+  product: null,
+  review: [], // Initialize as empty array
+  relatedProducts: null,
+  productCategory: null,
 };
 
 const ProductContext = createContext<ProductContextType>(
@@ -47,12 +51,21 @@ const ProductContext = createContext<ProductContextType>(
 // );
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
-  const id = params.id;
+  // const id = params.id;
   // const { auth } = useGlobalState()
+  // const [productsCollection, setProductsCollection] =
+  //   useState<ProductsCollection>(defaultProductsCollection);
 
-  const [product, setProduct] = useState<Product>(defaultProduct);
-  const [productsCollection, setProductsCollection] =
-    useState<ProductsCollection>(defaultProductsCollection);
+  
+  const { id } = params;
+
+  const [product, setProduct] = useState<Product | null>(null);
+  const [review, setReview] = useState<Review[]>([]);
+  const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
+  const [productCategory, setProductCategory] = useState<ProductCategory | null>(null);
+  const [productRating, setProductRating] = useState(null);
+
+
 
   async function getProduct(uniq_id: string) {
     try {
@@ -67,14 +80,55 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
     }
   }
 
+
+  async function getReview() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-reviews?rating=${productRating}`
+      );
+      if (response.status === 200) {
+        setReview(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching reviews:", error.message);
+    }
+  }
+
+  async function getRelatedProduct(uniq_id: string) {
+    try {
+      const relatedProductResponse = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/related-product/${uniq_id}`);
+      setRelatedProducts(relatedProductResponse.data.relatedProducts);
+    } catch (error: any) {
+      console.error("Error fetching related products:", error.message);
+    }
+  }
+
+  async function getProductCategory() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category`
+      );
+      if (response.status === 200) {
+        setProductCategory(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching ProductCategory:", error.message);
+    }
+  }
+
   useEffect(() => {
     getProduct(id);
+    // getReview();
+    getRelatedProduct(id);
+    getProductCategory();
   }, [id]);
 
-  const value = { product };
+  const value = { product, review, relatedProducts, productCategory };
 
   return (
-    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={value}>
+      {children}
+    </ProductContext.Provider>
   );
 }
 

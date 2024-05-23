@@ -25,6 +25,8 @@ interface GlobalContextType {
   auth: AuthState;
   setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
   verifyToken: (token: string) => Promise<boolean>;
+  setProductRating: (rating: number | null) => void;
+
   itemPrice: string | null;
   discountedPrice: string | null;
   setItemPrice: (price: string | null) => void;
@@ -57,6 +59,7 @@ const defaultContextValue: GlobalContextType = {
   addToCart: () => {},
   removeFromCart: () => {},
   updateCartItemQuantity: () => {},
+  setProductRating: () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
@@ -81,6 +84,12 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
   }, [auth.token]);
+  // const [auth, setAuth] = useState<AuthState>({
+  //     user: null,
+  //     token: "",
+  // });
+  // const [authInitialized, setAuthInitialized] = useState<boolean>(false);
+  const [productRating, setProductRating] = useState<number | null>(null);
 
   const [screenSize, setScreenSize] = useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -188,21 +197,21 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
       return prevCart;
     });
   };
-  useEffect(() => {
-    if (cart.length === 0) {
-      products.map((product) => {
-        addToCart(
-          product.id,
-          product.name,
-          product.price,
-          product.discountedPrice,
-          product.imageSrc,
-          product.quantity
-        );
-      });
-    }
-    console.log(cart);
-  }, [cart]);
+  // useEffect(() => {
+  //   if (cart.length === 0) {
+  //     products.map((product) => {
+  //       addToCart(
+  //         product.id,
+  //         product.name,
+  //         product.price,
+  //         product.discountedPrice,
+  //         product.imageSrc,
+  //         product.quantity
+  //       );
+  //     });
+  //   }
+  //   console.log(cart);
+  // }, [cart]);
 
   const removeFromCart = (itemId: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
@@ -227,6 +236,8 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     discountedPrice,
     setItemPrice,
     setDiscountedPrice,
+    productRating,
+    setProductRating,
     cart,
     setCart,
     addToCart,

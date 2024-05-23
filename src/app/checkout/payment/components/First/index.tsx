@@ -6,7 +6,7 @@ export default function First() {
       <div className="absolute top-0 left-0 -z-10 min-w-full h-[333px] bg-[#F7F7F7]"></div>
       <div className="text-[16px]  font-[400] leading-[25.6px] tracking-[-0.2px] ">
         <span className="text-[24px] font-[600] leading-[33.6px]  ">
-          Shopping Chart
+          Checkout
         </span>
         <br />
         Showing your choices product

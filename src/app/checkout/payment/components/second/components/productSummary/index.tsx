@@ -1,7 +1,6 @@
 "use client";
 import { useGlobalState } from "@/context";
 import Image from "next/image";
-import products from "../cartProducts/cartProducts";
 import { useEffect } from "react";
 import Link from "next/link";
 
@@ -14,9 +13,9 @@ export default function ProductSummary() {
     let totalDiscountedPrice = 0;
 
     cart.map((product) => {
-      totalPrice += parseFloat(product.price) * product.quantity;
+      totalPrice += parseFloat(product.price.slice(1)) * product.quantity;
       totalDiscountedPrice +=
-        parseFloat(product.discountedPrice) * product.quantity;
+        parseFloat(product.discountedPrice.slice(1)) * product.quantity;
     });
 
     // Update item price and discounted price in the global state
@@ -93,7 +92,7 @@ export default function ProductSummary() {
         <Image src="/svgs/RIGHT_ARROW.svg" width={16} height={16} alt="" />
       </div>
       <Link
-        href="/checkout/payment"
+        href="/checkout/payment/confirmed"
         className="text-[16px] text-white font-[600] leading-[22.4px] tracking-[-0.2px] md:w-[332px] h-[48px] flex justify-center items-center bg-[#1E4C2F] rounded-[8px] cursor-pointer"
       >
         Checkout
