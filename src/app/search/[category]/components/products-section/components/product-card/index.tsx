@@ -16,14 +16,14 @@ function calculatePercentage(numerator: string, denominator: string): number {
     return result;
 }
 
-// Function to extract the first 3 words and add ellipsis if there are more words
 const getShortProductName = (name) => {
-    const words = name.split(' ');
-    if (words.length > 3) {
-        return words.slice(0, 3).join(' ') + '...';
+    const maxLength = 25; // Maximum number of characters allowed
+    if (name.length > maxLength) {
+        return name.slice(0, maxLength) + '...';
     }
-    return name; // Return the full name if it's 3 words or fewer
+    return name; // Return the full name if it's 25 characters or fewer
 };
+
 
 export default function ProductCard({ product }: { product: Product }) {
     // Safe way to calculate percentage and handle errors
@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: Product }) {
     const brandRating = parseFloat(product.brand_rating);
 
     return (
-        <div className="relative px-2 md:px-5 py-0 pt-8 pb-3 md:py-10 w-full h-fit flex flex-col gap-[10px] md:gap-[16px] rounded-[8px] border-2 border-[#E4E9EE] transition-transform duration-300 hover:transform hover:scale-105">
+        <div className="relative px-2 md:px-5 py-0 pt-8 pb-3 md:py-10 w-full md:w-[310px] h-fit flex flex-col gap-[10px] md:gap-[16px] rounded-[8px] border-2 border-[#E4E9EE] transition-transform duration-300 hover:transform hover:scale-105">
             <div className="bg-white rounded-md p-1 absolute top-2 right-2 md:top-4 md:right-4 text-xs md:text-sm text-gray-600 flex items-center">{product.brand_rating} <Image src="/assets/svgs/star.svg" alt="star" width={15} height={15} className="ml-1 w-[12px] h-[12px] md:w-[15px] md:h-[15px]" /></div>
 
             <div className="relative basis-1/2 w-full rounded-[8px] shadow-red-500 flex justify-center items-center">

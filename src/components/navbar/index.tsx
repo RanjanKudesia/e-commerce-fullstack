@@ -5,11 +5,11 @@ import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { usePathname } from 'next/navigation'
 import Submenu from "./components/submenu";
-import { useProductState } from "@/app/product/[id]/context";
+import { useGlobalState } from "@/context";
 
 
 export default function Navbar() {
-  const { productCategory } = useProductState();
+  const { productCategory } = useGlobalState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function Navbar() {
               <Link href="/">Home</Link>
             </li>
             <li
-              className={`hidden md:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
+              className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -69,138 +69,15 @@ export default function Navbar() {
               {/* Mega Menu */}
               {isMegaMenuOpen && (
                 <div className="megamenu flex font-medium justify-between align-top w-full p-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md xl:px-40">
-                  <div className="w-1/4 ">
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Men</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">T-Shirts</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Casual Shirts</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Formal Shirts</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Jackets</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Blazers & Coats</Link>
-                      </li>
-                    </ul>
 
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Indian & Festive Wear</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Kurtas & Kurta Sets</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Sherwanis</Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="w-1/4 pl-5">
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Women</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Kurtas & Suits</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Sarees</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Ethnic Wear</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Lehenga Cholis</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Jackets</Link>
-                      </li>
-                    </ul>
-
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Western Wear</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Dresses</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Jumpsuits</Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="w-1/4 pl-5">
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Footwear</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Flats</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Casual Shoes</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Heels</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Boots</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Sports Shoes & Floaters</Link>
-                      </li>
-                    </ul>
-
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Product Features</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">360 Product Viewer</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Product with Video</Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="w-1/4 pl-5">
-                    <ul>
-                      <h3 className="px-4 font-bold py-2">
-                        <Link href="">Kids</Link>
-                      </h3>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">T-Shirts</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Shirts</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Jeans</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Party Wear</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Innerwear & Thermal</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Track Pants</Link>
-                      </li>
-                      <li className="px-4 leading-8 hover:font-bold text-[#757575] hover:text-black">
-                        <Link href="">Value Pack</Link>
-                      </li>
-                    </ul>
+                  <div className="w-full flex flex-wrap">
+                    {productCategory?.map((category, categoryIndex) => (
+                      <div key={categoryIndex} className="w-1/4 pl-5">
+                        <li className="px-4 leading-8 font-medium hover:font-bold text-[#757575] hover:text-black">
+                          <Link href={`/search/${category?.category_name}`}>{category?.category_name}</Link>
+                        </li>
+                      </div>
+                    ))}
                   </div>
 
                 </div>
@@ -208,18 +85,7 @@ export default function Navbar() {
             </li>
             <li className="xl:hidden">
               <Submenu />
-              <div>
-                {productCategory?.map((category, index) => {
-                  if (category.category_level === 1) {
-                    return (
-                      <ul key={index}>
-                        <li>{category?.parent}</li>
-                      </ul>
-                    );
-                  }
-                })}
 
-              </div>
             </li>
             <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
               <Link href="">Our Stroy</Link>

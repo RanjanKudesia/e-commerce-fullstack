@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import { useProductState } from "../../context";
 import { FaChevronLeft } from "react-icons/fa";

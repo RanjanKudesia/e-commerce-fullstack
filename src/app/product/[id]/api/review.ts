@@ -4,7 +4,7 @@ import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 
 const app = new Hono();
 
-const PAGE_SIZE = 5; 
+const PAGE_SIZE = 20; 
 
 app.get('/product-reviews', async (c) => {
   const colRef = collection(db, 'reviews');
@@ -15,7 +15,7 @@ app.get('/product-reviews', async (c) => {
     let q;
     if (rating !== null && rating !== undefined) {
       // If rating is provided, filter reviews by rating and limit the number of documents
-      q = query(colRef, where('rating', '==', parseInt(rating, 5)), limit(PAGE_SIZE));
+      q = query(colRef, where('rating', '==', parseInt(rating, 6)), limit(PAGE_SIZE));
     }
      if(rating === '0'){
       // If no rating is provided, fetch all reviews with a limit on the number of documents

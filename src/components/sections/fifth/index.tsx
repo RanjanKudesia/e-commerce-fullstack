@@ -1,17 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
+import BlogCards from "./component/blogcards";
 
 export default function Fifth() {
   return (
-    <div className="flex flex-col gap-[52px] justify-center px-[24px] md:px-[120px] pb-[60px] md:pb-[120px] ">
+    <div className="flex flex-col gap-[52px] justify-center px-[24px] md:px-[160px] pb-[60px]">
       <div className="flex flex-row justify-between items-center w-full ">
         <div className="text-[18px] md:text-[38px] font-[600] leading-[25.2px] md:leading-[53.2px] tracking-[-0.2px] ">
           Lenny’s Article
         </div>
-        <div className="flex rounded-[8px] cursor-pointer px-[12px] py-[6px] md:w-[200px] justify-center items-center outline outline-[1px] outline-[#1E4C2F] text-[#1E4C2F] text-[18px] font-[600] tracking-[-0.2px] ">
-          View Detail
-        </div>
+        <Link href="/articles">
+          <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-10 md:py-3 w-1/2 md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
+            View All
+          </button>
+        </Link>
       </div>
-      <div className="flex flex-col md:flex-row justify-center  gap-[24px] ">
+      {/* <div className="flex flex-col md:flex-row justify-center  gap-[24px] ">
         <div className="flex flex-col gap-[16px]  ">
           <Image src="/pngs/ARTICLE1.png" width={384} height={280} alt="" />
           <div className="flex flex-col gap-[12px] md:w-[361px]">
@@ -60,7 +64,8 @@ export default function Fifth() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <BlogCards />
     </div>
   );
 }

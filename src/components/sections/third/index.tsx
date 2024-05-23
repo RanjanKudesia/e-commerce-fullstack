@@ -6,8 +6,8 @@ export default function Third() {
         <div className="text-[18px] md:text-[38px] font-[600] leading-[25.2px] md:leading-[53.2px] tracking-[-0.2px] ">
           Popular Product on Lenny
         </div>
-        <div className="text-[14px] text-center tracking-tight md:tracking-normal   md:text-[18px] font-[400] leading-[22.4px] md:leading-[28.8px] ">
-          Lorem ipsum dolor sit amet consectetur. Integer cursus cursus in
+        <div className="-mt-3 text-[14px] text-center tracking-tight md:tracking-normal   md:text-[18px] font-[400] leading-[22.4px] md:leading-[28.8px] ">
+          Discover Lenny's top-selling item, loved by many.
         </div>
       </div>
       <TProducts />

@@ -20,12 +20,17 @@ interface CartItem {
   quantity: number;
 }
 
+interface ProductCategory {
+  parent: string;
+  category_level: number;
+}
+
 interface GlobalContextType {
   screenSize: number;
   auth: AuthState;
   setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
   verifyToken: (token: string) => Promise<boolean>;
-  productRating: number; // Added this line
+  productRating: number;
   setProductRating: (rating: number) => void;
   itemPrice: string | null;
   discountedPrice: string | null;
@@ -38,6 +43,8 @@ interface GlobalContextType {
   addToCart: (item: CartItem) => void;
   removeFromCart: (itemId: number) => void;
   updateCartItemQuantity: (itemId: number, quantity: number) => void;
+  productCategory: ProductCategory[];
+
 }
 
 const defaultContextValue: GlobalContextType = {
@@ -61,6 +68,7 @@ const defaultContextValue: GlobalContextType = {
   updateCartItemQuantity: () => { },
   productRating: 0, // Default value for productRating
   setProductRating: () => { },
+  productCategory: [],
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
@@ -82,6 +90,9 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   const [itemPrice, setItemPrice] = useState<string | null>(null);
   const [discountedPrice, setDiscountedPrice] = useState<string | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [productCategory, setProductCategory] = useState<ProductCategory[]>([]);
+  const getScreenSize = window.innerWidth; // Get the current screen width
+
 
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
@@ -99,6 +110,20 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  async function getProductCategory() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category?screenSize=${getScreenSize}`
+      );
+      if (response.status === 200) {
+        console.log('Fetched Categories:', response.data); // Log the fetched data for debugging
+        setProductCategory(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching ProductCategory:", error.message);
+    }
+  }
 
   async function verifyToken(token: string): Promise<boolean> {
     try {
@@ -194,6 +219,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     });
   };
   useEffect(() => {
+    getProductCategory();
     if (cart.length === 0) {
       products.map((product) => {
         addToCart(
@@ -237,6 +263,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     addToCart,
     removeFromCart,
     updateCartItemQuantity,
+    productCategory,
   };
 
   return (

@@ -1,23 +1,21 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { useProductState } from "../../context";
+import axios from "axios";
 import { Review } from "../../interfaces";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function FourthSec() {
   const [productRating, setProductRating] = useState<number>(0);
-  const [reviews, setReviews] = useState<Review[]>([]); // State to store fetched reviews
-  const reviewsPerPage = 4; // Number of reviews to show per page
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const reviewsPerPage = 4;
   const [visibleReviews, setVisibleReviews] = useState(reviewsPerPage);
   const [isOpen, setIsOpen] = useState(true);
   const [maxHeight, setMaxHeight] = useState("0px");
 
   const loadMoreReviews = () => {
-    setVisibleReviews(
-      (prevVisibleReviews) => prevVisibleReviews + reviewsPerPage
-    );
+    setVisibleReviews((prevVisibleReviews) => prevVisibleReviews + reviewsPerPage);
   };
 
   const toggleOpen = () => {
@@ -40,31 +38,27 @@ export default function FourthSec() {
     },
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const params = productRating !== null ? { rating: productRating } : {};
-  //       const response = await axios.get(`/api/v1/product-reviews`, { params });
-  //       console.log("Fetched data:", response.data);
-  //       setReviews(response.data); // Set fetched reviews to state
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-  //   // fetchData();
-  // }, [productRating]);
+  //reviews
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // const params = productRating ? { rating: productRating } : {};
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-reviews?rating=${productRating}`);
+        setReviews(response.data);  // Set fetched reviews to state
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  // useEffect(() => {
-  //   setProductRating(0);
-  // }, []);
+    fetchData();
+  }, [productRating]);
 
   const handleCheckboxChange = (rating: number) => {
     setProductRating((prevRating) => (prevRating === rating ? 0 : rating));
-    console.log(productRating);
   };
 
   return (
-    <div className="px-3 mt-10" id="reviews">
+    <div className="px-3 my-20" id="reviews">
       <h3 className="font-semibold text-lg mb-5">Product Reviews</h3>
       <div className="border rounded-lg p-5 md:p-10 flex flex-wrap md:flex-row">
         <div className="w-[50%] font-medium h-[10%] md:w-[10%]">
@@ -186,8 +180,7 @@ export default function FourthSec() {
                 width="12"
                 height="12"
                 alt="up-arrow"
-                className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""
-                  }`}
+                className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
               />
             </div>
             <div
@@ -214,9 +207,9 @@ export default function FourthSec() {
                       alt="star"
                       width={15}
                       height={15}
-                      className="mr-1 -ml-1"
-                    />{" "}
-                    5
+                      className="mr-1"
+                    />
+                    5 Stars
                   </div>
                 }
               />
@@ -236,9 +229,9 @@ export default function FourthSec() {
                       alt="star"
                       width={15}
                       height={15}
-                      className="mr-1 -ml-1"
-                    />{" "}
-                    4
+                      className="mr-1"
+                    />
+                    4 Stars
                   </div>
                 }
               />
@@ -258,9 +251,9 @@ export default function FourthSec() {
                       alt="star"
                       width={15}
                       height={15}
-                      className="mr-1 -ml-1"
-                    />{" "}
-                    3
+                      className="mr-1"
+                    />
+                    3 Stars
                   </div>
                 }
               />
@@ -280,9 +273,9 @@ export default function FourthSec() {
                       alt="star"
                       width={15}
                       height={15}
-                      className="mr-1 -ml-1"
-                    />{" "}
-                    2
+                      className="mr-1"
+                    />
+                    2 Stars
                   </div>
                 }
               />
@@ -302,16 +295,15 @@ export default function FourthSec() {
                       alt="star"
                       width={15}
                       height={15}
-                      className="mr-1 -ml-1"
-                    />{" "}
-                    1
+                      className="mr-1"
+                    />
+                    1 Star
                   </div>
                 }
               />
             </div>
           </div>
         </div>
-
         <div className="w-full md:w-9/12 border rounded-lg p-5">
           <h3 className="font-semibold text-lg">Review Lists</h3>
           <hr className="mt-5" />
@@ -382,12 +374,11 @@ export default function FourthSec() {
             </div>
             {/* Pagination button */}
             {visibleReviews < reviews.length && (
-              <button onClick={loadMoreReviews}>Load More</button>
+              <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-1/2 md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300" onClick={loadMoreReviews}>Load More</button>
             )}
           </div>
         </div>
       </div>
-      <hr className="mt-16 mb-10" />
     </div>
   );
 }

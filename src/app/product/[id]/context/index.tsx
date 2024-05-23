@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
-import { Product, Review, RelatedProduct, ProductCategory, ProductsCollection } from "../interfaces";
-
+import { Product, Review, RelatedProduct, ProductsCollection } from "../interfaces";
 
 interface ContextProviderProps {
   children: React.ReactNode;
@@ -13,7 +12,6 @@ interface ProductContextType {
   product: Product | null;
   review: Review[]; // Assuming review is an array of Review objects
   relatedProducts: RelatedProduct[] | null;
-  productCategory: ProductCategory[];
 }
 
 const defaultProduct: Product = {
@@ -38,7 +36,6 @@ const defaultProductContextValue: ProductContextType = {
   product: null,
   review: [], // Initialize as empty array
   relatedProducts: null,
-  productCategory: [],
 };
 const defaultProductsCollection: ProductsCollection = {
   products: [],
@@ -56,16 +53,12 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   // const { auth } = useGlobalState()
 
   const [product, setProduct] = useState<Product>(defaultProduct);
-  const [productsCollection, setProductsCollection] =
-    useState<ProductsCollection>(defaultProductsCollection);
+  const [productsCollection, setProductsCollection] = useState<ProductsCollection>(defaultProductsCollection);
   const { id } = params;
 
   const [review, setReview] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
-  const [productCategory, setProductCategory] = useState(null);
-  const [productRating, setProductRating] = useState(null);
-
-
+  const [productRating, setProductRating] = useState<number>(0);
 
   async function getProduct(uniq_id: string) {
     try {
@@ -102,27 +95,13 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
     }
   }
 
-  async function getProductCategory() {
-    try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category`
-      );
-      if (response.status === 200) {
-        setProductCategory(response.data);
-      }
-    } catch (error: any) {
-      console.error("Error fetching ProductCategory:", error.message);
-    }
-  }
-
   useEffect(() => {
     getProduct(id);
-    // getReview();
+    getReview();
     getRelatedProduct(id);
-    getProductCategory();
   }, [id]);
 
-  const value = { product, review, relatedProducts, productCategory };
+  const value = { product, review, relatedProducts };
 
   return (
     <ProductContext.Provider value={value}>
