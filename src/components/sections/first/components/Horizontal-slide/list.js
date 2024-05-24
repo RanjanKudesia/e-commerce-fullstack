@@ -18,8 +18,8 @@ const data = [
     heading: "Elevate Your Style with Our Exclusive Collection",
     description:
       "Discover the latest trends and timeless classics. From chic everyday wear to elegant evening outfits, our premium quality pieces ensure perfect fits and unbeatable comfort. Step out with confidence and make a statement.",
-    imageURL: "/svgs/IMAGE2.svg",
-    prodImg: "/svgs/OVERSIZED_TSHIRT.svg",
+    imageURL: "/pngs/image2.jpg",
+    prodImg: "/pngs/p_img2.jpg",
     prodName: "Green Jacket V2",
     prodDescription: "Cimahi, Bandung",
     prodRating: "5,8",

@@ -4,7 +4,7 @@ import { useProductState } from "../../context";
 import Link from "next/link";
 
 export default function FifthSec() {
-    const { relatedProducts } = useProductState();
+    const { relatedProducts, product } = useProductState();
 
     // Function to extract the first 3 words and add ellipsis if there are more words
     const getShortProductName = (name) => {
@@ -20,7 +20,7 @@ export default function FifthSec() {
         <div id="relatedProduct">
             <div className="w-full flex justify-between items-center mb-10 md:mb-5 px-3">
                 <h3 className="font-semibold text-lg mb-0 md:mb-5">Related Product</h3>
-                <Link href="/">
+                <Link href={`/search/${product?.category}`}>
                     <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-full md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
                         View Detail
                     </button>
@@ -41,7 +41,7 @@ export default function FifthSec() {
                                 className="bg-white p-3 rounded-full absolute right-1 top-1 md:top-5 md:right-5 object-contain"
                             /> */}
                             <Image
-                                src={relatedProduct?.images[0] || "/assets/jpgs/dummy-image.jpg"}
+                                src={relatedProduct?.images[0] || "/assets/pngs/placeholder.png"}
                                 width={180}
                                 height={180}
                                 alt={relatedProduct?.product_name}
