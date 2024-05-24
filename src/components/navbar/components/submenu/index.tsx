@@ -7,16 +7,21 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import ReceiptLong from '@mui/icons-material/ReceiptLong';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import { useGlobalState } from "@/context";
+import Link from 'next/link';
 
 export default function ExampleCollapsibleList() {
+
   const [open, setOpen] = React.useState(false);
+  const { productCategory } = useGlobalState();
 
   return (
     <Box
       sx={{
         width: 320,
         pl: '24px',
-        fontFamily: 'Jost, sans-serif',  // Apply Jost font to the entire Box
+        fontFamily: 'Jost, sans-serif',
+        fontWeight: 500,
       }}
     >
       <List
@@ -72,7 +77,7 @@ export default function ExampleCollapsibleList() {
               level="inherit"
               className=" text-black hover:font-bold"
               sx={{
-                fontWeight: open ? 'bold' : undefined,
+                fontWeight: open ? 'bold' : '500',
                 color: open ? 'text.primary' : 'inherit',
                 fontFamily: 'Jost, sans-serif',  // Apply Jost font to Typography
                 fontSize: '16px',
@@ -83,30 +88,27 @@ export default function ExampleCollapsibleList() {
           </ListItem>
           {open && (
             <List sx={{ '--ListItem-paddingY': '2px', fontSize: '16px' }}>
-              <ListItem>
-                <ListItemButton className="px-4 py-2 xl:py-0 text-black hover:font-bold" sx={{ fontFamily: 'Jost, sans-serif' }}>
-                  Men
-                </ListItemButton>
-              </ListItem>
-              <ListItem>
-                <ListItemButton className="px-4 py-2 xl:py-0 text-black hover:font-bold" sx={{ fontFamily: 'Jost, sans-serif' }}>
-                  Women
-                </ListItemButton>
-              </ListItem>
-              <ListItem>
-                <ListItemButton className="px-4 py-2 xl:py-0 text-black hover:font-bold" sx={{ fontFamily: 'Jost, sans-serif' }}>
-                  Kid's
-                </ListItemButton>
-              </ListItem>
-              <ListItem>
-                <ListItemButton className="px-4 py-2 xl:py-0 text-black hover:font-bold" sx={{ fontFamily: 'Jost, sans-serif' }}>
-                  Home Decor
-                </ListItemButton>
-              </ListItem>
+              {productCategory?.map((category, categoryIndex) => (
+                <ListItem key={categoryIndex}>
+                  <ListItemButton className="text-sm px-4 py-2 xl:py-0 text-black hover:font-bold" sx={{ fontFamily: 'Jost, sans-serif' }}>
+                    <Link href={`/search/${category?.category_name}`}>{category?.category_name}</Link>
+                  </ListItemButton>
+                </ListItem>
+              ))}
+              {/* <div className="">
+                {productCategory?.map((category, categoryIndex) => (
+                  <div key={categoryIndex} className="w-1/4 pl-5">
+                    <li className="px-4 leading-8 font-medium hover:font-bold text-[#757575] hover:text-black">
+                      <Link href={`/search/${category?.category_name}`}>{category?.category_name}</Link>
+                    </li>
+                  </div>
+                ))}
+              </div> */}
             </List>
           )}
         </ListItem>
       </List>
+
     </Box>
   );
 }

@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { GlobalStateProvider } from "@/context";
-// const Jost = Jost({ subsets: ["latin"] });
+
 const jost = Jost({
   subsets: ["latin"],
   display: "swap",
@@ -24,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={jost.className}>
         <GlobalStateProvider>

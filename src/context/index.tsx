@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter, usePathname } from "next/navigation";
 import products from "@/app/checkout/components/second/components/cartProducts/cartProducts";
+import { Product } from "@/app/product/[id]/interfaces";
 
 interface AuthState {
   user: null | { [key: string]: any };
@@ -20,13 +21,18 @@ interface CartItem {
   quantity: number;
 }
 
+interface ProductCategory {
+  parent: string;
+  category_level: number;
+}
+
 interface GlobalContextType {
   screenSize: number;
   auth: AuthState;
   setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
   verifyToken: (token: string) => Promise<boolean>;
-  setProductRating: (rating: number | null) => void;
-
+  productRating: number;
+  setProductRating: (rating: number) => void;
   itemPrice: string | null;
   discountedPrice: string | null;
   setItemPrice: (price: string | null) => void;
@@ -38,6 +44,9 @@ interface GlobalContextType {
   addToCart: (item: CartItem) => void;
   removeFromCart: (itemId: number) => void;
   updateCartItemQuantity: (itemId: number, quantity: number) => void;
+  productCategory: ProductCategory[];
+  fetchedProducts: Product[];
+  fetchProducts: () => Promise<void>;
 }
 
 const defaultContextValue: GlobalContextType = {
@@ -59,7 +68,11 @@ const defaultContextValue: GlobalContextType = {
   addToCart: () => {},
   removeFromCart: () => {},
   updateCartItemQuantity: () => {},
+  productRating: 0, // Default value for productRating
   setProductRating: () => {},
+  productCategory: [],
+  fetchedProducts: [],
+  fetchProducts: async () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
@@ -77,9 +90,13 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     token: "",
   });
   const [authInitialized, setAuthInitialized] = useState<boolean>(false);
+  const [productRating, setProductRating] = useState<number>(0);
   const [itemPrice, setItemPrice] = useState<string | null>(null);
   const [discountedPrice, setDiscountedPrice] = useState<string | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [productCategory, setProductCategory] = useState<ProductCategory[]>([]);
+  const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
+  const getScreenSize = window.innerWidth; // Get the current screen width
 
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
@@ -89,7 +106,6 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   //     token: "",
   // });
   // const [authInitialized, setAuthInitialized] = useState<boolean>(false);
-  const [productRating, setProductRating] = useState<number | null>(null);
 
   const [screenSize, setScreenSize] = useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -103,6 +119,20 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  async function getProductCategory() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category?screenSize=${getScreenSize}`
+      );
+      if (response.status === 200) {
+        console.log("Fetched Categories:", response.data); // Log the fetched data for debugging
+        setProductCategory(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching ProductCategory:", error.message);
+    }
+  }
 
   async function verifyToken(token: string): Promise<boolean> {
     try {
@@ -141,6 +171,19 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
         "An error occurred while verifying the token. Please try again."
       );
       return false;
+    }
+  }
+
+  async function fetchProducts() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-products`
+      );
+      if (response.status === 200) {
+        setFetchedProducts(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching products:", error.message);
     }
   }
 
@@ -212,6 +255,10 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   //   }
   //   console.log(cart);
   // }, [cart]);
+  useEffect(() => {
+    getProductCategory();
+    fetchProducts();
+  }, []);
 
   const removeFromCart = (itemId: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
@@ -243,6 +290,9 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     addToCart,
     removeFromCart,
     updateCartItemQuantity,
+    productCategory,
+    fetchedProducts,
+    fetchProducts,
   };
 
   return (

@@ -13,9 +13,9 @@ export default function ProductSummary() {
     let totalDiscountedPrice = 0;
 
     cart.map((product) => {
-      totalPrice += parseFloat(product.price.slice(1)) * product.quantity;
+      totalPrice += parseFloat(product.price) * product.quantity;
       totalDiscountedPrice +=
-        parseFloat(product.discountedPrice.slice(1)) * product.quantity;
+        parseFloat(product.discountedPrice) * product.quantity;
     });
 
     // Update item price and discounted price in the global state
@@ -55,23 +55,25 @@ export default function ProductSummary() {
       <div className="flex flex-col gap-[8px]">
         <div className="flex flex-row justify-between ">
           <div>Total Price</div>
-          <div>{itemPrice === null ? "$0.00" : `$${itemPrice}`}</div>
+          <div>{itemPrice === null ? "Rs0.00" : `Rs${itemPrice}`}</div>
         </div>
         <div className="flex flex-row justify-between ">
           <div>Total Price (Discount)</div>
           <div>
-            {discountedPrice === null ? "$0.00" : `$${discountedPrice}`}
+            {discountedPrice === null ? "Rs0.00" : `Rs${discountedPrice}`}
           </div>
         </div>
         <div className="flex flex-row justify-between ">
           <div>Tax & Fee</div>
-          <div>{itemPrice === null ? "$0" : "$100"}</div>
+          <div>{itemPrice === null ? "Rs0" : "Rs100"}</div>
         </div>
       </div>
       <hr />
       <div className="flex flex-row justify-between ">
         <div>Total Price</div>
-        <div>{discountedPrice === null ? "$0.00" : `$${discountedPrice}`}</div>
+        <div>
+          {discountedPrice === null ? "Rs0.00" : `Rs${discountedPrice}`}
+        </div>
       </div>
       <div className="cursor-pointer md:w-[332px]  md:h-[88px] rounded-[12px] flex flex-row px-[16px] py-[19px] outline outline-[1px] outline-[#E4E9EE] justify-between">
         <div className="flex flex-row gap-[16px]">

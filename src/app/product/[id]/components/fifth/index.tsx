@@ -6,11 +6,11 @@ import Link from "next/link";
 export default function FifthSec() {
     const { relatedProducts } = useProductState();
 
-    // Function to extract the first 2 words and add ellipsis if there are more words
+    // Function to extract the first 3 words and add ellipsis if there are more words
     const getShortProductName = (name) => {
         const words = name.split(' ');
-        if (words.length > 2) {
-            return words.slice(0, 2).join(' ') + '...';
+        if (words.length > 3) {
+            return words.slice(0, 3).join(' ') + '...';
         }
         return name; // Return the full name if it's 3 words or fewer
     };
@@ -18,10 +18,10 @@ export default function FifthSec() {
 
     return (
         <div id="relatedProduct">
-            <div className="flex justify-between items-center mb-10 md:mb-5 px-3">
+            <div className="w-full flex justify-between items-center mb-10 md:mb-5 px-3">
                 <h3 className="font-semibold text-lg mb-0 md:mb-5">Related Product</h3>
                 <Link href="/">
-                    <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-1/2 md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
+                    <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-full md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
                         View Detail
                     </button>
                 </Link>

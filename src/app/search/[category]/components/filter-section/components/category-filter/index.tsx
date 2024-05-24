@@ -24,7 +24,8 @@ export default function CategoryFilter() {
     }, [isOpen]);
 
     const checkBoxStyling = {
-        color: '#1E4C2F',
+        color: '#E4E9EE',
+        fontFamily: 'Jost, sans-serif',
         '&.Mui-checked': {
             color: '#1E4C2F',
         },
@@ -58,7 +59,7 @@ export default function CategoryFilter() {
                                     sx={checkBoxStyling}
                                 />
                             }
-                            label={<div className='text-[#818B9C] text-[16px] font-[400]'>{category}</div>}
+                            label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>{category}</div>}
                         />
                     ))}
                 </FormGroup>

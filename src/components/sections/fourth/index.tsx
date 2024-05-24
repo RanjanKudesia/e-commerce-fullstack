@@ -17,8 +17,7 @@ export default function Fourth() {
               Ipad Air Gen 5
             </div>
             <div className="text-[14px] md:text-[18px] font-[400] leading-[22.4px] md:leading-[28.8px] ">
-              Lorem ipsum dolor sit amet consectetur. Integer cursus cursus in
-              sapien quam risus sed diam.
+              Explore Lenny's bestseller: iPad Air Gen 5. Join countless satisfied customers and discover why it's the ultimate choice in tablets!
             </div>
           </div>
 

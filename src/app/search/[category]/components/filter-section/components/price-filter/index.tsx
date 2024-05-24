@@ -24,7 +24,8 @@ export default function PriceFilter() {
     }, [isOpen]);
 
     const checkBoxStyling = {
-        color: '#1E4C2F',
+        color: '#E4E9EE',
+        fontFamily: 'Jost, sans-serif',
         '&.Mui-checked': {
             color: '#1E4C2F',
         },
@@ -54,7 +55,7 @@ export default function PriceFilter() {
                             onChange={() => handleChange("under50")}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>Under $50</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>Under $50</div>}
                     />
                     <FormControlLabel
                         control={<Checkbox
@@ -62,7 +63,7 @@ export default function PriceFilter() {
                             onChange={() => handleChange("50to100")}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>$50 to $100</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>$50 to $100</div>}
                     />
                     <FormControlLabel
                         control={<Checkbox
@@ -70,7 +71,7 @@ export default function PriceFilter() {
                             onChange={() => handleChange("100to200")}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>$100 to $200</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>$100 to $200</div>}
                     />
                     <FormControlLabel
                         control={<Checkbox
@@ -78,7 +79,7 @@ export default function PriceFilter() {
                             onChange={() => handleChange("above200")}
                             sx={checkBoxStyling}
                         />}
-                        label={<div className='text-[#818B9C] text-[16px] font-[400]'>Above $200</div>}
+                        label={<div className='text-[#818B9C] text-[14px] md:text-[16px] font-[400]'>Above $200</div>}
                     />
                 </FormGroup>
             </div>

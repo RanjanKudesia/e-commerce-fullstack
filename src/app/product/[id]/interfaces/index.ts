@@ -48,8 +48,3 @@ export interface RelatedProduct{
 
 }
 
-
-export interface ProductCategory{
-    parent:string;
-}
-
