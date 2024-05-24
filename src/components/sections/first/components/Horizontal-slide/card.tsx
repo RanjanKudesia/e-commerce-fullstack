@@ -61,7 +61,7 @@ export default function Card({
         </div>
       </div>
       <Image
-        className={`md:absolute right-[0px] bottom-[0px]`}
+        className={`md:absolute right-[0px] top-[0px] object-contain w-[826px] h-[620px]`}
         // className={`absolute right-[${imgPosRight}] bottom-[${imgPosBottom}]`}
         // src="/svgs/IMAGE1.svg"
         src={imageURL}
@@ -76,7 +76,7 @@ export default function Card({
       >
         <Image
           // right-54 and top + 43
-          className="absolute right-[50%] bottom-[35%] md:right-[457px] md:top-[125px] "
+          className="absolute right-[50%] bottom-[35%] md:right-[457px] md:top-[125px] object-contain"
           src="/svgs/WHITE_DOT.svg"
           width={42}
           height={42}
