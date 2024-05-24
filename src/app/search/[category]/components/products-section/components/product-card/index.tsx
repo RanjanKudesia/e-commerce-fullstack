@@ -51,7 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
                     <div className="bg-white rounded-md p-1 absolute top-2 right-2 md:top-4 md:right-4 text-xs md:text-sm text-gray-600 flex items-center">{product.brand_rating} <Image src="/assets/svgs/star.svg" alt="star" width={15} height={15} className="ml-1 w-[12px] h-[12px] md:w-[15px] md:h-[15px]" /></div>
 
                     <div className="relative basis-1/2 w-full rounded-[8px] shadow-red-500 flex justify-center items-center">
-                        <Image src={product.images[0]} alt='product-image'
+                        <Image src={product.images[0] || "/assets/pngs/placeholder.png"} alt='product-image'
                             width={100}
                             height={100}
                             className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]"

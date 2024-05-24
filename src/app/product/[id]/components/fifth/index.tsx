@@ -41,7 +41,7 @@ export default function FifthSec() {
                                 className="bg-white p-3 rounded-full absolute right-1 top-1 md:top-5 md:right-5 object-contain"
                             /> */}
                             <Image
-                                src={relatedProduct?.images[0] || "/assets/jpgs/dummy-image.jpg"}
+                                src={relatedProduct?.images[0] || "/assets/pngs/placeholder.png"}
                                 width={180}
                                 height={180}
                                 alt={relatedProduct?.product_name}
