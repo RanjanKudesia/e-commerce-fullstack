@@ -1,25 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type propsType = {
   prodImg: string;
   prodName: string;
   prodPrice: string;
   prodRating: string;
+  prodLink: string;
 };
 export default function ProductCard({
   prodImg,
   prodName,
   prodPrice,
   prodRating,
+  prodLink,
 }: propsType) {
   return (
-    <div className="flex flex-col md:w-[282px] rounded-[8px]  gap-[23px] md:gap-[16px]   h-auto bg-white">
+    <Link
+      href={`/product/${prodLink}`}
+      className="cursor-pointer flex flex-col md:w-[282px] rounded-[8px]  gap-[23px] md:gap-[16px]   h-auto bg-white"
+    >
       <div className=" md:h-[280px] rounded-[8px] rounded-tr-[8px] px-[32px] md:px-[51px] py-[20px] md:py-[50px] w-full justify-center items-center bg-[#ffffff] shadow-md ">
         <div className="flex  w-[90px] h-[90px] md:w-[180px] md:h-[180px]">
           <Image
             // src="/svgs/GREEN_JACKET_V2.svg"
             className="object-contain"
-            src={prodImg}
+            src={prodImg || `/pngs/PRODUCT_PLACEHOLDER.png`}
             width={180}
             height={180}
             alt=""
@@ -39,7 +45,7 @@ export default function ProductCard({
             </span>
           </div>
           <div className="text-[14px] md:text-[20px] font-[600] text-[#1D9E34] leading-[19.6px] md:leading-[28px] tracking-[-0.2px]  ">
-            {/* $26 */}${prodPrice}
+            {/* $26 */}Rs{prodPrice}
           </div>
         </div>
         <div className="flex flex-row gap-[4px]">
@@ -55,6 +61,6 @@ export default function ProductCard({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

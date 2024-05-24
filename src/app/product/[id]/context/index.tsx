@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
-import { Product, Review, RelatedProduct, ProductsCollection } from "../interfaces";
+import {
+  Product,
+  Review,
+  RelatedProduct,
+  ProductsCollection,
+} from "../interfaces";
 
 interface ContextProviderProps {
   children: React.ReactNode;
@@ -15,21 +20,21 @@ interface ProductContextType {
 }
 
 const defaultProduct: Product = {
-  uniq_id: '',
-  product_rating: '',
-  description: '',
-  pid: '',
-  type: '',
-  brand: '',
-  retail_price: '',
+  uniq_id: "",
+  product_rating: "",
+  description: "",
+  pid: "",
+  type: "",
+  brand: "",
+  retail_price: "",
   is_FK_Advantage_product: false,
   images: [],
-  discounted_price: '',
-  category: '',
-  brand_rating: '',
-  subcategory: '',
+  discounted_price: "",
+  category: "",
+  brand_rating: "",
+  subcategory: "",
   product_specifications: [],
-  product_name: '',
+  product_name: "",
 };
 
 const defaultProductContextValue: ProductContextType = {
@@ -53,11 +58,14 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   // const { auth } = useGlobalState()
 
   const [product, setProduct] = useState<Product>(defaultProduct);
-  const [productsCollection, setProductsCollection] = useState<ProductsCollection>(defaultProductsCollection);
+  const [productsCollection, setProductsCollection] =
+    useState<ProductsCollection>(defaultProductsCollection);
   const { id } = params;
 
   const [review, setReview] = useState<Review[]>([]);
-  const [relatedProducts, setRelatedProducts] = useState<RelatedProduct[] | null>(null);
+  const [relatedProducts, setRelatedProducts] = useState<
+    RelatedProduct[] | null
+  >(null);
   const [productRating, setProductRating] = useState<number>(0);
 
   async function getProduct(uniq_id: string) {
@@ -88,7 +96,9 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
 
   async function getRelatedProduct(uniq_id: string) {
     try {
-      const relatedProductResponse = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/related-product/${uniq_id}`);
+      const relatedProductResponse = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/related-product/${uniq_id}`
+      );
       setRelatedProducts(relatedProductResponse.data.relatedProducts);
     } catch (error: any) {
       console.error("Error fetching related products:", error.message);
@@ -104,9 +114,7 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
   const value = { product, review, relatedProducts };
 
   return (
-    <ProductContext.Provider value={value}>
-      {children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 }
 

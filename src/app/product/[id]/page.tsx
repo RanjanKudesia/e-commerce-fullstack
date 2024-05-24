@@ -5,7 +5,6 @@ import SecondSec from "./components/second";
 import FourthSec from "./components/fourth";
 import FifthSec from "./components/fifth";
 
-
 export default function Product() {
   return (
     <Suspense fallback={<h1 className="w-full text-center">Loading...</h1>}>
@@ -17,5 +16,5 @@ export default function Product() {
         <FifthSec />
       </div>
     </Suspense>
-  )
+  );
 }

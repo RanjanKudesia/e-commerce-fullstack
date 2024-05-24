@@ -17,13 +17,17 @@ export default function CartProducts() {
     updateCartItemQuantity,
   } = useGlobalState();
 
+  useEffect(() => {
+    console.log(cart);
+  });
+
   return (
     <div className="flex flex-col gap-[32px]">
-      <div className="flex flex-col w-[788px]  py-[32px] px-[24px] gap-[24px] rounded-[12px] outline-[#E4E9EE] outline outline-[1px] bg-white ">
+      <div className="flex flex-col md:w-[788px]  py-[32px] px-[24px] gap-[24px] rounded-[12px] outline-[#E4E9EE] outline outline-[1px] bg-white ">
         <div className="flex gap-[8px]  ">
           <Image src="/pngs/LOGITECH_LOGO.png" width={46} height={46} alt="" />
-          <div className="text-[14px] font-[400] leading-[22.4px]">
-            <span className="text-[16px] leading-[22.4px] tracking-[-0.2px] font-[600] ">
+          <div className="text-[10px] md:text-[14px] font-[400] leading-[16px] md:leading-[22.4px]">
+            <span className="text-[12px] md:text-[16px] leading-[16px] md:leading-[22.4px] tracking-[-0.2px] font-[600] ">
               Logitech Indonesia
             </span>{" "}
             <br />
@@ -34,8 +38,8 @@ export default function CartProducts() {
         <div className="flex flex-col gap-[24px] ">
           {cart.map((product) => (
             <div className="flex flex-col gap-[24px] ">
-              <div className="flex flex-row justify-between items-center ">
-                <div className="flex flex-row gap-[24px]  ">
+              <div className="flex flex-col md:flex-row gap-[16px] items-end md:justify-between  md:items-center ">
+                <div className="flex w-full flex-row gap-[24px]  ">
                   <div className="flex flex-row gap-[16px]">
                     <div className="flex justify-center rounded-[8px] bg-[#F6F6F6] md:w-[80px] md:h-[80px] ">
                       <Image
@@ -60,7 +64,7 @@ export default function CartProducts() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-row gap-[12px] items-center h-[32px]">
+                <div className="flex flex-row gap-[12px] items-end h-[32px]">
                   <div className="flex flex-row p-[4px] rounded-[8px]">
                     <Image
                       onClick={() => {

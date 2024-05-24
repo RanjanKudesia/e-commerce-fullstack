@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter, usePathname } from "next/navigation";
 import products from "@/app/checkout/components/second/components/cartProducts/cartProducts";
+import { Product } from "@/app/product/[id]/interfaces";
 
 interface AuthState {
   user: null | { [key: string]: any };
@@ -44,7 +45,8 @@ interface GlobalContextType {
   removeFromCart: (itemId: number) => void;
   updateCartItemQuantity: (itemId: number, quantity: number) => void;
   productCategory: ProductCategory[];
-
+  fetchedProducts: Product[];
+  fetchProducts: () => Promise<void>;
 }
 
 const defaultContextValue: GlobalContextType = {
@@ -53,22 +55,24 @@ const defaultContextValue: GlobalContextType = {
     user: null,
     token: "",
   },
-  setAuth: () => { },
+  setAuth: () => {},
   verifyToken: async () => false,
   itemPrice: "0",
   discountedPrice: "0",
-  setItemPrice: () => { },
-  setDiscountedPrice: () => { },
+  setItemPrice: () => {},
+  setDiscountedPrice: () => {},
   selectedProducts: [],
-  setSelectedProducts: () => { },
+  setSelectedProducts: () => {},
   cart: [],
-  setCart: () => { },
-  addToCart: () => { },
-  removeFromCart: () => { },
-  updateCartItemQuantity: () => { },
+  setCart: () => {},
+  addToCart: () => {},
+  removeFromCart: () => {},
+  updateCartItemQuantity: () => {},
   productRating: 0, // Default value for productRating
-  setProductRating: () => { },
+  setProductRating: () => {},
   productCategory: [],
+  fetchedProducts: [],
+  fetchProducts: async () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
@@ -91,12 +95,17 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   const [discountedPrice, setDiscountedPrice] = useState<string | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [productCategory, setProductCategory] = useState<ProductCategory[]>([]);
+  const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
   const getScreenSize = window.innerWidth; // Get the current screen width
-
 
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
   }, [auth.token]);
+  // const [auth, setAuth] = useState<AuthState>({
+  //     user: null,
+  //     token: "",
+  // });
+  // const [authInitialized, setAuthInitialized] = useState<boolean>(false);
 
   const [screenSize, setScreenSize] = useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -117,7 +126,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
         `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category?screenSize=${getScreenSize}`
       );
       if (response.status === 200) {
-        console.log('Fetched Categories:', response.data); // Log the fetched data for debugging
+        console.log("Fetched Categories:", response.data); // Log the fetched data for debugging
         setProductCategory(response.data);
       }
     } catch (error: any) {
@@ -162,6 +171,19 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
         "An error occurred while verifying the token. Please try again."
       );
       return false;
+    }
+  }
+
+  async function fetchProducts() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-products`
+      );
+      if (response.status === 200) {
+        setFetchedProducts(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching products:", error.message);
     }
   }
 
@@ -218,22 +240,25 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
       return prevCart;
     });
   };
+  // useEffect(() => {
+  //   if (cart.length === 0) {
+  //     products.map((product) => {
+  //       addToCart(
+  //         product.id,
+  //         product.name,
+  //         product.price,
+  //         product.discountedPrice,
+  //         product.imageSrc,
+  //         product.quantity
+  //       );
+  //     });
+  //   }
+  //   console.log(cart);
+  // }, [cart]);
   useEffect(() => {
     getProductCategory();
-    if (cart.length === 0) {
-      products.map((product) => {
-        addToCart(
-          product.id,
-          product.name,
-          product.price,
-          product.discountedPrice,
-          product.imageSrc,
-          product.quantity
-        );
-      });
-    }
-    console.log(cart);
-  }, [cart]);
+    fetchProducts();
+  }, []);
 
   const removeFromCart = (itemId: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
@@ -258,12 +283,16 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     discountedPrice,
     setItemPrice,
     setDiscountedPrice,
+    productRating,
+    setProductRating,
     cart,
     setCart,
     addToCart,
     removeFromCart,
     updateCartItemQuantity,
     productCategory,
+    fetchedProducts,
+    fetchProducts,
   };
 
   return (

@@ -3,10 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 import Submenu from "./components/submenu";
 import { useGlobalState } from "@/context";
-
 
 export default function Navbar() {
   const { productCategory } = useGlobalState();
@@ -16,9 +15,9 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    const navList = document.querySelector('.navList');
+    const navList = document.querySelector(".navList");
     if (navList) {
-      navList.classList.toggle('hidden');
+      navList.classList.toggle("hidden");
     }
   };
 
@@ -32,27 +31,38 @@ export default function Navbar() {
     setIsMegaMenuOpen(false);
   };
 
-
   return (
     <div className="text-black sticky top-0 z-50">
       <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-40">
         <div className="w-1/4 xl:w-1/6 ">
-          <Link href="/"><Image
-            src="/assets/svgs/Logo.svg"
-            alt="Logo"
-            width={300}
-            height={300}
-            className="mx-2 w-full sm:w-1/2"
-          /></Link>
+          <Link href="/">
+            <Image
+              src="/assets/svgs/Logo.svg"
+              alt="Logo"
+              width={300}
+              height={300}
+              className="mx-2 w-full sm:w-1/2"
+            />
+          </Link>
         </div>
 
         <div className="navList hidden font-medium transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
-            <li className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === '/' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li
+              className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${
+                pathname === "/"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
+            >
               <Link href="/">Home</Link>
             </li>
             <li
-              className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/shop' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}
+              className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/shop"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -69,44 +79,63 @@ export default function Navbar() {
               {/* Mega Menu */}
               {isMegaMenuOpen && (
                 <div className="megamenu flex font-medium justify-between align-top w-full p-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md xl:px-40">
-
                   <div className="w-full flex flex-wrap">
                     {productCategory?.map((category, categoryIndex) => (
                       <div key={categoryIndex} className="w-1/4 pl-5">
                         <li className="px-4 leading-8 font-medium hover:font-bold text-[#757575] hover:text-black">
-                          <Link href={`/search/${category?.category_name}`}>{category?.category_name}</Link>
+                          <Link href={`/search/${category?.category_name}`}>
+                            {category?.category_name}
+                          </Link>
                         </li>
                       </div>
                     ))}
                   </div>
-
                 </div>
               )}
             </li>
             <li className="xl:hidden">
               <Submenu />
-
             </li>
-            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/our-story' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/our-story"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
+            >
               <Link href="">Our Stroy</Link>
             </li>
-            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/articles' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/articles"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
+            >
               <Link href="/articles">Blogs</Link>
             </li>
-            <li className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === '/contact-us' ? 'active' : 'font-medium px-4 hover:font-bold py-2 xl:py-0 text-black'}`}>
+            <li
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/contact-us"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
+            >
               <Link href="">Contact Us</Link>
             </li>
           </ul>
         </div>
 
         <div className="flex justify-end items-center w-1/3 xl:w-1/5">
-          <Image
-            src="/assets/svgs/shopping-cart.svg"
-            alt="Logo"
-            width={20}
-            height={20}
-            className="mx-2 xl:w-[25px] xl:mx-4 cursor-pointer"
-          />
+          <Link href="/checkout">
+            <Image
+              src="/assets/svgs/shopping-cart.svg"
+              alt="Logo"
+              width={20}
+              height={20}
+              className="mx-2 xl:w-[25px] xl:mx-4 cursor-pointer"
+            />
+          </Link>
 
           <Image
             src="/assets/svgs/user_profile.svg"

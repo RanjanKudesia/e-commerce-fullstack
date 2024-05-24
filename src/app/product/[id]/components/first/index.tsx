@@ -5,8 +5,10 @@ import React, { Children, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import { useProductState } from "../../context";
 import { FaChevronLeft } from "react-icons/fa";
+import { useGlobalState } from "@/context";
 
 export default function FirstSec() {
+  const { cart, addToCart } = useGlobalState();
   const { product } = useProductState();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -18,7 +20,7 @@ export default function FirstSec() {
 
   // Function to extract the first 50 words from the description
   const getShortDescription = (description) => {
-    return description.split(' ').slice(0, 50).join(' ') + '...';
+    return description.split(" ").slice(0, 50).join(" ") + "...";
   };
 
   const handlePrevious = () => {
@@ -130,18 +132,24 @@ export default function FirstSec() {
             {isExpanded || !product?.description
               ? product?.description
               : getShortDescription(product.description)}
-            {product?.description && product.description.split(' ').length > 50 && (
-              <button onClick={toggleExpanded} className="text-[#1D9E34] ml-2">
-                {isExpanded ? 'Read less' : 'Read more'}
-              </button>
-            )}
+            {product?.description &&
+              product.description.split(" ").length > 50 && (
+                <button
+                  onClick={toggleExpanded}
+                  className="text-[#1D9E34] ml-2"
+                >
+                  {isExpanded ? "Read less" : "Read more"}
+                </button>
+              )}
           </p>
           <hr className="my-4" />
           <h4 className="text-lg font-semibold mb-3">Product Variant:</h4>
           <div>
             <div className="w-full md:w-9/12 flex justify-between items-start">
               <div className="w-1/2 mr-2">
-                <p className="mb-2"><span className="font-semibold">Type:</span> {product?.type}</p>
+                <p className="mb-2">
+                  <span className="font-semibold">Type:</span> {product?.type}
+                </p>
                 {/* 
                 <div className="relative">
                   <select className="w-full appearance-none bg-white border border-gray-200 px-4 py-2 pr-8 rounded leading-tight focus:outline-none">
@@ -186,7 +194,21 @@ export default function FirstSec() {
             <button className="bg-[#1E4C2F] text-white py-4 px-3 w-full md:w-1/2 md:mr-2 mb-4 md:mb-0 rounded-md font-semibold border-2 border-[#1E4C2F] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300">
               Buy Now
             </button>
-            <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] w-full md:w-1/2 md:ml-2 py-4 px-3 rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white hover:fill-white transition-all ease-in-out duration-300">
+            <button
+              onClick={() => {
+                addToCart(
+                  product?.uniq_id,
+                  product?.product_name,
+                  product?.retail_price,
+                  product?.discounted_price,
+                  product?.images[0],
+                  1
+                );
+                console.log("added to cart");
+                console.log(cart)
+              }}
+              className="text-[#1E4C2F] border-2 border-[#1E4C2F] w-full md:w-1/2 md:ml-2 py-4 px-3 rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white hover:fill-white transition-all ease-in-out duration-300"
+            >
               <div className="flex">
                 <Image
                   src="/assets/svgs/cart.svg"
