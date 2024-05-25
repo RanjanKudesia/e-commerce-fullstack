@@ -1,15 +1,27 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import { useProductState } from "../../context";
 import { FaChevronLeft } from "react-icons/fa";
+import { useGlobalState } from "@/context";
 
 export default function FirstSec() {
+  const { cart, addToCart } = useGlobalState();
   const { product } = useProductState();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  // Function to extract the first 50 words from the description
+  const getShortDescription = (description) => {
+    return description.split(" ").slice(0, 50).join(" ") + "...";
+  };
 
   const handlePrevious = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -37,11 +49,11 @@ export default function FirstSec() {
           <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="">{product?.category}</Link>
           </li>
-          <FaAngleRight className="min-w-fit"/>
+          <FaAngleRight className="min-w-fit" />
           <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="">{product?.subcategory}</Link>
           </li>
-          <FaAngleRight className="min-w-fit"/>
+          <FaAngleRight className="min-w-fit" />
           <li className="px-3 text-black font-medium min-w-fit">
             <Link href="">{product?.product_name}</Link>
           </li>
@@ -75,7 +87,7 @@ export default function FirstSec() {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="overflow-x-scroll md:overflow-auto flex justify-between items-center pb-5">
+            <div className="overflow-x-scroll md:overflow-auto flex justify-start items-center pb-5">
               {product?.images.map((imageUrl, index) => (
                 <div
                   key={index}
@@ -116,20 +128,34 @@ export default function FirstSec() {
               {product?.retail_price}
             </h4>
           </div>
-          <p>{product?.description}</p>
+          <p>
+            {isExpanded || !product?.description
+              ? product?.description
+              : getShortDescription(product.description)}
+            {product?.description &&
+              product.description.split(" ").length > 50 && (
+                <button
+                  onClick={toggleExpanded}
+                  className="text-[#1D9E34] ml-2"
+                >
+                  {isExpanded ? "Read less" : "Read more"}
+                </button>
+              )}
+          </p>
           <hr className="my-4" />
           <h4 className="text-lg font-semibold mb-3">Product Variant:</h4>
           <div>
             <div className="w-full md:w-9/12 flex justify-between items-start">
               <div className="w-1/2 mr-2">
-                <p className="mb-2">Type</p>
+                <p className="mb-2">
+                  <span className="font-semibold">Type:</span> {product?.type}
+                </p>
+                {/* 
                 <div className="relative">
                   <select className="w-full appearance-none bg-white border border-gray-200 px-4 py-2 pr-8 rounded leading-tight focus:outline-none">
                     <option className="focus:bg-[#1E4C2F]">
                       {product?.type}
                     </option>
-                    {/* <option>Option 2</option>
-                    <option>Option 3</option> */}
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg
@@ -140,9 +166,9 @@ export default function FirstSec() {
                       <path d="M10 12l-6-6 1.5-1.5L10 9l4.5-4.5L16 6l-6 6z" />
                     </svg>
                   </div>
-                </div>
+                </div> */}
               </div>
-              <div className="w-1/2 ml-2">
+              {/* <div className="w-1/2 ml-2">
                 <p className="mb-2">Color</p>
                 <div className="relative">
                   <select className="w-full appearance-none bg-white border border-gray-200 px-4 py-2 pr-8 rounded leading-tight focus:outline-none">
@@ -160,7 +186,7 @@ export default function FirstSec() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -168,7 +194,21 @@ export default function FirstSec() {
             <button className="bg-[#1E4C2F] text-white py-4 px-3 w-full md:w-1/2 md:mr-2 mb-4 md:mb-0 rounded-md font-semibold border-2 border-[#1E4C2F] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300">
               Buy Now
             </button>
-            <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] w-full md:w-1/2 md:ml-2 py-4 px-3 rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white hover:fill-white transition-all ease-in-out duration-300">
+            <button
+              onClick={() => {
+                addToCart(
+                  product?.uniq_id,
+                  product?.product_name,
+                  product?.retail_price,
+                  product?.discounted_price,
+                  product?.images[0],
+                  1
+                );
+                console.log("added to cart");
+                console.log(cart)
+              }}
+              className="text-[#1E4C2F] border-2 border-[#1E4C2F] w-full md:w-1/2 md:ml-2 py-4 px-3 rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white hover:fill-white transition-all ease-in-out duration-300"
+            >
               <div className="flex">
                 <Image
                   src="/assets/svgs/cart.svg"

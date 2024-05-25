@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
-import { useGlobalState } from "@/context";
-import { Product } from "../interfaces";
+import {
+  Product,
+  Review,
+  RelatedProduct,
+  ProductsCollection,
+} from "../interfaces";
 
 interface ContextProviderProps {
   children: React.ReactNode;
@@ -10,44 +14,59 @@ interface ContextProviderProps {
 }
 
 interface ProductContextType {
-    product: Product;
+  product: Product | null;
+  review: Review[]; // Assuming review is an array of Review objects
+  relatedProducts: RelatedProduct[] | null;
 }
 
 const defaultProduct: Product = {
-    uniq_id: '',
-    product_rating: '',
-    description: '',
-    pid: '',
-    type: '',
-    brand: '',
-    retail_price: '',
-    is_FK_Advantage_product: false,
-    images: [],
-    discounted_price: '',
-    category: '',
-    brand_rating: '',
-    subcategory: '',
-    product_specifications: [],
-    product_name: '',
+  uniq_id: "",
+  product_rating: "",
+  description: "",
+  pid: "",
+  type: "",
+  brand: "",
+  retail_price: "",
+  is_FK_Advantage_product: false,
+  images: [],
+  discounted_price: "",
+  category: "",
+  brand_rating: "",
+  subcategory: "",
+  product_specifications: [],
+  product_name: "",
 };
 
 const defaultProductContextValue: ProductContextType = {
-    product: defaultProduct,
+  product: null,
+  review: [], // Initialize as empty array
+  relatedProducts: null,
+};
+const defaultProductsCollection: ProductsCollection = {
+  products: [],
 };
 
-const ProductContext = createContext<ProductContextType>(defaultProductContextValue);
+const ProductContext = createContext<ProductContextType>(
+  defaultProductContextValue
+);
+
+// const ProductContext = createContext<ProductsCollection>(
+//   defaultProductsCollection
+// );
 
 function ProductStateProvider({ children, params }: ContextProviderProps) {
-  console.log(params);
-  const id = params.id;
-
   // const { auth } = useGlobalState()
 
-  // useEffect(() => {
-  //     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
-  // }, [auth.token]);
+  const [product, setProduct] = useState<Product>(defaultProduct);
+  const [productsCollection, setProductsCollection] =
+    useState<ProductsCollection>(defaultProductsCollection);
+  const { id } = params;
 
-  const [product, setProduct] = useState<Product | null>(null);
+  const [review, setReview] = useState<Review[]>([]);
+  const [relatedProducts, setRelatedProducts] = useState<
+    RelatedProduct[] | null
+  >(null);
+  const [productRating, setProductRating] = useState<number>(0);
 
   async function getProduct(uniq_id: string) {
     try {
@@ -55,21 +74,44 @@ function ProductStateProvider({ children, params }: ContextProviderProps) {
         `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product/get-details/${uniq_id}`
       );
       if (response.status === 200) {
-        // console.log(response.data);
         setProduct(response.data);
       }
     } catch (error: any) {
-      console.error("Error", error.message);
+      console.error("Error fetching product:", error.message);
+    }
+  }
+
+  async function getReview() {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-reviews?rating=${productRating}`
+      );
+      if (response.status === 200) {
+        setReview(response.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching reviews:", error.message);
+    }
+  }
+
+  async function getRelatedProduct(uniq_id: string) {
+    try {
+      const relatedProductResponse = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/related-product/${uniq_id}`
+      );
+      setRelatedProducts(relatedProductResponse.data.relatedProducts);
+    } catch (error: any) {
+      console.error("Error fetching related products:", error.message);
     }
   }
 
   useEffect(() => {
-    // if (auth) {
     getProduct(id);
-    // };
+    getReview();
+    getRelatedProduct(id);
   }, [id]);
 
-  const value = { product };
+  const value = { product, review, relatedProducts };
 
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
