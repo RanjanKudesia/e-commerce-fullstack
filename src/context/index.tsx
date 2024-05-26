@@ -13,7 +13,7 @@ interface AuthState {
   token: string;
 }
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: string;
   discountedPrice: string;
@@ -37,11 +37,11 @@ interface GlobalContextType {
   discountedPrice: string | null;
   setItemPrice: (price: string | null) => void;
   setDiscountedPrice: (price: string | null) => void;
-  selectedProducts: number[];
-  setSelectedProducts: React.Dispatch<React.SetStateAction<number[]>>;
+  // selectedProducts: number[];
+  // setSelectedProducts: React.Dispatch<React.SetStateAction<number[]>>;
   cart: CartItem[];
   setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
-  addToCart: (item: CartItem) => void;
+  addToCart: (item: Product) => void;
   removeFromCart: (itemId: number) => void;
   updateCartItemQuantity: (itemId: number, quantity: number) => void;
   productCategory: ProductCategory[];
@@ -61,8 +61,8 @@ const defaultContextValue: GlobalContextType = {
   discountedPrice: "0",
   setItemPrice: () => {},
   setDiscountedPrice: () => {},
-  selectedProducts: [],
-  setSelectedProducts: () => {},
+  // selectedProducts: [],
+  // setSelectedProducts: () => {},
   cart: [],
   setCart: () => {},
   addToCart: () => {},
@@ -216,27 +216,27 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   //     }
   // }, [auth.user, auth.token, authInitialized, pathname]);
 
-  const addToCart = (
-    id: number,
-    name: string,
-    price: string,
-    discountedPrice: string,
-    imageSrc: string,
-    quantity: number
-  ) => {
+  const addToCart: any = (product: Product) => {
+    const {
+      uniq_id: id,
+      product_name: name,
+      retail_price: price,
+      discounted_price: discountedPrice,
+      images,
+    } = product;
+    const imageSrc = images.length > 0 ? images[0] : "";
+    const quantity = 1;
+
     setCart((prevCart) => {
-      // Check if the product is already in the cart
       const existingProduct = prevCart.find((item) => item.id === id);
 
       if (!existingProduct) {
-        // If the product is not already in the cart, add it
         return [
           ...prevCart,
           { id, name, price, discountedPrice, imageSrc, quantity },
         ];
       }
 
-      // If the product is already in the cart, don't update its quantity
       return prevCart;
     });
   };
@@ -260,11 +260,11 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
     fetchProducts();
   }, []);
 
-  const removeFromCart = (itemId: number) => {
+  const removeFromCart: any = (itemId: string) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
   };
 
-  const updateCartItemQuantity = (itemId: number, quantity: number) => {
+  const updateCartItemQuantity: any = (itemId: string, quantity: number) => {
     const updatedCart = cart.map((item) => {
       if (item.id === itemId) {
         return { ...item, quantity };
