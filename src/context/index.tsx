@@ -24,6 +24,7 @@ interface CartItem {
 interface ProductCategory {
   parent: string;
   category_level: number;
+  category_name: string;
 }
 
 interface GlobalContextType {
@@ -55,24 +56,24 @@ const defaultContextValue: GlobalContextType = {
     user: null,
     token: "",
   },
-  setAuth: () => {},
+  setAuth: () => { },
   verifyToken: async () => false,
   itemPrice: "0",
   discountedPrice: "0",
-  setItemPrice: () => {},
-  setDiscountedPrice: () => {},
+  setItemPrice: () => { },
+  setDiscountedPrice: () => { },
   selectedProducts: [],
-  setSelectedProducts: () => {},
+  setSelectedProducts: () => { },
   cart: [],
-  setCart: () => {},
-  addToCart: () => {},
-  removeFromCart: () => {},
-  updateCartItemQuantity: () => {},
+  setCart: () => { },
+  addToCart: () => { },
+  removeFromCart: () => { },
+  updateCartItemQuantity: () => { },
   productRating: 0, // Default value for productRating
-  setProductRating: () => {},
+  setProductRating: () => { },
   productCategory: [],
   fetchedProducts: [],
-  fetchProducts: async () => {},
+  fetchProducts: async () => { },
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultContextValue);
@@ -96,7 +97,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [productCategory, setProductCategory] = useState<ProductCategory[]>([]);
   const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
-  const getScreenSize = window.innerWidth; // Get the current screen width
+  // const getScreenSize = window.innerWidth; // Get the current screen width
 
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${auth?.token}`;
@@ -123,7 +124,8 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
   async function getProductCategory() {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category?screenSize=${getScreenSize}`
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category`
+        // `${process.env.NEXT_PUBLIC_SERVER_API}/api/v1/product-category?screenSize=${screenSize}`
       );
       if (response.status === 200) {
         console.log("Fetched Categories:", response.data); // Log the fetched data for debugging

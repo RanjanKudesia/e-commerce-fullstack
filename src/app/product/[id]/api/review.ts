@@ -8,15 +8,16 @@ const PAGE_SIZE = 20;
 
 app.get('/product-reviews', async (c) => {
   const colRef = collection(db, 'reviews');
-  const rating = c.req.query('rating'); // Get the rating from the query parameters
-  let querySnapshot;
+  const rating = c.req.query('rating') || '0'; // Get the rating from the query parameters
+  let querySnapshot ;
 
   try {
-    let q;
-    if (rating !== null && rating !== undefined) {
-      // If rating is provided, filter reviews by rating and limit the number of documents
-      q = query(colRef, where('rating', '==', parseInt(rating, 6)), limit(PAGE_SIZE));
-    }
+    // let q ;
+    let q = query(colRef, where('rating', '==', parseInt(rating, 6)), limit(PAGE_SIZE));
+
+    // if (rating !== null && rating !== undefined) {
+    //   // If rating is provided, filter reviews by rating and limit the number of documents
+    // }
      if(rating === '0'){
       // If no rating is provided, fetch all reviews with a limit on the number of documents
       q = query(colRef, limit(PAGE_SIZE));

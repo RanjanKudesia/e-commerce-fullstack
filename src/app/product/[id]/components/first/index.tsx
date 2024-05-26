@@ -19,7 +19,7 @@ export default function FirstSec() {
   };
 
   // Function to extract the first 50 words from the description
-  const getShortDescription = (description) => {
+  const getShortDescription = (description: string) => {
     return description.split(" ").slice(0, 50).join(" ") + "...";
   };
 
@@ -35,7 +35,7 @@ export default function FirstSec() {
     );
   };
 
-  const handleThumbnailClick = (index) => {
+  const handleThumbnailClick = (index: any) => {
     setCurrentImageIndex(index);
   };
   return (

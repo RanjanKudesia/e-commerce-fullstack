@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 
 
 export default function SecondSec() {
-  const [deliveryDate, setDeliveryDate] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState<string | null>(null);
 
   useEffect(() => {
     // Function to calculate delivery date

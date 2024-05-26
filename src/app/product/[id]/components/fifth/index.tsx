@@ -7,7 +7,7 @@ export default function FifthSec() {
     const { relatedProducts, product } = useProductState();
 
     // Function to extract the first 3 words and add ellipsis if there are more words
-    const getShortProductName = (name) => {
+    const getShortProductName = (name: string) => {
         const words = name.split(' ');
         if (words.length > 3) {
             return words.slice(0, 3).join(' ') + '...';
