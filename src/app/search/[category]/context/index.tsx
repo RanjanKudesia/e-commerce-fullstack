@@ -65,7 +65,7 @@ function SearchStateProvider({ children, params }: ContextProviderProps) {
     const [subCategory, setSubCategory] = useState<string>("");
     const [priceFilter, setPriceFilter] = useState<string>("");
     const [sortByFilter, setSortByFilter] = useState<string>("Relevant products");
-    const [isFilterOpen, setIsFilterOpen] = useState<Boolean>(false);
+    const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
 
     async function getSearchProducts(category: string, priceFilter: string) {
         try {
