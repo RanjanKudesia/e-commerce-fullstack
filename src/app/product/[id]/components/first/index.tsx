@@ -35,7 +35,7 @@ export default function FirstSec() {
     );
   };
 
-  const handleThumbnailClick = (index: any) => {
+  const handleThumbnailClick = (index: number) => {
     setCurrentImageIndex(index);
   };
   return (
@@ -66,7 +66,10 @@ export default function FirstSec() {
             {/* Main Image */}
             <div className="relative z-10">
               <Image
-                src={product?.images[currentImageIndex]}
+                src={
+                  product.images[currentImageIndex]
+                  || "/pngs/PRODUCT_PLACEHOLDER.png"
+                }
                 width={480}
                 height={480}
                 className="rounded-xl w-full h-[400] object-contain p-10 shadow-md"
@@ -196,16 +199,9 @@ export default function FirstSec() {
             </button>
             <button
               onClick={() => {
-                addToCart(
-                  product?.uniq_id,
-                  product?.product_name,
-                  product?.retail_price,
-                  product?.discounted_price,
-                  product?.images[0],
-                  1
-                );
+                addToCart(product);
                 console.log("added to cart");
-                console.log(cart)
+                console.log(cart);
               }}
               className="text-[#1E4C2F] border-2 border-[#1E4C2F] w-full md:w-1/2 md:ml-2 py-4 px-3 rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white hover:fill-white transition-all ease-in-out duration-300"
             >

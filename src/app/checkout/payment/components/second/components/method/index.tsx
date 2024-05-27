@@ -3,23 +3,37 @@ import { useGlobalState } from "@/context";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import products from "@/app/checkout/components/second/components/cartProducts/cartProducts";
+import { useRouter } from "next/navigation";
 
 export default function Method() {
-  const {
-    itemPrice,
-    discountedPrice,
-    setItemPrice,
-    setDiscountedPrice,
-    cart,
-    setCart,
-    addToCart,
-    removeFromCart,
-    updateCartItemQuantity,
-  } = useGlobalState();
+  const { cart } = useGlobalState();
 
   useEffect(() => {
     console.log(cart);
   });
+
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<
+    string | null
+  >(null);
+
+  const handleCheckboxClick = (paymentMethod: string) => {
+    if (selectedPaymentMethod === paymentMethod) {
+      setSelectedPaymentMethod(null); // Deselect if already selected
+    } else {
+      setSelectedPaymentMethod(paymentMethod); // Select the new payment method
+    }
+  };
+
+  const router = useRouter();
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    if (selectedPaymentMethod !== null) {
+      router.push("/checkout/payment/confirmed");
+    } else {
+      alert("Please select Payment Method.");
+    }
+  };
 
   return (
     <div className="flex flex-col gap-[32px]">
@@ -28,7 +42,18 @@ export default function Method() {
           Payment Method
         </div>
         <div className="flex flex-row gap-[16px]">
-          <Image src="/svgs/CHECKBOX.svg" width={24} height={24} alt="" />
+          <Image
+            onClick={() => handleCheckboxClick("1")}
+            className="cursor-pointer"
+            src={
+              selectedPaymentMethod === "1"
+                ? "/svgs/CHECKBOX_TICK.svg"
+                : "/svgs/CHECKBOX.svg"
+            }
+            width={24}
+            height={24}
+            alt=""
+          />
           <Image src="/svgs/PAYPAL_LOGO.svg" width={100} height={67} alt="" />
           <div className="flex flex-col gap-[4px] ">
             <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
@@ -41,7 +66,18 @@ export default function Method() {
         </div>
         <hr />
         <div className="flex flex-row gap-[16px]">
-          <Image src="/svgs/CHECKBOX.svg" width={24} height={24} alt="" />
+          <Image
+            onClick={() => handleCheckboxClick("2")}
+            className="cursor-pointer"
+            src={
+              selectedPaymentMethod === "2"
+                ? "/svgs/CHECKBOX_TICK.svg"
+                : "/svgs/CHECKBOX.svg"
+            }
+            width={24}
+            height={24}
+            alt=""
+          />
           <Image src="/svgs/STRIPE.svg" width={100} height={52} alt="" />
           <div className="flex flex-col gap-[4px] ">
             <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
@@ -54,7 +90,18 @@ export default function Method() {
         </div>
         <hr />
         <div className="flex flex-row gap-[16px]">
-          <Image src="/svgs/CHECKBOX.svg" width={24} height={24} alt="" />
+          <Image
+            onClick={() => handleCheckboxClick("3")}
+            className="cursor-pointer"
+            src={
+              selectedPaymentMethod === "3"
+                ? "/svgs/CHECKBOX_TICK.svg"
+                : "/svgs/CHECKBOX.svg"
+            }
+            width={24}
+            height={24}
+            alt=""
+          />
           <Image src="/svgs/PAYONEER.svg" width={100} height={67} alt="" />
           <div className="flex flex-col gap-[4px] ">
             <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
@@ -66,7 +113,10 @@ export default function Method() {
           </div>
         </div>
       </div>
-      <form className="flex flex-col gap-[24px] pt-[32px] px-[24px] pb-[24px]  outline-[#E4E9EE] outline outline-[1px] rounded-[12px] ">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-[24px] pt-[32px] px-[24px] pb-[24px]  outline-[#E4E9EE] outline outline-[1px] rounded-[12px] "
+      >
         <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
           Add Debit Card
         </div>

@@ -14,7 +14,7 @@ interface ContextProviderProps {
 }
 
 interface ProductContextType {
-  product: Product | null;
+  product: Product;
   review: Review[]; // Assuming review is an array of Review objects
   relatedProducts: RelatedProduct[] | null;
 }
@@ -38,7 +38,7 @@ const defaultProduct: Product = {
 };
 
 const defaultProductContextValue: ProductContextType = {
-  product: null,
+  product: defaultProduct,
   review: [], // Initialize as empty array
   relatedProducts: null,
 };

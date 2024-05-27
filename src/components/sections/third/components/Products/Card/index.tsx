@@ -25,10 +25,15 @@ export default function ProductCard({
           <Image
             // src="/svgs/GREEN_JACKET_V2.svg"
             className="object-contain"
-            src={prodImg || `/pngs/PRODUCT_PLACEHOLDER.png`}
+            src={
+              prodImg ===
+              `"url" parameter is valid but upstream response is invalid`
+                ? `/pngs/PRODUCT_PLACEHOLDER.png`
+                : prodImg
+            }
             width={180}
             height={180}
-            alt=""
+            alt="Image is not available for this product."
           />
         </div>
       </div>
