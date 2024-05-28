@@ -72,7 +72,7 @@ export default function FirstSec() {
                 }
                 width={480}
                 height={480}
-                className="rounded-xl w-full h-[400] object-contain p-10 shadow-md"
+                className="rounded-xl w-full h-[400px] object-contain p-10 shadow-md"
                 alt="Main Product Image"
               />
               <button
@@ -90,7 +90,7 @@ export default function FirstSec() {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="overflow-x-scroll md:overflow-auto flex justify-start items-center pb-5">
+            <div className="overflow-x-scroll flex justify-start items-center pb-5 overflow-hidden">
               {product?.images.map((imageUrl, index) => (
                 <div
                   key={index}
@@ -101,7 +101,7 @@ export default function FirstSec() {
                     src={imageUrl}
                     width={100}
                     height={100}
-                    className="min-w-[100px] h-[100] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
+                    className="w-[100px] h-[100px] min-w-fit object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
                     alt={`Thumbnail ${index}`}
                   />
                 </div>
