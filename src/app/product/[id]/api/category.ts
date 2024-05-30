@@ -59,7 +59,7 @@ app.get("/product-category", async (c) => {
   }
   
   const screenSize = getScreenSize(userAgent);
-  const limitValue = screenSize < 1200 ? 10 : 24; // Adjust limit based on screen size
+  const limitValue = screenSize < 1200 ? 12 : 24; // Adjust limit based on screen size
 
   try {
     // Create a query to filter documents where category_level === 1 and apply the dynamic limit

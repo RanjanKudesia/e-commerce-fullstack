@@ -140,7 +140,7 @@ export default function Navbar() {
             className="mx-2 xl:w-[35px] xl:mx-4 cursor-pointer"
           />
 
-          <div className="mr-5">
+          <div>
             {isOpen ? (
               <IoIosClose
                 className="text-4xl cursor-pointer"

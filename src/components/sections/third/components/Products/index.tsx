@@ -43,6 +43,7 @@ export default function TProducts() {
           prodPrice={product.discounted_price}
           prodRating={product.product_rating}
           prodLink={product.uniq_id}
+          prodRetailPrice={product.retail_price}
         />
       ))}
     </div>

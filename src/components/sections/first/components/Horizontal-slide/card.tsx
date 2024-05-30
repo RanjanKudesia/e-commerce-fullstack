@@ -38,13 +38,13 @@ export default function Card({
 
   return (
     <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] md:pb-[192px] gap-[32px] relative">
-      <div className="flex flex-col gap-[32px] justify-start w-[315px] md:w-[657px] z-10">
-        <div className="flex flex-col gap-[16px]">
+      <div className="flex flex-col gap-[32px] justify-start w-[100%] md:w-[650px] z-10">
+        <div className="flex flex-col gap-[16px] text-center md:text-left">
           <div className="text-black text-[28px] md:text-[58px] font-[600] leading-[39.2px] md:leading-[69.6px] tracking-tight ">
             {/* Upgrade Your Wardrobe With Our Collection */}
             {heading}
           </div>
-          <div className="text-black text-[14px] md:text-[18px] font-[400] leading-[160%] tracking-tight w-[315px] md:w-[585px]">
+          <div className="text-black text-[14px] md:text-[18px] font-[400] leading-[160%] tracking-tight w-[100%] md:w-[585px]">
             {/* Eget neque aenean viverra aliquam tortor diam nunc. Dis pellentesque
             lectus quis velit fusce aenean nunc dui consectetur. Eu lorem est
             ullamcorper nisl amet non mollis. */}
@@ -52,16 +52,16 @@ export default function Card({
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-[16px]">
-          <div className="flex rounded-[8px] cursor-pointer h-[53px] w-[327px] md:w-[200px] justify-center items-center text-stone-50 bg-[#1E4C2F] text-[18px] font-[600] tracking-[-0.2px]">
+          <div className="flex rounded-[8px] cursor-pointer h-[53px] w-full md:w-[200px] justify-center items-center text-stone-50 bg-[#1E4C2F] text-[14px] md:text-[18px] font-[600] tracking-[-0.2px] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300 hover:border-2 hover:border-[#1E4C2F]">
             Buy Now
           </div>
-          <div className="flex rounded-[8px] cursor-pointer h-[53px] w-[327px] md:w-[200px] justify-center items-center outline outline-[1px] outline-[#1E4C2F] text-[#1E4C2F] text-[18px] font-[600] tracking-[-0.2px] ">
+          <div className="flex rounded-[8px] cursor-pointer h-[53px] w-full md:w-[200px] justify-center items-center outline outline-[2px] outline-[#1E4C2F] text-[#1E4C2F] text-[14px] md:text-[18px] font-[600] tracking-[-0.2px] hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
             View Detail
           </div>
         </div>
       </div>
       <Image
-        className={`md:absolute right-[0px] top-[0px] object-contain w-[826px] h-[620px]`}
+        className={`md:absolute right-[0px] top-[0px] object-contain w-[826px] md:h-[620px] h-fit`}
         // className={`absolute right-[${imgPosRight}] bottom-[${imgPosBottom}]`}
         // src="/svgs/IMAGE1.svg"
         src={imageURL}

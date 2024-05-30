@@ -12,6 +12,14 @@ import { useState, useEffect } from 'react';
 
 export default function SecondSec() {
   const [deliveryDate, setDeliveryDate] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+
+  const toggleShowFullDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
 
   useEffect(() => {
     // Function to calculate delivery date
@@ -49,6 +57,14 @@ export default function SecondSec() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  const specificationsToShow = showAll ? product?.product_specifications : product?.product_specifications.slice(0, 3);
+  const descriptionWords = product?.description.split(' ');
+  const descriptionToShow = showFullDescription ? product?.description : descriptionWords.slice(0, 70).join(' ') + (descriptionWords.length > 70 ? '...' : '');
 
 
   return (
@@ -95,14 +111,36 @@ export default function SecondSec() {
       <div className="py-10" id="detailProduct">
         <h2 className="font-semibold text-xl pb-3">{product?.product_name}</h2>
 
-        <p className="text-[#818B9C]">{product?.description}</p>
+        {/* <p className="text-[#818B9C]">{product?.description}</p> */}
+        <div>
+          <p className="text-[#818B9C]">
+            {descriptionToShow}
+            {descriptionWords.length > 70 && !showFullDescription && (
+              <span
+                onClick={toggleShowFullDescription}
+                className="ml-2 text-[#1D9E34] underline cursor-pointer font-semibold"
+              >
+                Read More
+              </span>
+            )}
+            {showFullDescription && (
+              <span
+                onClick={toggleShowFullDescription}
+                className="ml-2 text-[#1D9E34] underline cursor-pointer font-semibold"
+              >
+                Show Less
+              </span>
+            )}
+          </p>
+        </div>
+
       </div>
 
       <div className="w-full flex justify-between items-start flex-col md:flex-row">
         <div className="w-full md:w-1/3 md:mr-10 mb-10 md:mb-0">
           <h4 className="font-semibold pb-5">Specification</h4>
 
-          <div>
+          {/* <div>
             {product?.product_specifications.map((specification, index) => (
               <ul key={specification.key}>
                 <li
@@ -114,6 +152,26 @@ export default function SecondSec() {
                 </li>
               </ul>
             ))}
+          </div> */}
+          <div>
+            {specificationsToShow.map((specification, index) => (
+              <ul key={specification.key}>
+                <li
+                  className={`py-3 px-4 w-full flex ${index % 2 === 0 ? "bg-[#F6F6F6]" : "bg-white"}`}
+                >
+                  <p className="w-1/2 text-[#818B9C]">{specification.key}</p>
+                  <p className="w-1/2 font-medium">{specification.value}</p>
+                </li>
+              </ul>
+            ))}
+            {product?.product_specifications.length > 3 && (
+              <button
+                onClick={toggleShowAll}
+                className="mt-3 text-[#1D9E34] underline font-semibold"
+              >
+                {showAll ? "Show Less" : "Read More"}
+              </button>
+            )}
           </div>
         </div>
 
