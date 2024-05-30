@@ -8,8 +8,6 @@ import Fifth from "@/components/sections/fifth";
 export default function Home() {
   return (
     <main>
-      {/* <Signup /> */}
-      {/* <Login /> */}
       <First />
       <Third />
       <Fourth />
