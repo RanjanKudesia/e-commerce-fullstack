@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useProductState } from "../../context";
 import Link from "next/link";
+import DummyImage from "@/components/dummy-img-placeholder";
+
 
 function calculatePercentage(numerator: string, denominator: string): number {
     const num = parseInt(numerator, 10);
@@ -49,17 +51,17 @@ export default function FifthSec() {
         <div id="relatedProduct" className="px-3">
             <div className="w-[100%] flex justify-between items-center mb-10 md:mb-5">
                 <h3 className="font-semibold text-lg mb-0 md:mb-5">Related Product</h3>
-                <Link href={`/search/${product?.category}`}>
-                    <button className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-full md:w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
-                        View Detail
-                    </button>
+
+                <Link href={`/search/${product?.category}`} className="text-[#1E4C2F] border-2 border-[#1E4C2F] md:ml-2 p-2 md:px-4 w-fit ml-2 text-sm md:text-base rounded-md flex justify-center items-center font-semibold hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
+                    View Detail
                 </Link>
+
             </div>
 
             <div className="w-full flex items-center flex-wrap md:flex-nowrap gap-[16px]">
                 {relatedProducts && relatedProducts.length > 0 ? (
                     relatedProducts.map((relatedProduct) => (
-                        <Link href={`/product/${relatedProduct?.uniq_id}`} className="w-[47%] min-h-[220px] md:min-h-[200px] md:w-[280px] border-2 border-[#E4E9EE] rounded-[8px] ">
+                        <Link href={`/product/${relatedProduct?.uniq_id}`} className="w-[47%] min-h-[220px] md:min-h-[200px] md:w-full border-2 border-[#E4E9EE] rounded-[8px] ">
                             <div className="relative px-2 md:px-5 py-0 pt-8 pb-3 md:py-10 h-fit flex flex-col transition-transform duration-300 hover:transform hover:scale-105">
                                 <div className="bg-white rounded-md p-1 absolute top-2 right-2 md:top-4 md:right-4 text-xs md:text-sm text-gray-600 flex items-center">
                                     {relatedProduct.brand_rating}{" "}
@@ -73,13 +75,20 @@ export default function FifthSec() {
                                 </div>
 
                                 <div className="relative basis-1/2 w-full rounded-[8px] shadow-red-500 flex justify-center items-center">
-                                    <Image
+                                    {/* <Image
                                         src={relatedProduct.images[0] || "/assets/pngs/placeholder.png"}
                                         alt="Image is not available for this product."
                                         width={100}
                                         height={100}
                                         className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]"
-                                    />
+                                    /> */}
+                                    <DummyImage
+                                        src={relatedProduct.images[0]}
+                                        alt="Image is not available for this product."
+                                        fallbackSrc="/assets/pngs/placeholder.png"
+                                        width={100}
+                                        height={100}
+                                        className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
                                 </div>
                                 <div className="basis-1/2 flex flex-col justify-between px-2 mt-3">
                                     <div className="text-xs md:text-base font-semibold pb-2 text-center">

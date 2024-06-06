@@ -37,9 +37,9 @@ export default function Card({
   // console.log(isMobileView);
 
   return (
-    <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] md:pb-[192px] gap-[32px] relative">
-      <div className="flex flex-col gap-[32px] justify-start w-[100%] md:w-[650px] z-10">
-        <div className="flex flex-col gap-[16px] text-center md:text-left">
+    <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] gap-[32px] relative">
+      <div className="flex justify-center flex-col gap-[32px] w-[100%] md:w-[650px] z-10">
+        <div className="flex justify-center flex-col gap-[16px] text-center md:text-left">
           <div className="text-black text-[28px] md:text-[58px] font-[600] leading-[39.2px] md:leading-[69.6px] tracking-tight ">
             {/* Upgrade Your Wardrobe With Our Collection */}
             {heading}
@@ -51,14 +51,14 @@ export default function Card({
             {description}
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-[16px]">
+        {/* <div className="flex flex-col md:flex-row gap-[16px]">
           <div className="flex rounded-[8px] cursor-pointer h-[53px] w-full md:w-[200px] justify-center items-center text-stone-50 bg-[#1E4C2F] text-[14px] md:text-[18px] font-[600] tracking-[-0.2px] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300 hover:border-2 hover:border-[#1E4C2F]">
             Buy Now
           </div>
           <div className="flex rounded-[8px] cursor-pointer h-[53px] w-full md:w-[200px] justify-center items-center outline outline-[2px] outline-[#1E4C2F] text-[#1E4C2F] text-[14px] md:text-[18px] font-[600] tracking-[-0.2px] hover:bg-[#1E4C2F] hover:text-white transition-all ease-in-out duration-300">
             View Detail
           </div>
-        </div>
+        </div> */}
       </div>
       <Image
         className={`md:absolute right-[0px] top-[0px] object-contain w-[826px] md:h-[620px] h-fit`}

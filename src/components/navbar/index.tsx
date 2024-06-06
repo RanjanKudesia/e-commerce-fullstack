@@ -33,20 +33,21 @@ export default function Navbar() {
 
   return (
     <div className="text-black sticky top-0 z-50">
-      <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-40">
+      <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-[150px]">
         <div className="w-1/4 xl:w-1/6 ">
           <Link href="/">
             <Image
               src="/assets/svgs/Logo.svg"
               alt="Logo"
-              width={300}
-              height={300}
-              className="mx-2 w-full sm:w-1/2"
+              width={350}
+              height={350}
+              className="mx-2 w-full sm:w-2/3"
             />
           </Link>
         </div>
 
-        <div className="navList hidden font-medium transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
+        <div className={`navList flex md:justify-center md:items-center font-medium absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:py-0 xl:h-0 transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+          } xl:translate-x-0 xl:static xl:w-full`}>
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
             <li
               className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === "/"
@@ -62,7 +63,7 @@ export default function Navbar() {
                 : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
               onMouseEnter={handleShopMenuHover}
-              onMouseLeave={handleShopMenuLeave}
+
             >
               <Link href="" className="flex hover:font-bold">
                 Shop
@@ -74,22 +75,7 @@ export default function Navbar() {
                   className="ml-1 xl:w-[20px] xl:h-[20px]"
                 />{" "}
               </Link>
-              {/* Mega Menu */}
-              {isMegaMenuOpen && (
-                <div className="megamenu flex font-medium justify-between align-top w-full p-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md xl:px-40">
-                  <div className="w-full flex flex-wrap">
-                    {productCategory?.map((category, categoryIndex) => (
-                      <div key={categoryIndex} className="w-1/4 pl-5">
-                        <li className="px-4 leading-8 font-medium hover:font-bold text-[#757575] hover:text-black">
-                          <Link href={`/search/${category?.category_name}`}>
-                            {category?.category_name}
-                          </Link>
-                        </li>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+
             </li>
             <li className="xl:hidden">
               <Submenu />
@@ -120,7 +106,22 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-
+        {/* Mega Menu */}
+        {isMegaMenuOpen && (
+          <div onMouseLeave={handleShopMenuLeave} className="megamenu transform flex font-medium justify-between align-top w-full py-5 absolute top-16 left-0 bg-[#F7F7F7] z-10 shadow-md md:px-[120px]">
+            <div className="w-full flex flex-wrap px-5">
+              {productCategory?.map((category, categoryIndex) => (
+                <ul key={categoryIndex} className="w-1/4 pl-5">
+                  <li className="leading-8 font-medium hover:font-bold text-[#757575] hover:text-black">
+                    <Link href={`/search/${category?.category_name}`}>
+                      {category?.category_name}
+                    </Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex justify-end items-center w-[75%] xl:w-1/5">
           <Link href="/checkout">
             <Image

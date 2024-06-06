@@ -11,7 +11,7 @@ export default function First() {
         <br />
         Showing your choices product
       </div>
-      <div className="flex flex-row items-center gap-[24px] ">
+      {/* <div className="flex flex-row items-center gap-[24px] ">
         <div className="text-[16px] font-[400] leading-[25.6px] ">Sort By:</div>
         <div className="flex cursor-pointer outline outline-[1px] outline-[#E4E9EE] rounded-[8px] justify-center gap-[4px] px-[16px] py-[11px] ">
           <div className="text-[14px] leading-[22.4px] font-[500] ">
@@ -24,7 +24,7 @@ export default function First() {
             alt=""
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
