@@ -37,7 +37,7 @@ export default function Card({
   // console.log(isMobileView);
 
   return (
-    <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:pl-[120px] min-h-[620px] bg-[#F7F7F7] pb-[100px] gap-[32px] relative">
+    <div className="flex flex-col md:flex-row pt-[22px] md:pt-[100px] px-[24px] md:px-[160px] min-h-[620px] bg-[#F7F7F7] pb-[100px] gap-[32px] relative">
       <div className="flex justify-center flex-col gap-[32px] w-[100%] md:w-[650px] z-10">
         <div className="flex justify-center flex-col gap-[16px] text-center md:text-left">
           <div className="text-black text-[28px] md:text-[58px] font-[600] leading-[39.2px] md:leading-[69.6px] tracking-tight ">
