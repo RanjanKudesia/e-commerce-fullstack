@@ -4,7 +4,7 @@ import { useSearchState } from "../../context";
 import ProductCard from "./components/product-card";
 import { Product } from "../../interfaces";
 
-export default function ProductsSection({ params }: { params: string }) {
+export default function ProductsSection() {
     const { products, sortByFilter } = useSearchState();
     const [sortedProducts, setSortedProducts] = useState(products);
 

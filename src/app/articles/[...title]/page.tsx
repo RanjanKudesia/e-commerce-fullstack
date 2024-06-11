@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import blogsData from "../data/articles.json";
 import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation';
 
 // Define the interface for a blog item
 interface Blog {
@@ -15,25 +14,27 @@ interface Blog {
 }
 
 export default function SingleBlog() {
-    const router = useRouter();
-    //get the current url index value
+    // let indexValue = params.title.length;  // { params }: { params: { title: string } }
     const searchParams = useSearchParams();
     const params = new URLSearchParams(searchParams);
-    let indexValue = params.get('index');
+    const indexParam = params.get('index');
+    const indexValue = indexParam ? parseInt(indexParam, 10) : 0;  // Default to 0 if no valid index found
 
     const blogs: Blog[] = blogsData.blogs;
+
+    // Only proceed if indexValue is a valid number
+    if (isNaN(indexValue)) return <p>Invalid index provided.</p>;
+
     const featuredImage = {
         backgroundImage: `url(${blogs[indexValue]?.image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
     };
 
-    {/* Use dangerouslySetInnerHTML to render html from json */ }
-    function createMarkup(c) {
+    function createMarkup(c: any) {
         return { __html: c };
     }
 
-    // Function to truncate title if needed
     const truncateTitle = (title: string) => {
         if (title.length > 30) {
             return title.slice(0, 30) + '...';
@@ -41,24 +42,8 @@ export default function SingleBlog() {
         return title;
     };
 
-    function generateSlug(title) {
+    function generatetitle(title: string) {
         return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-    }
-
-    function relatedBlogHandler(index: string) {
-        indexValue = index;
-        console.log(indexValue);
-
-        // Get current URL using router object
-        const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-        indexValue = index;
-        const url = currentUrl;
-        // console.log(currentUrl);
-
-        //get the related-product slug 
-        const updatedSlug = `/articles/${generateSlug(blogs[indexValue].title)}?index=${indexValue}`;
-        // console.log(updatedSlug);
-        router.push(updatedSlug, undefined, { shallow: true });   //shallow: Update the path of the current page without rerunning
     }
 
 
@@ -90,24 +75,32 @@ export default function SingleBlog() {
 
                     {blogs.map((blog, index) => {
                         // Check if the current index matches the indexValue to skip rendering
-                        if (String(index) === indexValue) {
+                        if ((index) === indexValue) {
                             return null; // Skip rendering this blog item
                         }
 
                         // Truncate the blog title if needed
                         const truncatedTitle = truncateTitle(blog.title);
 
+                        // Construct the href dynamically
+                        const href = `/articles/${generatetitle(blog.title)}?index=${index}`;
+                        // console.log("related post current path", href, index);
+
+
+
                         return (
-                            <div className="flex justify-between items-center mb-5 cursor-pointer" key={index} onClick={() => relatedBlogHandler(index)}>
-                                <div className="w-[40%] mr-4">
-                                    <Image src={blog.image} alt="featured_image" width={100} height={150} className="rounded-lg w-full" />
-                                </div>
-                                <div className="w-[60%]">
-                                    <div className="hover:underline hover:text-[#1d9e34]">
-                                        <h4 className="font-semibold">{truncatedTitle}</h4>
+                            <Link href={href} key={index}>
+                                <div className="flex justify-between items-center mb-5 cursor-pointer" key={index}>
+                                    <div className="w-[40%] mr-4">
+                                        <Image src={blog.image} alt="featured_image" width={100} height={150} className="rounded-lg w-full" />
+                                    </div>
+                                    <div className="w-[60%]">
+                                        <div className="hover:underline hover:text-[#1d9e34]">
+                                            <h4 className="font-semibold">{truncatedTitle}</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
 
@@ -129,8 +122,6 @@ export default function SingleBlog() {
 
                 <div className="w-full md:w-9/12 p-0 md:p-5">
                     <h3 className="font-semibold text-xl md:text-3xl mb-3">{blogs[indexValue]?.title}</h3>
-                    {/* <p className='text-[#818b9c]'>{blogs[indexValue]?.content}</p> */}
-                    {/* Use dangerouslySetInnerHTML to render html from json */}
                     {blogs[indexValue] && <div className="text-[#818B9C] mt-3 text-sm md:text-base" dangerouslySetInnerHTML={createMarkup(blogs[indexValue]?.content)}>
                     </div>}
                 </div>

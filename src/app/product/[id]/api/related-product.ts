@@ -8,7 +8,7 @@ const app = new Hono();
 const productsCollection = collection(db, 'productsv2');
 
 // Function to fetch related products based on category and brand rating criteria
-const getRelatedProducts = async (subcategory, productId, brandRatingThreshold = 3.0) => {
+const getRelatedProducts = async (subcategory:string, productId:string, brandRatingThreshold = 3.0) => {
   try {
     // Query for related products in the same category with a higher brand rating than the threshold
     const relatedProductsQuery = query(

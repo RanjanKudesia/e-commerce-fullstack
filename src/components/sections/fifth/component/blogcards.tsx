@@ -16,12 +16,12 @@ export default function BlogCards() {
     const blogs: Blog[] = blogsData.blogs;
     const [truncatedContent, setTruncatedContent] = useState<string>('');
 
-    function generateSlug(title) {
+    function generateSlug(title: string) {
         return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
     }
 
     {/* Use dangerouslySetInnerHTML to render html from json */ }
-    function createMarkup(c) {
+    function createMarkup(c: any) {
         return { __html: c };
     }
 

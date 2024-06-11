@@ -18,7 +18,7 @@ function calculatePercentage(numerator: string, denominator: string): number {
 }
 
 const getShortProductName = (name: any) => {
-  const maxLength = 25; // Maximum number of characters allowed
+  const maxLength = 15; // Maximum number of characters allowed
   if (name.length > maxLength) {
     return name.slice(0, maxLength) + "...";
   }

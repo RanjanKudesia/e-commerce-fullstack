@@ -12,8 +12,8 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Lenny | Home",
-  description: "E-Commerce Site",
+  title: "Lenny E-commerce: Premium Fashion & Accessories ",
+  description: "Discover the latest in fashion, accessories, and lifestyle products at Lenny. Shop our curated collection of premium quality items, enjoy exclusive deals, and experience fast, reliable shipping. Elevate your style with Lenny today! ",
 };
 
 export default function RootLayout({
@@ -22,8 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta property="og:title" content="Lenny E-commerce: Premium Fashion & Accessories" />
+        <meta property="og:description" content="Discover the latest in fashion, accessories, and lifestyle products at Lenny. Shop our curated collection of premium quality items, enjoy exclusive deals, and experience fast, reliable shipping. Elevate your style with Lenny today!" />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SERVER_API}/svgs/IMAGE2.svg`} />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SERVER_API}`} />
+        <meta property="og:type" content="website" />
         <link
           href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap"
           rel="stylesheet"

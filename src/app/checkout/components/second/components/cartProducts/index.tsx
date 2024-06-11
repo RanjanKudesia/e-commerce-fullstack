@@ -36,7 +36,7 @@ export default function CartProducts() {
         </div>
 
         <div className="flex flex-col gap-[24px] ">
-          {cart.map((product) => (
+          {cart.map((product: any) => (
             <div className="flex flex-col gap-[24px] ">
               <div className="flex flex-col md:flex-row gap-[16px] items-end md:justify-between  md:items-center ">
                 <div className="flex w-full flex-row gap-[24px]  ">

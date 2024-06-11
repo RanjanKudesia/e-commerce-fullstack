@@ -20,7 +20,7 @@ export default function FirstSec() {
 
   // Function to extract the first 50 words from the description
   const getShortDescription = (description: string) => {
-    return description.split(" ").slice(0, 50).join(" ") + "...";
+    return description.split(" ").slice(0, 40).join(" ") + "...";
   };
 
   const handlePrevious = () => {
@@ -67,13 +67,13 @@ export default function FirstSec() {
             <div className="relative z-10">
               <Image
                 src={
-                  product.images[currentImageIndex] 
-                    || "/pngs/PRODUCT_PLACEHOLDER.png"
+                  product.images[currentImageIndex]
+                  || "/pngs/PRODUCT_PLACEHOLDER.png"
                 }
                 width={480}
                 height={480}
-                className="rounded-xl w-full h-[400] object-contain p-10 shadow-md"
-                alt="Main Product Image"
+                className="rounded-xl w-full h-[250px] md:h-[400px] object-contain p-10 shadow-md"
+                alt="Image is not available for this product."
               />
               <button
                 className="absolute top-1/2 left-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81] z-10"
@@ -90,26 +90,26 @@ export default function FirstSec() {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="overflow-x-scroll md:overflow-auto flex justify-start items-center pb-5">
+            <div className="max-w-[100%] overflow-x-scroll flex justify-start items-center pb-5 overflow-hidden">
               {product?.images.map((imageUrl, index) => (
                 <div
                   key={index}
                   onClick={() => handleThumbnailClick(index)}
-                  className="cursor-pointer"
+                  className="cursor-pointer w-[80px] h-[80px] md:w-[100px] md:h-[100px] min-w-fit"
                 >
                   <Image
                     src={imageUrl}
                     width={100}
                     height={100}
-                    className="min-w-[100px] h-[100] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
-                    alt={`Thumbnail ${index}`}
+                    className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
+                    alt="not available"
                   />
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 mt-10 md:mt-0">
+        <div className="w-full md:w-1/2 mt-5 md:mt-0">
           {/* product desc here */}
           <h2 className="font-semibold text-2xl md:text-4xl">
             {product?.product_name}
@@ -136,12 +136,11 @@ export default function FirstSec() {
               ? product?.description
               : getShortDescription(product.description)}
             {product?.description &&
-              product.description.split(" ").length > 50 && (
+              product.description.split(" ").length > 40 && (
                 <button
                   onClick={toggleExpanded}
-                  className="text-[#1D9E34] ml-2"
-                >
-                  {isExpanded ? "Read less" : "Read more"}
+                  className="text-[#1D9E34] ml-2 font-semibold underline"
+                >{isExpanded ? "Read less" : "Read more"}
                 </button>
               )}
           </p>
