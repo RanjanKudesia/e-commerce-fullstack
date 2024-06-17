@@ -47,7 +47,7 @@ export default function CategoryFilter() {
                 <div className="text-[#0B0F0E] text-[16px] font-[600]">Category</div>
                 <Image src='/assets/svgs/UP_ARROW.svg' width='12' height='12' alt='up-arrow' className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             </div>
-            <div className='overflow-y-auto' style={{ maxHeight: maxHeight, overflowY: overflowStyle, transition: 'max-height 0.5s ease' }}>
+            <div className='overflow-y-auto scrollbar-style' style={{ maxHeight: maxHeight, overflowY: overflowStyle, transition: 'max-height 0.5s ease' }}>
                 <FormGroup>
                     {subCategories.length > 0 && subCategories.map((category, index) => (
                         <FormControlLabel

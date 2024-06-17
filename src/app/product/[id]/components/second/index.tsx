@@ -8,8 +8,6 @@ import { BsPhoneFlip } from "react-icons/bs";
 import { LiaExchangeAltSolid } from "react-icons/lia";
 import { useState, useEffect } from 'react';
 
-
-
 export default function SecondSec() {
   const [deliveryDate, setDeliveryDate] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -62,19 +60,19 @@ export default function SecondSec() {
     setShowAll(!showAll);
   };
 
-  const specificationsToShow = showAll ? product?.product_specifications : product?.product_specifications.slice(0, 3);
+  const specificationsToShow = showAll ? product?.product_specifications : product?.product_specifications.slice(0, 2);
   const descriptionWords = product?.description.split(' ');
   const descriptionToShow = showFullDescription ? product?.description : descriptionWords.slice(0, 70).join(' ') + (descriptionWords.length > 70 ? '...' : '');
 
 
   return (
     <div className="px-3">
-      <div className="flex overflow-x-scroll md:overflow-auto">
+      <div className="flex overflow-x-scroll no-scrollbar md:overflow-auto">
         <Link
           href={"#detailProduct"}
           className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] border-b-[3px] border-[#1E4C2F] ${isActive
             ? 'active'
-            : 'text-[#818B9C] border-none'
+            : 'text-[#818B9C] hover:text-[#1E4C2F] border-b-[0px] hover:border-b-[3px] border-[#1E4C2F]'
             }`}
         >
           Detail Product
@@ -92,7 +90,7 @@ export default function SecondSec() {
           href={"#reviews"}
           className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] border-b-[3px] border-[#1E4C2F] hover:text-[#1E4C2F] ${pathname === "/product/"
             ? "active"
-            : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] border-none"
+            : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] hover:text-[#1E4C2F] border-b-[0px] hover:border-b-[3px] border-[#1E4C2F]"
             }`}
         >
           Reviews
@@ -101,7 +99,7 @@ export default function SecondSec() {
           href="#relatedProduct"
           className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] border-b-[3px] border-[#1E4C2F] hover:text-[#1E4C2F]  ${pathname === "/product/"
             ? "active"
-            : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] border-none"
+            : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] hover:text-[#1E4C2F] border-b-[0px] hover:border-b-[3px] border-[#1E4C2F]"
             }`}
         >
           Related Product

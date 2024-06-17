@@ -38,13 +38,13 @@ export default function Method() {
   return (
     <div className="flex flex-col gap-[32px]">
       <div className="flex flex-col md:w-[788px]  py-[32px] px-[24px] gap-[24px] rounded-[12px] outline-[#E4E9EE] outline outline-[1px] bg-white ">
-        <div className="text-[12px] md:text-[16px] leading-[16px] md:leading-[22.4px] tracking-[-0.2px] font-[600] ">
+        <div className="text-[20px] leading-[16px] md:leading-[22.4px] tracking-[-0.2px] font-[600] ">
           Payment Method
         </div>
-        <div className="flex flex-row gap-[16px]">
+        <div className="flex items-center flex-row gap-[16px]">
           <Image
             onClick={() => handleCheckboxClick("1")}
-            className="cursor-pointer"
+            className="cursor-pointer w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
             src={
               selectedPaymentMethod === "1"
                 ? "/svgs/CHECKBOX_TICK.svg"
@@ -54,21 +54,21 @@ export default function Method() {
             height={24}
             alt=""
           />
-          <Image src="/svgs/PAYPAL_LOGO.svg" width={100} height={67} alt="" />
-          <div className="flex flex-col gap-[4px] ">
-            <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
+          <Image src="/svgs/PAYPAL_LOGO.svg" width={100} height={67} alt="" className="object-contain w-[90px] h-[50px] md:w-[100px] md:h-[70px]" />
+          <div className="flex justify-center flex-col gap-[4px] ">
+            <div className="text-[16px] md:text-[20px] font-[600] leading-[18px] md:leading-[28px] tracking-[-0.2px] ">
               Paypal
             </div>
-            <div className="text-[16px] font-[400] leading-[25.6px] ">
+            <div className="text-[12px] md:text-[16px] font-[400] leading-[14px] md:leading-[25.6px]">
               yelenastacia99@gmail.com
             </div>
           </div>
         </div>
         <hr />
-        <div className="flex flex-row gap-[16px]">
+        <div className="flex items-center flex-row gap-[16px]">
           <Image
             onClick={() => handleCheckboxClick("2")}
-            className="cursor-pointer"
+            className="cursor-pointer w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
             src={
               selectedPaymentMethod === "2"
                 ? "/svgs/CHECKBOX_TICK.svg"
@@ -78,21 +78,21 @@ export default function Method() {
             height={24}
             alt=""
           />
-          <Image src="/svgs/STRIPE.svg" width={100} height={52} alt="" />
-          <div className="flex flex-col gap-[4px] ">
-            <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
+          <Image src="/svgs/STRIPE.svg" width={100} height={52} alt="" className="object-contain w-[90px] h-[50px] md:w-[100px] md:h-[70px]" />
+          <div className="flex justify-center flex-col gap-[4px] ">
+            <div className="text-[16px] md:text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
               Stripe
             </div>
-            <div className="text-[16px] font-[400] leading-[25.6px] ">
+            <div className="text-[12px] md:text-[16px] font-[400] leading-[14px] md:leading-[25.6px] ">
               8329 3288 823 ****
             </div>
           </div>
         </div>
         <hr />
-        <div className="flex flex-row gap-[16px]">
+        <div className="flex items-center flex-row gap-[16px]">
           <Image
             onClick={() => handleCheckboxClick("3")}
-            className="cursor-pointer"
+            className="cursor-pointer w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
             src={
               selectedPaymentMethod === "3"
                 ? "/svgs/CHECKBOX_TICK.svg"
@@ -102,12 +102,12 @@ export default function Method() {
             height={24}
             alt=""
           />
-          <Image src="/svgs/PAYONEER.svg" width={100} height={67} alt="" />
-          <div className="flex flex-col gap-[4px] ">
-            <div className="text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
+          <Image src="/svgs/PAYONEER.svg" width={100} height={67} alt="" className="object-contain w-[90px] h-[50px] md:w-[100px] md:h-[70px]" />
+          <div className="flex justify-center flex-col gap-[4px] ">
+            <div className="text-[16px] md:text-[20px] font-[600] leading-[28px] tracking-[-0.2px] ">
               Payoneer
             </div>
-            <div className="text-[16px] font-[400] leading-[25.6px] ">
+            <div className="text-[12px] md:text-[16px] font-[400] leading-[14px] md:leading-[25.6px] ">
               8329 3288 823 ****
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function Method() {
 
         <div className="grid grid-cols-2 gap-[16px]">
           <div className="flex flex-col gap-[8px]">
-            <div className="text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
+            <div className="text-[12px] md:text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
               Holder Name
             </div>
             <input
@@ -133,7 +133,7 @@ export default function Method() {
             />
           </div>
           <div className="flex flex-col gap-[8px]">
-            <div className="text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
+            <div className="text-[12px] md:text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
               Card Number
             </div>
             <input
@@ -143,7 +143,7 @@ export default function Method() {
             />
           </div>
           <div className="flex flex-col gap-[8px]">
-            <div className="text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
+            <div className="text-[12px] md:text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
               Expiry Date
             </div>
             <input
@@ -154,7 +154,7 @@ export default function Method() {
             />
           </div>
           <div className="flex flex-col gap-[8px]">
-            <div className="text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
+            <div className="text-[12px] md:text-[16px] font-[600] leading-[22.4px] tracking-[-0.2px] ">
               CVV
             </div>
             <input

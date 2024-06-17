@@ -28,7 +28,7 @@ export default function ProductsSection() {
     }, [products, sortByFilter]);
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-2 md:gap-x-6 md:gap-y-6">
+        <div className="w-full grid grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-2 md:gap-x-6 md:gap-y-6">
             {sortedProducts.length > 0 ? (
                 sortedProducts.map((product, index) => (
                     <ProductCard key={index} product={product} />

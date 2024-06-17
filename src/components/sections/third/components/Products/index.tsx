@@ -34,7 +34,7 @@ export default function TProducts() {
   // };
 
   return (
-    <div className="grid grid-cols-2 gap-[17px] gap-y-[24px] md:grid-cols-4 md:gap-[24px] md:gap-y-[32px]">
+    <div className="w-full px-[24px] md:w-[1250px] mx-auto grid grid-cols-2 gap-[17px] gap-y-[24px] md:grid-cols-3 lg:grid-cols-4 md:gap-[24px] md:gap-y-[32px]">
       {fetchedProducts?.map((product: Product) => (
         <ProductCard
           key={product.uniq_id}

@@ -1,3 +1,4 @@
+import DummyImage from "@/components/dummy-img-placeholder";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -128,13 +129,20 @@ export default function ProductCard({
         </div>
 
         <div className="relative basis-1/2 w-full rounded-[8px] shadow-red-500 flex justify-center items-center">
-          <Image
+          {/* <Image
             src={prodImg || "/assets/pngs/placeholder.png"}
             alt="Image is not available for this product."
             width={100}
             height={100}
             className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]"
-          />
+          /> */}
+          <DummyImage
+            src={prodImg}
+            alt="Image is not available for this product."
+            fallbackSrc="/assets/pngs/placeholder.png"
+            width={300}
+            height={300}
+            className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
         </div>
         <div className="basis-1/2 flex flex-col justify-between px-2 mt-3">
           <div className="text-xs md:text-base font-semibold pb-2 text-center">

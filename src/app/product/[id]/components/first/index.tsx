@@ -7,11 +7,12 @@ import { useProductState } from "../../context";
 import { FaChevronLeft } from "react-icons/fa";
 import { useGlobalState } from "@/context";
 import { useRouter } from "next/navigation";
+import DummyImage from "@/components/dummy-img-placeholder";
 
 export default function FirstSec() {
   const { cart, addToCart } = useGlobalState();
   const { product } = useProductState();
-
+  // const prodImg = product.images[0];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
@@ -40,24 +41,33 @@ export default function FirstSec() {
   const handleThumbnailClick = (index: number) => {
     setCurrentImageIndex(index);
   };
+
+  const prodMainImg = product?.images[currentImageIndex];
+
   return (
     <div>
       {product && (
-        <ul className="flex justify-start items-center text-xs md:text-base overflow-x-scroll md:overflow-auto">
+        <ul className="flex justify-start items-center text-xs md:text-base overflow-x-scroll no-scrollbar md:overflow-auto">
           <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
             <Link href="/">Home</Link>
           </li>
           <FaAngleRight className="min-w-fit" />
           <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
-            <Link href="">{product?.category}</Link>
+            <Link href={`/search/${product?.category}`}>
+              {product?.category}
+            </Link>
           </li>
           <FaAngleRight className="min-w-fit" />
           <li className="px-3 text-[#1D9E34] font-medium min-w-fit">
-            <Link href="">{product?.subcategory}</Link>
+            <Link href={`/search/${product?.category}`}>
+              {product?.subcategory}
+            </Link>
           </li>
           <FaAngleRight className="min-w-fit" />
           <li className="px-3 text-black font-medium min-w-fit">
-            <Link href="">{product?.product_name}</Link>
+            <Link href={`/product/${product?.uniq_id}`}>
+              {product?.product_name}
+            </Link>
           </li>
         </ul>
       )}
@@ -67,7 +77,7 @@ export default function FirstSec() {
           <div className="grid gap-4">
             {/* Main Image */}
             <div className="relative z-10">
-              <Image
+              {/* <Image
                 src={
                   product.images[currentImageIndex] ||
                   "/pngs/PRODUCT_PLACEHOLDER.png"
@@ -76,7 +86,17 @@ export default function FirstSec() {
                 height={480}
                 className="rounded-xl w-full h-[250px] md:h-[400px] object-contain p-10 shadow-md"
                 alt="Image is not available for this product."
+              /> */}
+
+              <DummyImage
+                src={prodMainImg}
+                alt="Image is not available for this product."
+                fallbackSrc="/assets/pngs/placeholder.png"
+                width={480}
+                height={480}
+                className="rounded-xl w-full h-[250px] md:h-[400px] object-contain p-10 shadow-md"
               />
+
               <button
                 className="absolute top-1/2 left-4 text-white p-2 rounded-full opacity-75 hover:opacity-100 bg-[#0b0f0e81] z-10"
                 onClick={handlePrevious}
@@ -92,19 +112,27 @@ export default function FirstSec() {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="max-w-[100%] overflow-x-scroll flex justify-start items-center pb-5 overflow-hidden">
+            <div className="max-w-[100%] overflow-x-scroll no-scrollbar flex justify-start items-center pb-5 overflow-hidden">
               {product?.images.map((imageUrl, index) => (
                 <div
                   key={index}
                   onClick={() => handleThumbnailClick(index)}
                   className="cursor-pointer w-[80px] h-[80px] md:w-[100px] md:h-[100px] min-w-fit"
                 >
-                  <Image
+                  {/* <Image
                     src={imageUrl}
                     width={100}
                     height={100}
                     className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
                     alt="not available"
+                  /> */}
+                  <DummyImage
+                    src={imageUrl}
+                    alt="Image is not available for this product."
+                    fallbackSrc="/assets/pngs/placeholder.png"
+                    width={100}
+                    height={100}
+                    className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] object-contain mx-1 rounded-lg p-4 shadow-md overflow-hidden active:border-2 active:border-[#1E4C2F]"
                   />
                 </div>
               ))}

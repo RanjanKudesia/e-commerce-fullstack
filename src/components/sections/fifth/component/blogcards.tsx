@@ -43,7 +43,7 @@ export default function BlogCards() {
 
     return (
         <div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 justify-items-center">
+            <div className="w-full md:w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-5 justify-items-center">
                 {/* Use `blogs?.map()` to render each blog item */}
                 {blogs.slice(1, 5).map((blog, index) => (
                     // Skip rendering the first blog (index === 0)

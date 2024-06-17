@@ -4,8 +4,8 @@ import BlogCards from "./component/blogcards";
 
 export default function Fifth() {
   return (
-    <div className="flex flex-col gap-[52px] justify-center px-[24px] md:px-[160px] pb-[60px]">
-      <div className="flex flex-row justify-between items-center w-full ">
+    <div className="w-full px-[24px] md:w-[1200px] md:px-[0px] mx-auto flex flex-col gap-[52px] justify-center items-center pb-[60px]">
+      <div className="w-full flex flex-row justify-between items-center">
         <div className="text-[24px] md:text-[38px] font-[600] leading-[25.2px] md:leading-[53.2px] tracking-[-0.2px] ">
           Lenny’s Article
         </div>

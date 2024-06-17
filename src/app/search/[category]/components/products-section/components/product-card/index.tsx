@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Product } from "../../../../interfaces";
 import Link from "next/link";
+// import DummyImage from "@/components/dummy-img-placeholder";
+
 
 function calculatePercentage(numerator: string, denominator: string): number {
   const num = parseInt(numerator, 10);
@@ -48,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div>
       <Link href={`/product/${product?.uniq_id}`}>
-        <div className="relative px-2 md:px-5 py-0 pt-8 pb-3 md:py-10 w-full md:w-[310px] h-fit flex flex-col gap-[10px] md:gap-[16px] rounded-[8px] border-2 border-[#E4E9EE] transition-transform duration-300 hover:transform hover:scale-105">
+        <div className="relative px-2 md:px-5 py-0 pt-8 pb-3 md:py-10 w-full h-fit flex flex-col gap-[10px] md:gap-[16px] rounded-[8px] border-2 border-[#E4E9EE] transition-transform duration-300 hover:transform hover:scale-105">
           <div className="bg-white rounded-md p-1 absolute top-2 right-2 md:top-4 md:right-4 text-xs md:text-sm text-gray-600 flex items-center">
             {product.brand_rating}{" "}
             <Image
@@ -64,10 +66,17 @@ export default function ProductCard({ product }: { product: Product }) {
             <Image
               src={product.images[0] || "/assets/pngs/placeholder.png"}
               alt="product-image"
-              width={100}
-              height={100}
+              width={300}
+              height={300}
               className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]"
             />
+            {/* <DummyImage
+              src={product.images[0]}
+              alt="Image is not available for this product."
+              fallbackSrc="/assets/pngs/placeholder.png"
+              width={100}
+              height={100}
+              className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" /> */}
           </div>
           <div className="basis-1/2 flex flex-col justify-between px-2">
             <div className="text-xs md:text-base font-semibold pb-2 text-center">

@@ -43,7 +43,8 @@ export default function First() {
           navButtonsProps={{
             // You can also set individual styles for the navigation buttons here
             style: {
-              marginRight: "120px",
+              marginRight: "20px",
+              marginLeft: "20px",
               padding: "0px",
               backgroundColor: "white",
               color: "black",
