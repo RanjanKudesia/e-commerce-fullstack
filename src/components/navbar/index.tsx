@@ -80,30 +80,30 @@ export default function Navbar() {
             <li className="xl:hidden">
               <Submenu />
             </li>
-            <li
+            {/* <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/our-story"
                 ? "active"
                 : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="">Our Stroy</Link>
-            </li>
+            </li> */}
             <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/articles"
                 ? "active"
                 : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
-              <Link href="/articles">Blogs</Link>
+              <Link href="/articles">Articles</Link>
             </li>
-            <li
+            {/* <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/contact-us"
                 ? "active"
                 : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="">Contact Us</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         {/* Mega Menu */}

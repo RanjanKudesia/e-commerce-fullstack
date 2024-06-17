@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Product } from "../../../../interfaces";
 import Link from "next/link";
-// import DummyImage from "@/components/dummy-img-placeholder";
+import DummyImage from "@/components/dummy-img-placeholder";
 
 
 function calculatePercentage(numerator: string, denominator: string): number {
@@ -63,20 +63,20 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
 
           <div className="relative basis-1/2 w-full rounded-[8px] shadow-red-500 flex justify-center items-center">
-            <Image
+            {/* <Image
               src={product.images[0] || "/assets/pngs/placeholder.png"}
               alt="product-image"
               width={300}
               height={300}
               className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]"
-            />
-            {/* <DummyImage
+            /> */}
+            <DummyImage
               src={product.images[0]}
               alt="Image is not available for this product."
               fallbackSrc="/assets/pngs/placeholder.png"
-              width={100}
-              height={100}
-              className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" /> */}
+              width={500}
+              height={500}
+              className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
           </div>
           <div className="basis-1/2 flex flex-col justify-between px-2">
             <div className="text-xs md:text-base font-semibold pb-2 text-center">

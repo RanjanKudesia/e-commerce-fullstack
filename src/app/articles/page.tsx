@@ -46,7 +46,7 @@ export default function Articles() {
     return (
         <div className="xl:px-40 md:py-12 px-5 py-5 bg-[#F7F7F7]">
             <div className="min-h-[50px] md:min-h-[100px] flex justify-center items-center flex-col">
-                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold md:leading-[44px]">The Lenny Blog</h2>
+                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold md:leading-[44px]">The Lenny's Article</h2>
                 <p className="text-[#818B9C] leading-6">All things recruiting: real stories, best practices</p>
             </div>
 

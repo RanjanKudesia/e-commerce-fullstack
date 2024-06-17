@@ -3,6 +3,8 @@ import { useGlobalState } from "@/context";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import products from "./cartProducts";
+import DummyImage from "@/components/dummy-img-placeholder";
+
 
 export default function CartProducts() {
   const {
@@ -41,14 +43,21 @@ export default function CartProducts() {
               <div className="flex flex-col md:flex-row gap-[16px] items-end md:justify-between  md:items-center ">
                 <div className="flex w-full flex-row gap-[24px]  ">
                   <div className="flex flex-row gap-[16px]">
-                    <div className="flex justify-center rounded-[8px] bg-[#F6F6F6] md:w-[80px] md:h-[80px] ">
-                      <Image
-                        className="object-contain "
+                    <div className="flex justify-center items-center rounded-[8px] md:w-[80px] md:h-[80px] shadow-md p-2">
+                      {/* <Image
+                        className="w-[70px] h-[70px] object-contain"
                         src={product.imageSrc}
-                        width={60}
-                        height={60}
+                        width={100}
+                        height={100}
                         alt=""
-                      />
+                      /> */}
+                      <DummyImage
+                        src={product.imageSrc}
+                        alt="Image is not available for this product."
+                        fallbackSrc="/assets/pngs/placeholder.png"
+                        width={100}
+                        height={100}
+                        className="w-[70px] h-[70px] object-contain" />
                     </div>
                     <div className="flex flex-col gap-[8px]">
                       <div className="text-[14px] font-[400] leading-[22.4px] ">
@@ -57,9 +66,10 @@ export default function CartProducts() {
                         </span>
                         <br />
                         Central Jakarta
+                        {/* {product.category} */}
                       </div>
                       <div className="text-[16px] leading-[22.4px] tracking-[-0.2px] font-[600] text-[#1D9E34] ">
-                        {product.price}
+                        Rs.{product.price}
                       </div>
                     </div>
                   </div>
