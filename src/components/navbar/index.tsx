@@ -8,7 +8,7 @@ import Submenu from "./components/submenu";
 import { useGlobalState } from "@/context";
 
 export default function Navbar() {
-  const { productCategory } = useGlobalState();
+  const { productCategory, cart } = useGlobalState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -49,18 +49,20 @@ export default function Navbar() {
         <div className="navList hidden font-medium transition-all ease-in-out duration-300 absolute top-0 left-0 py-10 px-5 bg-white z-10 h-screen w-9/12 sm:w-1/4 xl:w-1/2 xl:py-0 xl:static xl:h-0 xl:block">
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
             <li
-              className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === "/"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
-                }`}
+              className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${
+                pathname === "/"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
-              className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/shop"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
-                }`}
+              className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/shop"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
               onMouseEnter={handleShopMenuHover}
               onMouseLeave={handleShopMenuLeave}
             >
@@ -95,26 +97,29 @@ export default function Navbar() {
               <Submenu />
             </li>
             <li
-              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/our-story"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
-                }`}
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/our-story"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
             >
               <Link href="">Our Stroy</Link>
             </li>
             <li
-              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/articles"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
-                }`}
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/articles"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
             >
               <Link href="/articles">Blogs</Link>
             </li>
             <li
-              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/contact-us"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
-                }`}
+              className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${
+                pathname === "/contact-us"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+              }`}
             >
               <Link href="">Contact Us</Link>
             </li>
@@ -122,7 +127,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex justify-end items-center w-[75%] xl:w-1/5">
-          <Link href="/checkout">
+          <Link className="relative" href="/checkout">
             <Image
               src="/assets/svgs/shopping-cart.svg"
               alt="Logo"
@@ -130,6 +135,11 @@ export default function Navbar() {
               height={20}
               className="mx-2 xl:w-[25px] xl:mx-4 cursor-pointer"
             />
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2  bg-green-500 text-white rounded-full px-2 py-0.5 text-xs">
+                {cart.length}
+              </span>
+            )}
           </Link>
 
           <Image

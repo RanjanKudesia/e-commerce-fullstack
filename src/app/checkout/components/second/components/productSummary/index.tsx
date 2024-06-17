@@ -43,9 +43,9 @@ export default function ProductSummary() {
           cart.map((product) => {
             return (
               <div className="flex flex-col gap-[8px]" key={product.id}>
-                <div className="flex flex-row justify-between ">
+                <div className="flex flex-row gap-[8px] justify-between ">
                   <div>{product.name}</div>
-                  <div>{product.price}</div>
+                  <div>Rs {product.price}</div>
                 </div>
               </div>
             ); // Return null if the selected product is not found

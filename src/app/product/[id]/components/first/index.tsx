@@ -6,6 +6,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { useProductState } from "../../context";
 import { FaChevronLeft } from "react-icons/fa";
 import { useGlobalState } from "@/context";
+import { useRouter } from "next/navigation";
 
 export default function FirstSec() {
   const { cart, addToCart } = useGlobalState();
@@ -13,6 +14,7 @@ export default function FirstSec() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
+  const router = useRouter();
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -67,8 +69,8 @@ export default function FirstSec() {
             <div className="relative z-10">
               <Image
                 src={
-                  product.images[currentImageIndex]
-                  || "/pngs/PRODUCT_PLACEHOLDER.png"
+                  product.images[currentImageIndex] ||
+                  "/pngs/PRODUCT_PLACEHOLDER.png"
                 }
                 width={480}
                 height={480}
@@ -140,7 +142,8 @@ export default function FirstSec() {
                 <button
                   onClick={toggleExpanded}
                   className="text-[#1D9E34] ml-2 font-semibold underline"
-                >{isExpanded ? "Read less" : "Read more"}
+                >
+                  {isExpanded ? "Read less" : "Read more"}
                 </button>
               )}
           </p>
@@ -193,7 +196,15 @@ export default function FirstSec() {
           </div>
 
           <div className="w-full flex justify-between items-center mt-10 flex-col md:flex-row">
-            <button className="bg-[#1E4C2F] text-white py-4 px-3 w-full md:w-1/2 md:mr-2 mb-4 md:mb-0 rounded-md font-semibold border-2 border-[#1E4C2F] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300">
+            <button
+              onClick={() => {
+                addToCart(product);
+                console.log("added to cart");
+                console.log(cart);
+                router.push("/checkout");
+              }}
+              className="bg-[#1E4C2F] text-white py-4 px-3 w-full md:w-1/2 md:mr-2 mb-4 md:mb-0 rounded-md font-semibold border-2 border-[#1E4C2F] hover:bg-white hover:text-[#1E4C2F] transition-all ease-in-out duration-300"
+            >
               Buy Now
             </button>
             <button
