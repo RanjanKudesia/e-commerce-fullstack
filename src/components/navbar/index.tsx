@@ -8,7 +8,7 @@ import Submenu from "./components/submenu";
 import { useGlobalState } from "@/context";
 
 export default function Navbar() {
-  const { productCategory } = useGlobalState();
+  const { productCategory, cart } = useGlobalState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -51,16 +51,16 @@ export default function Navbar() {
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
             <li
               className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === "/"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
               className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/shop"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
               onMouseEnter={handleShopMenuHover}
 
@@ -90,8 +90,8 @@ export default function Navbar() {
             </li> */}
             <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/articles"
-                ? "active"
-                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                  ? "active"
+                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/articles">Articles</Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
           </div>
         )}
         <div className="flex justify-end items-center w-[75%] xl:w-1/5">
-          <Link href="/checkout">
+          <Link className="relative" href="/checkout">
             <Image
               src="/assets/svgs/shopping-cart.svg"
               alt="Logo"
@@ -131,6 +131,11 @@ export default function Navbar() {
               height={20}
               className="mx-2 xl:w-[25px] xl:mx-4 cursor-pointer"
             />
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2  bg-green-500 text-white rounded-full px-2 py-0.5 text-xs">
+                {cart.length}
+              </span>
+            )}
           </Link>
 
           <Image
