@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import products from "./cartProducts";
 import DummyImage from "@/components/dummy-img-placeholder";
+import Link from "next/link";
 
 
 export default function CartProducts() {
@@ -41,7 +42,7 @@ export default function CartProducts() {
           {cart.map((product: any) => (
             <div className="flex flex-col gap-[24px] ">
               <div className="flex flex-col md:flex-row gap-[16px] items-end md:justify-between  md:items-center ">
-                <div className="flex w-full flex-row gap-[24px]  ">
+                <Link href={`/product/${product.uniqid}`} className="flex w-full flex-row gap-[24px]  ">
                   <div className="flex flex-row gap-[16px]">
                     <div className="flex justify-center items-center rounded-[8px] md:w-[80px] md:h-[80px] shadow-md p-2">
                       {/* <Image
@@ -65,15 +66,14 @@ export default function CartProducts() {
                           {product.name}
                         </span>
                         <br />
-                        Central Jakarta
-                        {/* {product.category} */}
+                        {product.subcategory} | {product.category}
                       </div>
-                      <div className="text-[16px] leading-[22.4px] tracking-[-0.2px] font-[600] text-[#1D9E34] ">
-                        Rs.{product.price}
+                      <div className="text-[16px] leading-[22.4px] tracking-[-0.2px]">
+                        <span className="text-[#1D9E34] font-[600]"> Rs.{product.discountedPrice} </span> <span className="line-through text-gray-400">{product.price}</span>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
                 <div className="flex flex-row gap-[12px] items-end h-[32px]">
                   <div className="flex flex-row p-[4px] rounded-[8px]">
                     <Image

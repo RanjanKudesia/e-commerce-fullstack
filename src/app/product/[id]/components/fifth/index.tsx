@@ -86,8 +86,8 @@ export default function FifthSec() {
                                         src={relatedProduct.images[0]}
                                         alt="Image is not available for this product."
                                         fallbackSrc="/assets/pngs/placeholder.png"
-                                        width={100}
-                                        height={100}
+                                        width={500}
+                                        height={500}
                                         className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
                                 </div>
                                 <div className="basis-1/2 flex flex-col justify-between px-2 mt-3">

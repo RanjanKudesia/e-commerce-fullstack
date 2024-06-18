@@ -83,7 +83,7 @@ export default function ExampleCollapsibleList() {
                 fontSize: '16px',
               }}
             >
-              Shop
+              All Category
             </Typography>
           </ListItem>
           {open && (

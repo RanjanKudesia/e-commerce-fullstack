@@ -19,6 +19,9 @@ interface CartItem {
   discountedPrice: string;
   imageSrc: string;
   quantity: number;
+  category: string;
+  subcategory: string;
+  uniqid: string;
 }
 
 interface ProductCategory {
@@ -225,6 +228,9 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
       retail_price: price,
       discounted_price: discountedPrice,
       images,
+      category: category,
+      uniq_id: uniqid,
+      subcategory: subcategory,
     } = product;
     const imageSrc = images.length > 0 ? images[0] : "";
     const quantity = 1;
@@ -235,7 +241,7 @@ function GlobalStateProvider({ children }: ContextProviderProps) {
       if (!existingProduct) {
         return [
           ...prevCart,
-          { id, name, price, discountedPrice, imageSrc, quantity },
+          { id, name, price, discountedPrice, imageSrc, quantity, category, subcategory, uniqid },
         ];
       }
 

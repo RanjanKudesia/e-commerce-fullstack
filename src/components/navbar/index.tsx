@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import Submenu from "./components/submenu";
 import { useGlobalState } from "@/context";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export default function Navbar() {
   const { productCategory, cart } = useGlobalState();
@@ -31,9 +33,36 @@ export default function Navbar() {
     setIsMegaMenuOpen(false);
   };
 
+  // useEffect(() => {
+  //   toast.success('Added to Bag!', {
+  //     position: "top-right",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //   });
+  // }, [cart]);
+
+
   return (
     <div className="text-black sticky top-0 z-50">
       <nav className="w-full flex justify-between items-center py-5 px-3 bg-white relative z-50 xl:px-[150px]">
+        {/* <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        /> */}
+
         <div className="w-1/4 xl:w-1/6 ">
           <Link href="/">
             <Image
@@ -51,22 +80,22 @@ export default function Navbar() {
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
             <li
               className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === "/"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
               className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/shop"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
               onMouseEnter={handleShopMenuHover}
 
             >
               <Link href="" className="flex hover:font-bold">
-                Shop
+                All Category
                 <Image
                   src="/assets/svgs/chevron-down.svg"
                   alt="icon"
@@ -90,8 +119,8 @@ export default function Navbar() {
             </li> */}
             <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/articles"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/articles">Articles</Link>
@@ -132,7 +161,7 @@ export default function Navbar() {
               className="mx-2 xl:w-[25px] xl:mx-4 cursor-pointer"
             />
             {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2  bg-green-500 text-white rounded-full px-2 py-0.5 text-xs">
+              <span className="absolute -top-2 md:right-1 -right-[2px] bg-[#1d9e34] text-white rounded-full w-[15px] h-[15px] md:w-[20px] md:h-[20px] p-1 text-[10px] md:text-xs flex justify-center items-center">
                 {cart.length}
               </span>
             )}
