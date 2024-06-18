@@ -167,13 +167,13 @@ export default function Navbar() {
             )}
           </Link>
 
-          <Image
+          {/* <Image
             src="/assets/svgs/user_profile.svg"
             alt="Logo"
             width={25}
             height={25}
             className="mx-2 xl:w-[35px] xl:mx-4 cursor-pointer"
-          />
+          /> */}
 
           <div>
             {isOpen ? (
