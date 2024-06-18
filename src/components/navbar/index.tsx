@@ -11,7 +11,6 @@ import { useGlobalState } from "@/context";
 
 export default function Navbar() {
   const { productCategory, cart } = useGlobalState();
-  const { productCategory, cart } = useGlobalState();
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -81,16 +80,16 @@ export default function Navbar() {
           <ul className="flex justify-start items-start flex-col xl:flex-row xl:justify-center xl:items-center">
             <li
               className={`text-[#1E4C2F] font-semibold px-4 hover:font-bold py-2 xl:py-0 ${pathname === "/"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
               className={`hidden xl:block text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/shop"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
               onMouseEnter={handleShopMenuHover}
 
@@ -120,8 +119,8 @@ export default function Navbar() {
             </li> */}
             <li
               className={`text-[#1E4C2F] px-4 font-semibold hover:font-bold py-2 xl:py-0 ${pathname === "/articles"
-                  ? "active"
-                  : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
+                ? "active"
+                : "font-medium px-4 hover:font-bold py-2 xl:py-0 text-black"
                 }`}
             >
               <Link href="/articles">Articles</Link>
