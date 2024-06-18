@@ -88,7 +88,7 @@ export default function SecondSec() {
         </Link> */}
         <Link
           href={"#reviews"}
-          className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] border-b-[3px] border-[#1E4C2F] hover:text-[#1E4C2F] ${pathname === "/product/"
+          className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] hover:text-[#1E4C2F] ${pathname === "/product/"
             ? "active"
             : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] hover:text-[#1E4C2F] border-b-[0px] hover:border-b-[3px] border-[#1E4C2F]"
             }`}
@@ -97,7 +97,7 @@ export default function SecondSec() {
         </Link>
         <Link
           href="#relatedProduct"
-          className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] border-b-[3px] border-[#1E4C2F] hover:text-[#1E4C2F]  ${pathname === "/product/"
+          className={`min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#1E4C2F] hover:text-[#1E4C2F]  ${pathname === "/product/"
             ? "active"
             : "min-w-fit text-base md:text-lg font-semibold md:py-4 md:px-6 py-2 px-3 text-[#818B9C] hover:text-[#1E4C2F] border-b-[0px] hover:border-b-[3px] border-[#1E4C2F]"
             }`}

@@ -45,7 +45,7 @@ export default function ProductSummary() {
               <div className="flex flex-col gap-[8px]" key={product.id}>
                 <div className="flex flex-row gap-[8px] justify-between ">
                   <div>{product.name}</div>
-                  <div>Rs {product.price}</div>
+                  <div>Rs.{product.price}</div>
                 </div>
               </div>
             ); // Return null if the selected product is not found
@@ -56,24 +56,24 @@ export default function ProductSummary() {
       <div className="flex flex-col gap-[8px]">
         <div className="flex flex-row justify-between ">
           <div>Total Price</div>
-          <div>{itemPrice === null ? "Rs0.00" : `Rs${itemPrice}`}</div>
+          <div>{itemPrice === null ? "Rs0.00" : `Rs.${itemPrice}`}</div>
         </div>
         <div className="flex flex-row justify-between ">
           <div>Total Price (Discount)</div>
           <div>
-            {discountedPrice === null ? "Rs0.00" : `Rs${discountedPrice}`}
+            {discountedPrice === null ? "Rs0.00" : `Rs.${discountedPrice}`}
           </div>
         </div>
         <div className="flex flex-row justify-between ">
           <div>Tax & Fee</div>
-          <div>{itemPrice === null ? "Rs0" : "Rs100"}</div>
+          <div>{itemPrice === null ? "Rs.0" : "Rs.100"}</div>
         </div>
       </div>
       <hr />
       <div className="flex flex-row justify-between ">
         <div>Total Price</div>
         <div>
-          {discountedPrice === null ? "Rs0.00" : `Rs${discountedPrice}`}
+          {discountedPrice === null ? "Rs.0.00" : `Rs.${discountedPrice}`}
         </div>
       </div>
       <div className="cursor-pointer md:w-[332px]  md:h-[88px] rounded-[12px] flex flex-row px-[16px] py-[19px] outline outline-[1px] outline-[#E4E9EE] justify-between">
